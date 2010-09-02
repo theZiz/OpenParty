@@ -1,0 +1,19 @@
+#This file was created with Wings 3D 0.99.03
+#See http://www.wings3d.com for details 
+#Criterion Renderware export v1.0.
+modelbegin 
+clumpbegin 
+#Object name Regular Plane1
+clumpbegin 
+LightSampling Vertex 
+Vertex -0.200000 0.000000 -0.200000 UV 0.50 0.50
+Vertex -0.200000 0.000000 0.200000 UV 0.50 1.00
+Vertex 0.200000 0.000000 -0.200000 UV 1.00 0.50
+Vertex 0.200000 0.000000 0.200000 UV 1.00 1.00 
+Color 1.0 1.0 1.0
+Opacity 1.0
+Texture Regular Plane1_auv
+Quad 2 4 3 1
+clumpend 
+clumpend 
+modelend 

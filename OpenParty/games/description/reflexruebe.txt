@@ -1,0 +1,2 @@
+german:Reflexrübe ist ein Reflexspiel. Wer am schnellsten den Button drückt, den die geisteskranke Rübe zeigt, bekommt einen Punkt. Wer zuerst 3 Punkte hat, hat gewonnen. Aber Achtung! Wer falsch oder zu früh wählt, muss eine Runde aussetzen.
+english:Reflexrübe (Speedbeet) is a reflex game. The first one who pushes the button the mad beet shows, gains a point. But beware! Those who choose the wrong button or act too early will have to skip one turn.

@@ -1,0 +1,50 @@
+ToDo bis Release 0.8:
++ Spiel beenden ohne Alt+F4
+  + Esc Zwischenmenu
+- 3 Minispiele
+  - Pong von 2 bis 8 Spielern, 2: Viereck, 3: Dreieck, 4: Viereck: 5: FÃ¼nfeck ... Ball wird schneller. Jeder Spieler 3 Leben.
+  - Tanzen zu Rhythmus
+	- einen Button drücken gaaaaaanz schnell
+- Pathfinding
+- Zweisprachigkeit durchgängig (bis auf Minispiele)
+- Für die Entwicklung notwendige Header einzeln runterladbar
+  - Auch Einbetten in das How to
+- Minispielsektion auf der Internetseite basteln
+  - Code einzeln runterladbar
+  - Screenshot
+  - Beschreibung (Sprache, blablabla)
+
+ToDo bis Relese 0.8.5:
+- Abfragen, was das Minispiel kann
+- bei Laden von Text aus XML-Datei zu viele Leerzeichen und/oder Zeilenumbrüche ignorieren
+- leveldesigner Rewrite
+  - Pfeile, die die Spielrichtung zeigen dann in forest.xml reinfrickeln
+- Neues Board
+  - Neuer Dialog für Board- und Savegameauswahl
+	- Spiel speichern
+- Funktionen sinnvoll auffüllen
+- Speicher sinnvoll freigeben:
+  - bei Cancel von allem
+	- nach Spiel
+- CPU Handycap
+- Physikengine wieder nutzen => verbessern
+- 2 Minispiele
+
+allgemeine ToDo:
+
+Minispielideen:
+	- KugelKriegAbleitung:
+		- Slow motion munition third person shooter
+  - Eviltetris?
+  - Rumlaufen, auf Kopf springen, Feld wird kleiner
+  - Minensuchspiel in geschlossenem Raum
+  - Tauchen nach SchÃ¤tzen Third Person
+  - MÃ¼nzen sammeln auf "Bahnen"
+  - Immer schneller Buttons drÃ¼cken mÃ¼ssen, sonst geht ein Atomkraftwerk hoch
+  - auf Laufrad Ã¼ber Hindernisse springen
+  - iwado
+	- Roflcopter
+	- Wettfliegen (alle Fliegen nebeneinander und müssen entgegenkommenden Gegenständen ausweichen - oder den anderen reinschubsen)	
+	- Buttons drücken, die dastehen, immer mehr
+
+0359 3050329

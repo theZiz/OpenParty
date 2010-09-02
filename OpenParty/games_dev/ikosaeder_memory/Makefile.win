@@ -1,0 +1,5 @@
+all: ikosaeder_memory.pp
+	fpc ikosaeder_memory.pp -oikosaeder_memory.dll -Xs -XX
+
+debug: ikosaeder_memory.pp
+	fpc ikosaeder_memory.pp -oikosaeder_memory.dll -gw

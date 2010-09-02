@@ -1,0 +1,5 @@
+all: ikosaeder_implosion.pp
+	fpc ikosaeder_implosion.pp -oikosaeder_implosion.dll -Xs -XX
+
+debug: ikosaeder_implosion.pp
+	fpc ikosaeder_implosion.pp -oikosaeder_implosion.dll -gw

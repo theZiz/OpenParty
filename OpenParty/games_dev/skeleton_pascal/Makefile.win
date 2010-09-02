@@ -1,0 +1,5 @@
+all: skeleton_pascal.pp
+	fpc skeleton_pascal.pp -oskeleton_pascal.dll
+
+debug: skeleton_pascal.pp
+	fpc skeleton_pascal.pp -oskeleton_pascal.dll -gw

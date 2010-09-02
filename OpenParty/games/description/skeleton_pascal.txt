@@ -1,0 +1,2 @@
+german:Dies hier ist nur ein "Skeleton", d.h. kein richtiges Spiel sondern nur ein Grundstein, um ein Minispiel zu erstellen, wobei wichtige Sachen wie Sound, Fade In, Fade Out, Countdown oder Textanzeigevorbereitungen schon impementiert sind. Mit [A], [B], [C] oder [D] kann man beenden. Es gewinner aber jeder.
+english:This is the "skeleton", that means, it is not a really game, but a basis to create a minigame. Important things like sound, fade in, fade out, count down or drawing text are implemented yet. You can exit with [A], [B], [C] or [D]. Everybody wins.

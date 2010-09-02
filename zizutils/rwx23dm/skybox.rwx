@@ -1,0 +1,45 @@
+#This file was created with Wings 3D 0.99.03
+#See http://www.wings3d.com for details 
+#Criterion Renderware export v1.0.
+modelbegin 
+clumpbegin 
+#Object name cube1
+clumpbegin 
+LightSampling Vertex 
+Vertex -0.100000 -0.100000 0.100000 UV 0.25 0.50  
+Vertex -0.100000 -0.100000 0.100000 UV 0.25 0.50  
+Vertex -0.100000 -0.100000 0.100000 UV 0.50 0.75  
+Vertex -0.100000 0.100000 0.100000 UV 0.25 0.25  
+Vertex -0.100000 0.100000 0.100000 UV 0.25 0.25  
+Vertex -0.100000 0.100000 0.100000 UV 0.25 0.25  
+Vertex 0.100000 0.100000 0.100000 UV 0.50 0.25  
+Vertex 0.100000 0.100000 0.100000 UV 0.50 0.25  
+Vertex 0.100000 0.100000 0.100000 UV 0.50 0.25  
+Vertex 0.100000 -0.100000 0.100000 UV 0.25 0.75  
+Vertex 0.100000 -0.100000 0.100000 UV 0.50 0.50  
+Vertex 0.100000 -0.100000 0.100000 UV 0.50 0.50  
+Vertex -0.100000 -0.100000 -0.100000 UV 0.00 0.50  
+Vertex -0.100000 -0.100000 -0.100000 UV 0.50 0.50  
+Vertex -0.100000 -0.100000 -0.100000 UV 1.00 0.50  
+Vertex -0.100000 0.100000 -0.100000 UV 0.00 0.25  
+Vertex -0.100000 0.100000 -0.100000 UV 0.25 0.00  
+Vertex -0.100000 0.100000 -0.100000 UV 1.00 0.25  
+Vertex 0.100000 0.100000 -0.100000 UV 0.50 0.00  
+Vertex 0.100000 0.100000 -0.100000 UV 0.75 0.25  
+Vertex 0.100000 0.100000 -0.100000 UV 0.75 0.25  
+Vertex 0.100000 -0.100000 -0.100000 UV 0.25 0.50  
+Vertex 0.100000 -0.100000 -0.100000 UV 0.75 0.50  
+Vertex 0.100000 -0.100000 -0.100000 UV 0.75 0.50
+Surface 0.580000 0.150000 0.150000
+Color 1.0 1.0 1.0
+Opacity 1.0
+Texture cube1_auv
+Quad 5 16 13 2
+Quad 18 20 23 15
+Quad 8 19 17 6
+Quad 3 14 22 10
+Quad 12 24 21 9
+Quad 1 11 7 4
+clumpend 
+clumpend 
+modelend 

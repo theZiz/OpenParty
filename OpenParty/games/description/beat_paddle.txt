@@ -1,0 +1,2 @@
+german:In Beat Paddle muss dein Charakter als erster mit seinem Ruderboot die Ziellinie erreichen, indem du immer den Button drückst, der gerade auf den Trommeln angezeigt wird, ehe sie wieder geschlagen werden.
+english:To play Beat Paddle your character needs to reach the finishing line with his rowboat. For this you need to press the button shown at the drum before it gets beaten again.

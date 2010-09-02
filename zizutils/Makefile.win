@@ -1,0 +1,49 @@
+# Project: libzizopenparty
+# Makefile created by Dev-C++ 4.9.9.2
+
+CPP  = g++.exe
+CC   = gcc.exe
+WINDRES = windres.exe
+RES  = 
+OBJ  = 3dobjects/3dobjects.o partikel/partikel.o texture/texture.o ttf/ttf.o xml/xml.o zizwindow/zizwindow.o $(RES)
+LINKOBJ  = 3dobjects/3dobjects.o partikel/partikel.o texture/texture.o ttf/ttf.o xml/xml.o zizwindow/zizwindow.o $(RES)
+LIBS =  -L"C:/Dev-Cpp/lib" --no-export-all-symbols --add-cdecl-alias -lSDL -lSDL_image -lopengl32 -lglu32 -lSDL_ttf  -mwindows 
+INCS =  -I"C:/Dev-Cpp/include" 
+CXXINCS =  -I"C:/Dev-Cpp/lib/gcc/mingw32/3.4.2/include"  -I"C:/Dev-Cpp/include/c++/3.4.2/backward"  -I"C:/Dev-Cpp/include/c++/3.4.2/mingw32"  -I"C:/Dev-Cpp/include/c++/3.4.2"  -I"C:/Dev-Cpp/include" 
+BIN  = libzizopenparty.dll
+CXXFLAGS = $(CXXINCS) -DBUILDING_DLL=1   -mwindows
+CFLAGS = $(INCS) -DBUILDING_DLL=1   -mwindows
+RM = rm -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before libzizopenparty.dll all-after
+
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+DLLWRAP=dllwrap.exe
+DEFFILE=liblibzizopenparty.def
+STATICLIB=liblibzizopenparty.a
+
+$(BIN): $(LINKOBJ)
+	$(DLLWRAP) --output-def $(DEFFILE) --implib $(STATICLIB) $(LINKOBJ) $(LIBS) -o $(BIN)
+
+3dobjects/3dobjects.o: 3dobjects/3dobjects.c
+	$(CC) -c 3dobjects/3dobjects.c -o 3dobjects/3dobjects.o $(CFLAGS)
+
+partikel/partikel.o: partikel/partikel.c
+	$(CC) -c partikel/partikel.c -o partikel/partikel.o $(CFLAGS)
+
+texture/texture.o: texture/texture.c
+	$(CC) -c texture/texture.c -o texture/texture.o $(CFLAGS)
+
+ttf/ttf.o: ttf/ttf.c
+	$(CC) -c ttf/ttf.c -o ttf/ttf.o $(CFLAGS)
+
+xml/xml.o: xml/xml.c
+	$(CC) -c xml/xml.c -o xml/xml.o $(CFLAGS)
+
+zizwindow/zizwindow.o: zizwindow/zizwindow.c
+	$(CC) -c zizwindow/zizwindow.c -o zizwindow/zizwindow.o $(CFLAGS)

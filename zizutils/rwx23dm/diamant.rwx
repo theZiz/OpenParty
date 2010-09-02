@@ -1,0 +1,29 @@
+#This file was created with Wings 3D 0.99.03
+#See http://www.wings3d.com for details 
+#Criterion Renderware export v1.0.
+modelbegin 
+clumpbegin 
+#Object name cube9
+clumpbegin 
+LightSampling Vertex 
+Vertex -0.001582 -0.188800 -0.000267 
+Vertex -0.000693 0.188800 0.001618 
+Vertex 0.100000 0.000000 -0.100000 
+Vertex -0.100000 0.000000 -0.100000 
+Vertex 0.100000 0.000000 0.100000 
+Vertex -0.100000 0.000000 0.100000 
+Surface 0.580000 0.150000 0.150000
+Color 1.0 1.0 1.0
+Opacity 1.0
+Texture Null
+Triangle 5 1 3
+Triangle 3 1 4
+Triangle 1 5 6
+Triangle 5 2 6
+Triangle 6 2 4
+Triangle 2 5 3
+Triangle 6 4 1
+Triangle 3 4 2
+clumpend 
+clumpend 
+modelend 

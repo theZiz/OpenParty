@@ -1,0 +1,2 @@
+german:In "Wettschwimmen" wird eure Spielfigur ein Fisch und dieser muss als erster in das Ziel schwimmen. Er paddelt mit seiner Schwanzflosse, indem man möglichst schnell abwechselnd [A] und [B] drückt.
+english:In "Wettschwimmen" your charakter become a fish and this fish must swim as first into a goal. It paddles with his tail fin by pressing [A] and [B] rotatory as fast as possible.

@@ -1,0 +1,1921 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<openparty>
+  <sound>
+    <background filename="Whimsy Groove.ogg"/>
+    <sample filename="Blackbird.ogg" play_all="40000" plusminus="20000"/>
+    <sample filename="Blackbird2.ogg" play_all="40000" plusminus="20000"/>
+    <sample filename="Cat.ogg" play_all="40000" plusminus="20000"/>
+    <sample filename="Elkbellow.ogg" play_all="40000" plusminus="20000"/>
+    <sample filename="Tit.ogg" play_all="40000" plusminus="20000"/>
+    <sample filename="Tit2.ogg" play_all="40000" plusminus="20000"/>
+    <sample filename="Tit3.ogg" play_all="40000" plusminus="20000"/>
+    <sample filename="Tit4.ogg" play_all="40000" plusminus="20000"/>
+    <sample filename="Tit5.ogg" play_all="40000" plusminus="20000"/>
+    <sample filename="Woodpecker.ogg" play_all="40000" plusminus="20000"/>    
+    <sample filename="Woodpecker2.ogg" play_all="40000" plusminus="20000"/>    
+  </sound>
+  <objects>
+    <object name="tree" filename="tree.3dm" texture="forest.png"/>
+    <object name="ground" filename="ground2.3dm" texture="forest.png"/>
+    <object name="forest_ring" filename="forest.3dm" texture="forest.png"/>
+    <object name="forest_blue" filename="forest_blue.3dm" texture="forest.png"/>
+    <object name="forest_duell" filename="forest_duell.3dm" texture="forest.png"/>
+    <object name="forest_luck" filename="forest_luck.3dm" texture="forest.png"/>
+    <object name="forest_question" filename="forest_question.3dm" texture="forest.png"/>
+    <object name="forest_red" filename="forest_red.3dm" texture="forest.png"/>
+    <object name="forest_green" filename="forest_green.3dm" texture="forest.png"/>
+    <object name="forest_shop" filename="forest_shop.3dm" texture="forest.png"/>
+    <object name="rubin" filename="rubin.3dm" texture="forest.png" light="simple"/>
+    <object name="mine" filename="mine.3dm" texture="items.png"/>
+    <object name="dice" filename="dice.3dm" texture="dice.png" light="simple"/>
+    <object name="double_dice" filename="dice.3dm" texture="golden_dice.png" light="simple"/>
+    <object name="slomo" filename="slomo.3dm" texture="items.png" light="simple"/>
+    <object name="bomb" filename="bomb.3dm" texture="items.png"/>
+    <object name="trap" filename="trap.3dm" texture="items.png" light="simple"/>
+  </objects>
+  <design diceangle="0.000000">
+    <redskybox texture="redskybox.png">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <size r="50.000000"/>
+    </redskybox>
+    <light>
+      <position x="0.000000" y="10.000000" z="0.000000"/>
+      <ambient r="0.100000" g="0.100000" b="0.100000"/>
+      <diffuse r="1.000000" g="1.000000" b="1.000000"/>
+    </light>
+    <set object="forest_question" type="question" triggerfunction_in="teleport" nr="2" next="3">
+      <position x="0.000000" y="0.000000" z="-18.750000"/>
+      <rotation x="0.000000" y="0.000000" z="0.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <cameraposition x="-0.570688" y="3.500000" z="-23.717325"/>
+      <camerarotation x="-10.000000" y="186.554352" z="0.000000"/>
+    </set>
+    <set object="forest_blue" type="blue" triggerfunction_in="rubinaction"  nr="3" next="4">
+      <position x="2.500000" y="0.000000" z="-18.750000"/>
+      <rotation x="0.000000" y="0.000000" z="0.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <cameraposition x="3.648765" y="3.500000" z="-23.616245"/>
+      <camerarotation x="-10.000000" y="166.717468" z="0.000000"/>
+    </set>
+    <set object="forest_blue" type="blue" triggerfunction_in="rubinaction"  nr="4" next="5">
+      <position x="5.000000" y="0.000000" z="-17.500000"/>
+      <rotation x="0.000000" y="0.000000" z="0.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <cameraposition x="8.900209" y="3.500000" z="-20.628637"/>
+      <camerarotation x="-10.000000" y="128.735596" z="0.000000"/>
+    </set>
+    <set object="forest_blue" type="blue" triggerfunction_in="rubinaction"  nr="5" next="6">
+      <position x="5.625000" y="0.000000" z="-15.000000"/>
+      <rotation x="0.000000" y="0.000000" z="0.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <cameraposition x="10.587538" y="3.500000" z="-15.610917"/>
+      <camerarotation x="-10.000000" y="97.018127" z="0.000000"/>
+    </set>
+    <set object="forest_blue" type="blue" triggerfunction_in="rubinaction"  nr="6" next="7">
+      <position x="5.625000" y="0.000000" z="-12.500000"/>
+      <rotation x="0.000000" y="0.000000" z="0.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <cameraposition x="10.491245" y="3.500000" z="-11.351235"/>
+      <camerarotation x="-10.000000" y="76.717476" z="0.000000"/>
+    </set>
+    <set object="forest_blue" type="blue" triggerfunction_in="rubinaction"  nr="7" next="8">
+      <position x="4.375000" y="0.000000" z="-10.000000"/>
+      <rotation x="0.000000" y="0.000000" z="0.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <cameraposition x="8.213758" y="3.500000" z="-6.796263"/>
+      <camerarotation x="-10.000000" y="50.152428" z="0.000000"/>
+    </set>
+    <set object="forest_blue" type="blue" triggerfunction_in="rubinaction" triggerfunction_out="vorweiche" nr="8" next="9">
+      <position x="1.875000" y="0.000000" z="-8.125000"/>
+      <rotation x="0.000000" y="0.000000" z="0.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <cameraposition x="4.801322" y="3.500000" z="-4.070787"/>
+      <camerarotation x="-10.000000" y="35.821495" z="0.000000"/>
+    </set>
+    <set object="forest_red" type="red" triggerfunction_in="rubinaction" triggerfunction_out="weiche" nr="9" next="10">
+      <position x="-0.625000" y="0.000000" z="-6.250000"/>
+      <rotation x="0.000000" y="0.000000" z="0.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <cameraposition x="-3.001451" y="3.500000" z="-1.850855"/>
+      <camerarotation x="-10.000000" y="331.621735" z="0.000000"/>
+    </set>
+    <set type="ghost" nr="1009" next="0">
+      <color r="1.000000" g="1.000000" b="1.000000" a="0.350000"/>
+      <position x="-0.625000" y="0.000000" z="-6.250000"/>
+      <rotation x="0.000000" y="0.000000" z="0.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <cameraposition x="3.320938" y="3.500000" z="-9.320766"/>
+      <camerarotation x="-10.000000" y="127.890289" z="0.000000"/>
+    </set>
+    <set type="ghost" nr="2009" next="0">
+      <color r="1.000000" g="1.000000" b="1.000000" a="0.350000"/>
+      <position x="-0.625000" y="0.000000" z="-6.250000"/>
+      <rotation x="0.000000" y="0.000000" z="0.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <cameraposition x="2.642904" y="3.500000" z="-2.465717"/>
+      <camerarotation x="-10.000000" y="40.812065" z="0.000000"/>
+    </set>
+    <set object="forest_luck" type="luck"  triggerfunction_in="dice" nr="10" next="11">
+      <position x="-3.125000" y="0.000000" z="-4.375000"/>
+      <rotation x="0.000000" y="0.000000" z="0.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <cameraposition x="-6.401010" y="3.500000" z="-8.152268"/>
+      <camerarotation x="-10.000000" y="220.934967" z="0.000000"/>
+    </set>
+    <set object="forest_question" type="question" triggerfunction_in="questionmark"  nr="11" next="12">
+      <position x="-5.000000" y="0.000000" z="-2.500000"/>
+      <rotation x="0.000000" y="0.000000" z="0.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <cameraposition x="-8.682883" y="3.500000" z="-5.881775"/>
+      <camerarotation x="-10.000000" y="227.440445" z="0.000000"/>
+    </set>
+    <set object="forest_duell" type="duell" triggerfunction_in="duell" nr="12" next="13">
+      <position x="-6.875000" y="0.000000" z="-0.625000"/>
+      <rotation x="0.000000" y="0.000000" z="0.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <cameraposition x="-11.283373" y="3.500000" z="-2.984290"/>
+      <camerarotation x="-10.000000" y="241.845032" z="0.000000"/>
+    </set>
+    <set object="forest_luck" type="luck" triggerfunction_in="dice" triggerfunction_out="vorweiche" nr="13" next="14">
+      <position x="-7.500000" y="0.000000" z="2.500000"/>
+      <rotation x="0.000000" y="0.000000" z="0.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <cameraposition x="-12.475667" y="3.500000" z="2.007312"/>
+      <camerarotation x="-10.000000" y="264.345032" z="0.000000"/>
+    </set>
+    <set object="forest_red" type="red" triggerfunction_in="rubinaction" triggerfunction_out="weiche"  nr="14" next="15">
+      <position x="-7.500000" y="0.000000" z="5.625000"/>
+      <rotation x="0.000000" y="0.000000" z="0.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <cameraposition x="-7.500000" y="3.500000" z="10.625000"/>
+      <camerarotation x="-10.000000" y="-0.000000" z="0.000000"/>
+    </set>
+    <set type="ghost" nr="1014" next="0">
+      <color r="1.000000" g="1.000000" b="1.000000" a="0.350000"/>
+      <position x="-7.500000" y="0.000000" z="5.625000"/>
+      <rotation x="0.000000" y="0.000000" z="0.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <cameraposition x="-7.545537" y="3.500000" z="0.625211"/>
+      <camerarotation x="-10.000000" y="180.521729" z="0.000000"/>
+    </set>
+    <set type="ghost" nr="2014" next="0">
+      <color r="1.000000" g="1.000000" b="1.000000" a="0.350000"/>
+      <position x="-7.500000" y="0.000000" z="5.625000"/>
+      <rotation x="0.000000" y="0.000000" z="0.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <cameraposition x="-12.220894" y="3.500000" z="3.977833"/>
+      <camerarotation x="-10.000000" y="250.765579" z="0.000000"/>
+    </set>
+    <set object="forest_blue" type="blue" triggerfunction_in="rubinaction"  nr="15" next="16">
+      <position x="-7.500000" y="0.000000" z="8.750000"/>
+      <rotation x="0.000000" y="0.000000" z="0.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <cameraposition x="-2.534011" y="3.500000" z="8.167804"/>
+      <camerarotation x="-10.000000" y="96.686630" z="0.000000"/>
+    </set>
+    <set object="forest_blue" type="blue" triggerfunction_in="rubinaction"  nr="16" next="17">
+      <position x="-7.500000" y="0.000000" z="11.875000"/>
+      <rotation x="0.000000" y="0.000000" z="0.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <cameraposition x="-2.633755" y="3.500000" z="13.023765"/>
+      <camerarotation x="-10.000000" y="76.717476" z="0.000000"/>
+    </set>
+    <set object="forest_blue" type="blue" triggerfunction_in="rubinaction"  nr="17" next="18">
+      <position x="-8.750000" y="0.000000" z="14.375000"/>
+      <rotation x="0.000000" y="0.000000" z="0.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <cameraposition x="-4.693789" y="3.500000" z="17.298552"/>
+      <camerarotation x="-10.000000" y="54.217472" z="0.000000"/>
+    </set>
+    <set object="forest_green" type="green" triggerfunction_in="shop_itemstadt" nr="18" next="19">
+      <position x="-10.625000" y="0.000000" z="16.250000"/>
+      <rotation x="0.000000" y="0.000000" z="0.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <cameraposition x="-7.872545" y="3.500000" z="20.424206"/>
+      <camerarotation x="-10.000000" y="33.400707" z="0.000000"/>
+    </set>
+    <set object="forest_blue" type="blue" triggerfunction_in="rubinaction"  nr="19" next="20">
+      <position x="-13.750000" y="0.000000" z="17.500000"/>
+      <rotation x="0.000000" y="0.000000" z="0.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <cameraposition x="-13.750000" y="3.500000" z="22.500000"/>
+      <camerarotation x="-10.000000" y="-0.000000" z="0.000000"/>
+    </set>
+    <set object="forest_question" type="question" triggerfunction_in="teleport"  nr="20" next="21">
+      <position x="-16.875000" y="0.000000" z="16.250000"/>
+      <rotation x="0.000000" y="0.000000" z="0.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <cameraposition x="-20.116850" y="3.500000" z="20.056627"/>
+      <camerarotation x="-10.000000" y="319.581177" z="0.000000"/>
+    </set>
+    <set object="forest_blue" type="blue" triggerfunction_in="rubinaction"  nr="21" next="22">
+      <position x="-18.750000" y="0.000000" z="13.125000"/>
+      <rotation x="0.000000" y="0.000000" z="0.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <cameraposition x="-23.676640" y="3.500000" z="13.978361"/>
+      <camerarotation x="-10.000000" y="279.826904" z="0.000000"/>
+    </set>
+    <set object="forest_blue" type="blue" triggerfunction_in="rubinaction"  nr="22" next="23">
+      <position x="-18.125000" y="0.000000" z="10.000000"/>
+      <rotation x="0.000000" y="0.000000" z="0.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <cameraposition x="-22.917717" y="3.500000" z="8.575267"/>
+      <camerarotation x="-10.000000" y="253.444336" z="0.000000"/>
+    </set>
+    <set object="forest_blue" type="blue" triggerfunction_in="rubinaction"  nr="23" next="24">
+      <position x="-16.875000" y="0.000000" z="6.875000"/>
+      <rotation x="0.000000" y="0.000000" z="0.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <cameraposition x="-20.410534" y="3.500000" z="3.339466"/>
+      <camerarotation x="-10.000000" y="225.000000" z="0.000000"/>
+    </set>
+    <set object="forest_blue" type="blue" triggerfunction_in="rubinaction"  nr="24" next="25">
+      <position x="-13.750000" y="0.000000" z="5.625000"/>
+      <rotation x="0.000000" y="0.000000" z="0.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <cameraposition x="-15.174732" y="3.500000" z="0.832283"/>
+      <camerarotation x="-10.000000" y="196.555649" z="0.000000"/>
+    </set>
+    <set object="forest_blue" type="blue" triggerfunction_in="rubinaction" triggerfunction_out="vorweiche" nr="25" next="14">
+      <position x="-10.625000" y="0.000000" z="5.000000"/>
+      <rotation x="0.000000" y="0.000000" z="0.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <cameraposition x="-10.074049" y="3.500000" z="0.030447"/>
+      <camerarotation x="-10.000000" y="173.673721" z="0.000000"/>
+    </set>
+    <set object="forest_question" type="question" triggerfunction_in="questionmark" nr="26" next="27">
+      <position x="-5.000000" y="0.000000" z="7.500000"/>
+      <rotation x="0.000000" y="0.000000" z="0.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <cameraposition x="-6.944170" y="3.500000" z="12.106540"/>
+      <camerarotation x="-10.000000" y="337.118042" z="0.000000"/>
+    </set>
+    <set object="forest_duell" type="duell" triggerfunction_in="duell" name="start" nr="27" next="28">
+      <position x="-1.875000" y="0.000000" z="8.750000"/>
+      <rotation x="0.000000" y="0.000000" z="0.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <cameraposition x="-2.332137" y="3.500000" z="13.729058"/>
+      <camerarotation x="-10.000000" y="354.754272" z="0.000000"/>
+    </set>
+    <set object="forest_luck" type="luck" triggerfunction_in="dice"  nr="28" next="29">
+      <position x="1.250000" y="0.000000" z="8.125000"/>
+      <rotation x="0.000000" y="0.000000" z="0.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <cameraposition x="2.674733" y="3.500000" z="12.917717"/>
+      <camerarotation x="-10.000000" y="16.555655" z="0.000000"/>
+    </set>
+    <set object="forest_question" type="question" triggerfunction_in="questionmark" triggerfunction_out="vorweiche" nr="29" next="30">
+      <position x="4.375000" y="0.000000" z="6.875000"/>
+      <rotation x="0.000000" y="0.000000" z="0.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <cameraposition x="6.824625" y="3.500000" z="11.233823"/>
+      <camerarotation x="-10.000000" y="29.335651" z="0.000000"/>
+    </set>
+    <set object="forest_red" type="red" nr="30" triggerfunction_in="rubinaction" triggerfunction_out="weiche"  next="31">
+      <position x="6.875000" y="0.000000" z="5.000000"/>
+      <rotation x="0.000000" y="0.000000" z="0.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <cameraposition x="4.425375" y="3.500000" z="0.641177"/>
+      <camerarotation x="-10.000000" y="209.335648" z="0.000000"/>
+    </set>
+    <set type="ghost" nr="1030" next="0">
+      <color r="1.000000" g="1.000000" b="1.000000" a="0.350000"/>
+      <position x="6.875000" y="0.000000" z="5.000000"/>
+      <rotation x="0.000000" y="0.000000" z="0.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <cameraposition x="1.936890" y="3.500000" z="5.784273"/>
+      <camerarotation x="-10.000000" y="279.024414" z="0.000000"/>
+    </set>
+    <set type="ghost" nr="2030" next="0">
+      <color r="1.000000" g="1.000000" b="1.000000" a="0.350000"/>
+      <position x="6.875000" y="0.000000" z="5.000000"/>
+      <rotation x="0.000000" y="0.000000" z="0.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <cameraposition x="7.448295" y="3.500000" z="9.967025"/>
+      <camerarotation x="-10.000000" y="6.583894" z="0.000000"/>
+    </set>
+    <set object="forest_blue" type="blue" triggerfunction_in="rubinaction"  nr="31" next="32">
+      <position x="10.000000" y="0.000000" z="3.750000"/>
+      <rotation x="0.000000" y="0.000000" z="0.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <cameraposition x="8.575268" y="3.500000" z="-1.042717"/>
+      <camerarotation x="-10.000000" y="196.555649" z="0.000000"/>
+    </set>
+    <set object="forest_blue" type="blue" triggerfunction_in="rubinaction"  nr="32" next="33">
+      <position x="13.125000" y="0.000000" z="3.125000"/>
+      <rotation x="0.000000" y="0.000000" z="0.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <cameraposition x="13.243945" y="3.500000" z="-1.873585"/>
+      <camerarotation x="-10.000000" y="178.636856" z="0.000000"/>
+    </set>
+    <set object="forest_blue" type="blue" triggerfunction_in="rubinaction"  nr="33" next="36">
+      <position x="15.625000" y="0.000000" z="3.750000"/>
+      <rotation x="0.000000" y="0.000000" z="0.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <cameraposition x="18.390736" y="3.500000" z="-0.415419"/>
+      <camerarotation x="-10.000000" y="146.416824" z="0.000000"/>
+    </set>
+    <set object="forest_green" type="green" triggerfunction_in="shop_30percent"  nr="36" next="37">
+      <position x="17.500000" y="0.000000" z="6.250000"/>
+      <rotation x="0.000000" y="0.000000" z="0.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <cameraposition x="22.243418" y="3.500000" z="4.668862"/>
+      <camerarotation x="-10.000000" y="108.434937" z="0.000000"/>
+    </set>
+    <set object="forest_blue" type="blue" triggerfunction_in="rubinaction"  nr="37" next="38">
+      <position x="17.500000" y="0.000000" z="9.375000"/>
+      <rotation x="0.000000" y="0.000000" z="0.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <cameraposition x="22.409782" y="3.500000" z="10.320538"/>
+      <camerarotation x="-10.000000" y="79.099297" z="0.000000"/>
+    </set>
+    <set object="forest_question" type="question" triggerfunction_in="teleport"  nr="38" next="39">
+      <position x="16.250000" y="0.000000" z="12.500000"/>
+      <rotation x="0.000000" y="0.000000" z="0.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <cameraposition x="20.056625" y="3.500000" z="15.741851"/>
+      <camerarotation x="-10.000000" y="49.581169" z="0.000000"/>
+    </set>
+    <set object="forest_blue" type="blue" triggerfunction_in="rubinaction"  nr="39" next="40">
+      <position x="13.125000" y="0.000000" z="14.375000"/>
+      <rotation x="0.000000" y="0.000000" z="0.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <cameraposition x="13.978361" y="3.500000" z="19.301640"/>
+      <camerarotation x="-10.000000" y="9.826909" z="0.000000"/>
+    </set>
+    <set object="forest_blue" type="blue" triggerfunction_in="rubinaction"  nr="40" next="41">
+      <position x="10.000000" y="0.000000" z="13.750000"/>
+      <rotation x="0.000000" y="0.000000" z="0.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <cameraposition x="7.959152" y="3.500000" z="18.314531"/>
+      <camerarotation x="-10.000000" y="335.910095" z="0.000000"/>
+    </set>
+    <set object="forest_blue" type="blue" triggerfunction_in="rubinaction"  nr="41" next="42">
+      <position x="7.500000" y="0.000000" z="11.875000"/>
+      <rotation x="0.000000" y="0.000000" z="0.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <cameraposition x="3.227534" y="3.500000" z="14.472313"/>
+      <camerarotation x="-10.000000" y="301.296204" z="0.000000"/>
+    </set>
+    <set object="forest_blue" type="blue" triggerfunction_in="rubinaction" triggerfunction_out="vorweiche" nr="42" next="30">
+      <position x="6.875000" y="0.000000" z="8.125000"/>
+      <rotation x="0.000000" y="0.000000" z="0.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <cameraposition x="1.918766" y="3.500000" z="8.785110"/>
+      <camerarotation x="-10.000000" y="277.586456" z="0.000000"/>
+    </set>
+    <set object="forest_duell" type="duell" triggerfunction_in="duell"  nr="43" next="44">
+      <position x="6.250000" y="0.000000" z="1.875000"/>
+      <rotation x="0.000000" y="0.000000" z="0.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <cameraposition x="11.175945" y="3.500000" z="1.017640"/>
+      <camerarotation x="-10.000000" y="99.873413" z="0.000000"/>
+    </set>
+    <set object="forest_luck" type="luck" triggerfunction_in="dice"  nr="44" next="45">
+      <position x="5.625000" y="0.000000" z="-0.625000"/>
+      <rotation x="0.000000" y="0.000000" z="0.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <cameraposition x="10.314425" y="3.500000" z="-2.359731"/>
+      <camerarotation x="-10.000000" y="110.300644" z="0.000000"/>
+    </set>
+    <set object="forest_question" type="question" triggerfunction_in="questionmark"  nr="45" next="46">
+      <position x="4.375000" y="0.000000" z="-3.125000"/>
+      <rotation x="0.000000" y="0.000000" z="0.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <cameraposition x="8.213759" y="3.500000" z="-6.328736"/>
+      <camerarotation x="-10.000000" y="129.847565" z="0.000000"/>
+    </set>
+    <set object="forest_duell" type="duell" triggerfunction_in="duell" triggerfunction_out="vorweiche" nr="46" next="9">
+      <position x="1.875000" y="0.000000" z="-5.000000"/>
+      <rotation x="0.000000" y="0.000000" z="0.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <cameraposition x="4.503655" y="3.500000" z="-9.253254"/>
+      <camerarotation x="-10.000000" y="148.282532" z="0.000000"/>
+    </set>
+    <set object="forest_blue" type="blue" triggerfunction_in="rubinaction"  nr="47" next="48">
+      <position x="-3.125000" y="0.000000" z="-7.500000"/>
+      <rotation x="0.000000" y="0.000000" z="0.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <cameraposition x="-6.048552" y="3.500000" z="-3.443789"/>
+      <camerarotation x="-10.000000" y="324.217468" z="0.000000"/>
+    </set>
+    <set object="forest_blue" type="blue" triggerfunction_in="rubinaction"  nr="48" next="49">
+      <position x="-5.000000" y="0.000000" z="-9.375000"/>
+      <rotation x="0.000000" y="0.000000" z="0.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <cameraposition x="-8.777268" y="3.500000" z="-6.098990"/>
+      <camerarotation x="-10.000000" y="310.934967" z="0.000000"/>
+    </set>
+    <set object="forest_blue" type="blue" triggerfunction_in="rubinaction"  nr="49" next="50">
+      <position x="-6.875000" y="0.000000" z="-11.875000"/>
+      <rotation x="0.000000" y="0.000000" z="0.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <cameraposition x="-11.618417" y="3.500000" z="-10.293862"/>
+      <camerarotation x="-10.000000" y="288.434937" z="0.000000"/>
+    </set>
+    <set object="forest_green" type="green" triggerfunction_in="shop_itemland"  nr="50" next="51">
+      <position x="-6.875000" y="0.000000" z="-14.375000"/>
+      <rotation x="0.000000" y="0.000000" z="0.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <cameraposition x="-11.618417" y="3.500000" z="-15.956138"/>
+      <camerarotation x="-10.000000" y="251.565063" z="0.000000"/>
+    </set>
+    <set object="forest_blue" type="blue" triggerfunction_in="rubinaction"  nr="51" next="52">
+      <position x="-5.000000" y="0.000000" z="-16.875000"/>
+      <rotation x="0.000000" y="0.000000" z="0.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <cameraposition x="-8.777268" y="3.500000" z="-20.151011"/>
+      <camerarotation x="-10.000000" y="229.065033" z="0.000000"/>
+    </set>
+    <set object="forest_blue" type="blue" triggerfunction_in="rubinaction" nr="52" next="2">
+      <position x="-3.125000" y="0.000000" z="-18.750000"/>
+      <rotation x="0.000000" y="0.000000" z="0.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <cameraposition x="-5.038417" y="3.500000" z="-23.369398"/>
+      <camerarotation x="-10.000000" y="202.500000" z="0.000000"/>
+    </set>
+    <set object="ground" type="none" nr="66" next="0" alwaysvisible="True">
+      <position x="0.000000" y="-0.400000" z="0.000000"/>
+      <rotation x="0.000000" y="0.000000" z="0.000000"/>
+      <scale x="40.000000" y="20.000000" z="40.000000"/>
+      <cameraposition x="0.000000" y="0.000000" z="0.000000"/>
+      <camerarotation x="0.000000" y="0.000000" z="0.000000"/>
+    </set>
+    <set object="forest_ring" type="none" nr="67" next="0" alwaysvisible="True">
+      <position x="0.000000" y="5.000000" z="0.000000"/>
+      <rotation x="0.000000" y="0.000000" z="0.000000"/>
+      <scale x="30.000000" y="15.000000" z="30.000000"/>
+      <cameraposition x="0.000000" y="0.000000" z="0.000000"/>
+      <camerarotation x="0.000000" y="0.000000" z="0.000000"/>
+    </set>
+    <set object="tree" type="none" nr="255" next="255">
+      <position x="-19.375000" y="0.937500" z="-17.500000"/>
+      <rotation x="0.000000" y="0.000000" z="0.000000"/>
+      <scale x="8.000000" y="8.000000" z="8.000000"/>
+      <cameraposition x="-21.326841" y="4.437500" z="-22.103294"/>
+      <camerarotation x="-10.000000" y="202.977417" z="0.000000"/>
+    </set>
+    <set object="tree" type="none" nr="0" next="255">
+      <position x="-19.375000" y="0.937500" z="18.125000"/>
+      <rotation x="0.000000" y="0.000000" z="0.000000"/>
+      <scale x="8.000000" y="8.000000" z="8.000000"/>
+      <cameraposition x="-19.440773" y="4.437500" z="23.124567"/>
+      <camerarotation x="-10.000000" y="359.246277" z="0.000000"/>
+    </set>
+    <set object="tree" type="none" nr="1" next="255">
+      <position x="-18.750000" y="0.937500" z="-5.625000"/>
+      <rotation x="0.000000" y="0.000000" z="0.000000"/>
+      <scale x="8.000000" y="8.000000" z="8.000000"/>
+      <cameraposition x="-23.741451" y="4.437500" z="-5.917259"/>
+      <camerarotation x="-10.000000" y="266.649048" z="0.000000"/>
+    </set>
+    <set object="tree" type="none" nr="34" next="255">
+      <position x="-18.125000" y="0.937500" z="-12.500000"/>
+      <rotation x="0.000000" y="0.000000" z="0.000000"/>
+      <scale x="8.000000" y="8.000000" z="8.000000"/>
+      <cameraposition x="-17.898428" y="4.437500" z="-17.494864"/>
+      <camerarotation x="-10.000000" y="177.402786" z="0.000000"/>
+    </set>
+    <set object="tree" type="none" nr="35" next="255">
+      <position x="-18.125000" y="0.937500" z="3.125000"/>
+      <rotation x="0.000000" y="0.000000" z="0.000000"/>
+      <scale x="8.000000" y="8.000000" z="8.000000"/>
+      <cameraposition x="-18.125000" y="4.437500" z="8.125000"/>
+      <camerarotation x="-10.000000" y="-0.000000" z="0.000000"/>
+    </set>
+    <set object="tree" type="none" nr="53" next="255">
+      <position x="-18.125000" y="0.937500" z="6.250000"/>
+      <rotation x="0.000000" y="0.000000" z="0.000000"/>
+      <scale x="8.000000" y="8.000000" z="8.000000"/>
+      <cameraposition x="-18.196407" y="4.437500" z="11.249490"/>
+      <camerarotation x="-10.000000" y="359.181702" z="0.000000"/>
+    </set>
+    <set object="tree" type="none" nr="54" next="255">
+      <position x="-17.500000" y="0.937500" z="-15.625000"/>
+      <rotation x="0.000000" y="0.000000" z="0.000000"/>
+      <scale x="8.000000" y="8.000000" z="8.000000"/>
+      <cameraposition x="-17.428595" y="4.437500" z="-20.624491"/>
+      <camerarotation x="-10.000000" y="179.181717" z="0.000000"/>
+    </set>
+    <set object="tree" type="none" nr="55" next="255">
+      <position x="-17.500000" y="0.937500" z="-8.125000"/>
+      <rotation x="0.000000" y="0.000000" z="0.000000"/>
+      <scale x="8.000000" y="8.000000" z="8.000000"/>
+      <cameraposition x="-17.500000" y="4.437500" z="-3.125000"/>
+      <camerarotation x="-10.000000" y="-0.000000" z="0.000000"/>
+    </set>
+    <set object="tree" type="none" nr="56" next="255">
+      <position x="-17.500000" y="0.937500" z="-1.875000"/>
+      <rotation x="0.000000" y="0.000000" z="0.000000"/>
+      <scale x="8.000000" y="8.000000" z="8.000000"/>
+      <cameraposition x="-17.684805" y="4.437500" z="3.121583"/>
+      <camerarotation x="-10.000000" y="357.881805" z="0.000000"/>
+    </set>
+    <set object="tree" type="none" nr="57" next="255">
+      <position x="-16.250000" y="0.937500" z="-18.750000"/>
+      <rotation x="0.000000" y="0.000000" z="0.000000"/>
+      <scale x="8.000000" y="8.000000" z="8.000000"/>
+      <cameraposition x="-16.115162" y="4.437500" z="-23.748182"/>
+      <camerarotation x="-10.000000" y="178.454681" z="0.000000"/>
+    </set>
+    <set object="tree" type="none" nr="58" next="255">
+      <position x="-15.625000" y="0.937500" z="12.500000"/>
+      <rotation x="0.000000" y="0.000000" z="0.000000"/>
+      <scale x="8.000000" y="8.000000" z="8.000000"/>
+      <cameraposition x="-15.661179" y="4.437500" z="17.499868"/>
+      <camerarotation x="-10.000000" y="359.585419" z="0.000000"/>
+    </set>
+    <set object="tree" type="none" nr="59" next="255">
+      <position x="-15.000000" y="0.937500" z="-5.625000"/>
+      <rotation x="0.000000" y="0.000000" z="0.000000"/>
+      <scale x="8.000000" y="8.000000" z="8.000000"/>
+      <cameraposition x="-14.913831" y="4.437500" z="-10.624257"/>
+      <camerarotation x="-10.000000" y="179.012527" z="0.000000"/>
+    </set>
+    <set object="tree" type="none" nr="60" next="255">
+      <position x="-15.000000" y="0.937500" z="-1.875000"/>
+      <rotation x="0.000000" y="0.000000" z="0.000000"/>
+      <scale x="8.000000" y="8.000000" z="8.000000"/>
+      <cameraposition x="-15.000000" y="4.437500" z="3.125000"/>
+      <camerarotation x="-10.000000" y="-0.000000" z="0.000000"/>
+    </set>
+    <set object="tree" type="none" nr="61" next="255">
+      <position x="-15.000000" y="0.937500" z="2.500000"/>
+      <rotation x="0.000000" y="0.000000" z="0.000000"/>
+      <scale x="8.000000" y="8.000000" z="8.000000"/>
+      <cameraposition x="-15.000000" y="4.437500" z="7.500000"/>
+      <camerarotation x="-10.000000" y="-0.000000" z="0.000000"/>
+    </set>
+    <set object="tree" type="none" nr="62" next="255">
+      <position x="-15.000000" y="0.937500" z="8.750000"/>
+      <rotation x="0.000000" y="0.000000" z="0.000000"/>
+      <scale x="8.000000" y="8.000000" z="8.000000"/>
+      <cameraposition x="-15.086167" y="4.437500" z="13.749257"/>
+      <camerarotation x="-10.000000" y="359.012543" z="0.000000"/>
+    </set>
+    <set object="tree" type="none" nr="63" next="255">
+      <position x="-14.375000" y="0.937500" z="-9.375000"/>
+      <rotation x="0.000000" y="0.000000" z="0.000000"/>
+      <scale x="8.000000" y="8.000000" z="8.000000"/>
+      <cameraposition x="-14.288831" y="4.437500" z="-14.374257"/>
+      <camerarotation x="-10.000000" y="179.012527" z="0.000000"/>
+    </set>
+    <set object="tree" type="none" nr="64" next="255">
+      <position x="-14.375000" y="0.937500" z="4.375000"/>
+      <rotation x="0.000000" y="0.000000" z="0.000000"/>
+      <scale x="8.000000" y="8.000000" z="8.000000"/>
+      <cameraposition x="-14.464243" y="4.437500" z="9.374204"/>
+      <camerarotation x="-10.000000" y="358.977295" z="0.000000"/>
+    </set>
+    <set object="tree" type="none" nr="65" next="255">
+      <position x="-13.750000" y="0.937500" z="-13.125000"/>
+      <rotation x="0.000000" y="0.000000" z="0.000000"/>
+      <scale x="8.000000" y="8.000000" z="8.000000"/>
+      <cameraposition x="-18.724810" y="4.437500" z="-13.626274"/>
+      <camerarotation x="-10.000000" y="264.246155" z="0.000000"/>
+    </set>
+    <set object="tree" type="none" nr="68" next="255">
+      <position x="-13.125000" y="0.937500" z="-16.875000"/>
+      <rotation x="0.000000" y="0.000000" z="0.000000"/>
+      <scale x="8.000000" y="8.000000" z="8.000000"/>
+      <cameraposition x="-12.890483" y="4.437500" z="-21.869497"/>
+      <camerarotation x="-10.000000" y="177.311646" z="0.000000"/>
+    </set>
+    <set object="tree" type="none" nr="69" next="255">
+      <position x="-11.875000" y="0.937500" z="0.625000"/>
+      <rotation x="0.000000" y="0.000000" z="0.000000"/>
+      <scale x="8.000000" y="8.000000" z="8.000000"/>
+      <cameraposition x="-6.878178" y="4.437500" z="0.446768"/>
+      <camerarotation x="-10.000000" y="92.042816" z="0.000000"/>
+    </set>
+    <set object="tree" type="none" nr="71" next="255">
+      <position x="-11.250000" y="0.937500" z="-11.875000"/>
+      <rotation x="0.000000" y="0.000000" z="0.000000"/>
+      <scale x="8.000000" y="8.000000" z="8.000000"/>
+      <cameraposition x="-11.189037" y="4.437500" z="-16.874628"/>
+      <camerarotation x="-10.000000" y="179.301407" z="0.000000"/>
+    </set>
+    <set object="tree" type="none" nr="72" next="255">
+      <position x="-11.250000" y="0.937500" z="-6.875000"/>
+      <rotation x="0.000000" y="0.000000" z="0.000000"/>
+      <scale x="8.000000" y="8.000000" z="8.000000"/>
+      <cameraposition x="-11.250000" y="4.437500" z="-1.875000"/>
+      <camerarotation x="-10.000000" y="-0.000000" z="0.000000"/>
+    </set>
+    <set object="tree" type="none" nr="73" next="255">
+      <position x="-11.250000" y="0.937500" z="-3.750000"/>
+      <rotation x="0.000000" y="0.000000" z="0.000000"/>
+      <scale x="8.000000" y="8.000000" z="8.000000"/>
+      <cameraposition x="-11.250000" y="4.437500" z="1.250000"/>
+      <camerarotation x="-10.000000" y="-0.000000" z="0.000000"/>
+    </set>
+    <set object="tree" type="none" nr="74" next="255">
+      <position x="-11.250000" y="0.937500" z="8.750000"/>
+      <rotation x="0.000000" y="0.000000" z="0.000000"/>
+      <scale x="8.000000" y="8.000000" z="8.000000"/>
+      <cameraposition x="-11.366186" y="4.437500" z="13.748650"/>
+      <camerarotation x="-10.000000" y="358.668488" z="0.000000"/>
+    </set>
+    <set object="tree" type="none" nr="75" next="255">
+      <position x="-10.000000" y="0.937500" z="-18.125000"/>
+      <rotation x="0.000000" y="0.000000" z="0.000000"/>
+      <scale x="8.000000" y="8.000000" z="8.000000"/>
+      <cameraposition x="-10.238457" y="4.437500" z="-23.119310"/>
+      <camerarotation x="-10.000000" y="182.733551" z="0.000000"/>
+    </set>
+    <set object="tree" type="none" nr="76" next="255">
+      <position x="-9.375000" y="0.937500" z="-13.750000"/>
+      <rotation x="0.000000" y="0.000000" z="0.000000"/>
+      <scale x="8.000000" y="8.000000" z="8.000000"/>
+      <cameraposition x="-4.387579" y="4.437500" z="-14.104446"/>
+      <camerarotation x="-10.000000" y="94.065063" z="0.000000"/>
+    </set>
+    <set object="tree" type="none" nr="77" next="255">
+      <position x="-9.375000" y="0.937500" z="-1.250000"/>
+      <rotation x="0.000000" y="0.000000" z="0.000000"/>
+      <scale x="8.000000" y="8.000000" z="8.000000"/>
+      <cameraposition x="-9.553231" y="4.437500" z="3.746822"/>
+      <camerarotation x="-10.000000" y="357.957184" z="0.000000"/>
+    </set>
+    <set object="tree" type="none" nr="78" next="255">
+      <position x="-8.750000" y="0.937500" z="-10.000000"/>
+      <rotation x="0.000000" y="0.000000" z="0.000000"/>
+      <scale x="8.000000" y="8.000000" z="8.000000"/>
+      <cameraposition x="-8.882604" y="4.437500" z="-14.998241"/>
+      <camerarotation x="-10.000000" y="181.519699" z="0.000000"/>
+    </set>
+    <set object="tree" type="none" nr="79" next="255">
+      <position x="-8.125000" y="0.937500" z="-5.000000"/>
+      <rotation x="0.000000" y="0.000000" z="0.000000"/>
+      <scale x="8.000000" y="8.000000" z="8.000000"/>
+      <cameraposition x="-3.134662" y="4.437500" z="-5.310687"/>
+      <camerarotation x="-10.000000" y="93.562500" z="0.000000"/>
+    </set>
+    <set object="tree" type="none" nr="80" next="255">
+      <position x="-8.125000" y="0.937500" z="18.750000"/>
+      <rotation x="0.000000" y="0.000000" z="0.000000"/>
+      <scale x="8.000000" y="8.000000" z="8.000000"/>
+      <cameraposition x="-8.167368" y="4.437500" z="23.749821"/>
+      <camerarotation x="-10.000000" y="359.514496" z="0.000000"/>
+    </set>
+    <set object="tree" type="none" nr="81" next="255">
+      <position x="-7.500000" y="0.937500" z="-18.125000"/>
+      <rotation x="0.000000" y="0.000000" z="0.000000"/>
+      <scale x="8.000000" y="8.000000" z="8.000000"/>
+      <cameraposition x="-7.550181" y="4.437500" z="-23.124748"/>
+      <camerarotation x="-10.000000" y="180.575043" z="0.000000"/>
+    </set>
+    <set object="tree" type="none" nr="82" next="255">
+      <position x="-6.250000" y="0.937500" z="15.625000"/>
+      <rotation x="0.000000" y="0.000000" z="0.000000"/>
+      <scale x="8.000000" y="8.000000" z="8.000000"/>
+      <cameraposition x="-6.304338" y="4.437500" z="20.624704"/>
+      <camerarotation x="-10.000000" y="359.377319" z="0.000000"/>
+    </set>
+    <set object="tree" type="none" nr="83" next="255">
+      <position x="-5.000000" y="0.937500" z="-5.625000"/>
+      <rotation x="0.000000" y="0.000000" z="0.000000"/>
+      <scale x="8.000000" y="8.000000" z="8.000000"/>
+      <cameraposition x="-9.964458" y="4.437500" z="-6.220108"/>
+      <camerarotation x="-10.000000" y="263.164368" z="0.000000"/>
+    </set>
+    <set object="tree" type="none" nr="85" next="255">
+      <position x="-3.750000" y="0.937500" z="11.875000"/>
+      <rotation x="0.000000" y="0.000000" z="0.000000"/>
+      <scale x="8.000000" y="8.000000" z="8.000000"/>
+      <cameraposition x="-3.750000" y="4.437500" z="16.875000"/>
+      <camerarotation x="-10.000000" y="-0.000000" z="0.000000"/>
+    </set>
+    <set object="tree" type="none" nr="86" next="255">
+      <position x="-3.750000" y="0.937500" z="18.750000"/>
+      <rotation x="0.000000" y="0.000000" z="0.000000"/>
+      <scale x="8.000000" y="8.000000" z="8.000000"/>
+      <cameraposition x="-3.839243" y="4.437500" z="23.749203"/>
+      <camerarotation x="-10.000000" y="358.977295" z="0.000000"/>
+    </set>
+    <set object="tree" type="none" nr="87" next="255">
+      <position x="-2.500000" y="0.937500" z="-16.250000"/>
+      <rotation x="0.000000" y="0.000000" z="0.000000"/>
+      <scale x="8.000000" y="8.000000" z="8.000000"/>
+      <cameraposition x="-2.410757" y="4.437500" z="-21.249203"/>
+      <camerarotation x="-10.000000" y="178.977295" z="0.000000"/>
+    </set>
+    <set object="tree" type="none" nr="88" next="255">
+      <position x="-2.500000" y="0.937500" z="15.625000"/>
+      <rotation x="0.000000" y="0.000000" z="0.000000"/>
+      <scale x="8.000000" y="8.000000" z="8.000000"/>
+      <cameraposition x="-2.621844" y="4.437500" z="20.623516"/>
+      <camerarotation x="-10.000000" y="358.603638" z="0.000000"/>
+    </set>
+    <set object="tree" type="none" nr="89" next="255">
+      <position x="-1.250000" y="0.937500" z="-10.000000"/>
+      <rotation x="0.000000" y="0.000000" z="0.000000"/>
+      <scale x="8.000000" y="8.000000" z="8.000000"/>
+      <cameraposition x="-6.212183" y="4.437500" z="-10.613792"/>
+      <camerarotation x="-10.000000" y="262.948669" z="0.000000"/>
+    </set>
+    <set object="tree" type="none" nr="90" next="255">
+      <position x="-0.625000" y="0.937500" z="-13.125000"/>
+      <rotation x="0.000000" y="0.000000" z="0.000000"/>
+      <scale x="8.000000" y="8.000000" z="8.000000"/>
+      <cameraposition x="-0.132312" y="4.437500" z="-18.100666"/>
+      <camerarotation x="-10.000000" y="174.345032" z="0.000000"/>
+    </set>
+    <set object="tree" type="none" nr="91" next="255">
+      <position x="-0.625000" y="0.000000" z="1.875000"/>
+      <rotation x="0.000000" y="0.000000" z="0.000000"/>
+      <scale x="12.000000" y="12.000000" z="12.000000"/>
+      <cameraposition x="-5.617349" y="4.437500" z="2.151500"/>
+      <camerarotation x="-10.000000" y="273.170074" z="0.000000"/>
+    </set>
+    <set object="tree" type="none" nr="92" next="255">
+      <position x="0.625000" y="0.937500" z="13.125000"/>
+      <rotation x="0.000000" y="0.000000" z="0.000000"/>
+      <scale x="8.000000" y="8.000000" z="8.000000"/>
+      <cameraposition x="0.848385" y="4.437500" z="18.120007"/>
+      <camerarotation x="-10.000000" y="2.560658" z="0.000000"/>
+    </set>
+    <set object="tree" type="none" nr="93" next="255">
+      <position x="1.250000" y="0.937500" z="-16.250000"/>
+      <rotation x="0.000000" y="0.000000" z="0.000000"/>
+      <scale x="8.000000" y="8.000000" z="8.000000"/>
+      <cameraposition x="1.303182" y="4.437500" z="-21.249718"/>
+      <camerarotation x="-10.000000" y="179.390564" z="0.000000"/>
+    </set>
+    <set object="tree" type="none" nr="94" next="255">
+      <position x="1.250000" y="0.937500" z="17.500000"/>
+      <rotation x="0.000000" y="0.000000" z="0.000000"/>
+      <scale x="8.000000" y="8.000000" z="8.000000"/>
+      <cameraposition x="1.143689" y="4.437500" z="22.498869"/>
+      <camerarotation x="-10.000000" y="358.781677" z="0.000000"/>
+    </set>
+    <set object="tree" type="none" nr="95" next="255">
+      <position x="2.500000" y="0.937500" z="-11.875000"/>
+      <rotation x="0.000000" y="0.000000" z="0.000000"/>
+      <scale x="8.000000" y="8.000000" z="8.000000"/>
+      <cameraposition x="2.471315" y="4.437500" z="-16.874918"/>
+      <camerarotation x="-10.000000" y="180.328705" z="0.000000"/>
+    </set>
+    <set object="tree" type="none" nr="96" next="255">
+      <position x="3.750000" y="0.937500" z="11.250000"/>
+      <rotation x="0.000000" y="0.000000" z="0.000000"/>
+      <scale x="8.000000" y="8.000000" z="8.000000"/>
+      <cameraposition x="8.748178" y="4.437500" z="11.115010"/>
+      <camerarotation x="-10.000000" y="91.547058" z="0.000000"/>
+    </set>
+    <set object="tree" type="none" nr="97" next="255">
+      <position x="3.750000" y="0.937500" z="14.375000"/>
+      <rotation x="0.000000" y="0.000000" z="0.000000"/>
+      <scale x="8.000000" y="8.000000" z="8.000000"/>
+      <cameraposition x="-1.237421" y="4.437500" z="14.729446"/>
+      <camerarotation x="-10.000000" y="274.065063" z="0.000000"/>
+    </set>
+    <set object="tree" type="none" nr="98" next="255">
+      <position x="4.375000" y="0.937500" z="18.750000"/>
+      <rotation x="0.000000" y="0.000000" z="0.000000"/>
+      <scale x="8.000000" y="8.000000" z="8.000000"/>
+      <cameraposition x="4.663807" y="4.437500" z="23.741652"/>
+      <camerarotation x="-10.000000" y="3.311333" z="0.000000"/>
+    </set>
+    <set object="tree" type="none" nr="99" next="255">
+      <position x="5.000000" y="0.937500" z="-5.000000"/>
+      <rotation x="0.000000" y="0.000000" z="0.000000"/>
+      <scale x="8.000000" y="8.000000" z="8.000000"/>
+      <cameraposition x="0.031245" y="4.437500" z="-5.558098"/>
+      <camerarotation x="-10.000000" y="263.591309" z="0.000000"/>
+    </set>
+    <set object="tree" type="none" nr="100" next="255">
+      <position x="5.625000" y="0.937500" z="-8.125000"/>
+      <rotation x="0.000000" y="0.000000" z="0.000000"/>
+      <scale x="8.000000" y="8.000000" z="8.000000"/>
+      <cameraposition x="10.585080" y="4.437500" z="-7.494444"/>
+      <camerarotation x="-10.000000" y="82.755074" z="0.000000"/>
+    </set>
+    <set object="tree" type="none" nr="101" next="255">
+      <position x="6.250000" y="0.937500" z="-19.375000"/>
+      <rotation x="0.000000" y="0.000000" z="0.000000"/>
+      <scale x="8.000000" y="8.000000" z="8.000000"/>
+      <cameraposition x="6.034070" y="4.437500" z="-24.370335"/>
+      <camerarotation x="-10.000000" y="182.475143" z="0.000000"/>
+    </set>
+    <set object="tree" type="none" nr="102" next="255">
+      <position x="7.500000" y="0.937500" z="-10.625000"/>
+      <rotation x="0.000000" y="0.000000" z="0.000000"/>
+      <scale x="8.000000" y="8.000000" z="8.000000"/>
+      <cameraposition x="12.487421" y="4.437500" z="-10.979446"/>
+      <camerarotation x="-10.000000" y="94.065063" z="0.000000"/>
+    </set>
+    <set object="tree" type="none" nr="103" next="255">
+      <position x="7.500000" y="0.937500" z="15.625000"/>
+      <rotation x="0.000000" y="0.000000" z="0.000000"/>
+      <scale x="8.000000" y="8.000000" z="8.000000"/>
+      <cameraposition x="7.416700" y="4.437500" z="20.624306"/>
+      <camerarotation x="-10.000000" y="359.045410" z="0.000000"/>
+    </set>
+    <set object="tree" type="none" nr="104" next="255">
+      <position x="8.125000" y="0.937500" z="-3.125000"/>
+      <rotation x="0.000000" y="0.000000" z="0.000000"/>
+      <scale x="8.000000" y="8.000000" z="8.000000"/>
+      <cameraposition x="3.149599" y="4.437500" z="-3.620360"/>
+      <camerarotation x="-10.000000" y="264.314270" z="0.000000"/>
+    </set>
+    <set object="tree" type="none" nr="105" next="255">
+      <position x="8.750000" y="0.937500" z="-6.875000"/>
+      <rotation x="0.000000" y="0.000000" z="0.000000"/>
+      <scale x="8.000000" y="8.000000" z="8.000000"/>
+      <cameraposition x="13.719603" y="4.437500" z="-6.324498"/>
+      <camerarotation x="-10.000000" y="83.678894" z="0.000000"/>
+    </set>
+    <set object="tree" type="none" nr="106" next="255">
+      <position x="9.375000" y="0.937500" z="-18.125000"/>
+      <rotation x="0.000000" y="0.000000" z="0.000000"/>
+      <scale x="8.000000" y="8.000000" z="8.000000"/>
+      <cameraposition x="9.513729" y="4.437500" z="-23.123075"/>
+      <camerarotation x="-10.000000" y="178.410080" z="0.000000"/>
+    </set>
+    <set object="tree" type="none" nr="107" next="255">
+      <position x="9.375000" y="0.937500" z="-15.000000"/>
+      <rotation x="0.000000" y="0.000000" z="0.000000"/>
+      <scale x="8.000000" y="8.000000" z="8.000000"/>
+      <cameraposition x="9.375000" y="4.437500" z="-10.000000"/>
+      <camerarotation x="-10.000000" y="-0.000000" z="0.000000"/>
+    </set>
+    <set object="tree" type="none" nr="108" next="255">
+      <position x="9.375000" y="0.937500" z="0.625000"/>
+      <rotation x="0.000000" y="0.000000" z="0.000000"/>
+      <scale x="8.000000" y="8.000000" z="8.000000"/>
+      <cameraposition x="8.681495" y="4.437500" z="5.576672"/>
+      <camerarotation x="-10.000000" y="352.027313" z="0.000000"/>
+    </set>
+    <set object="tree" type="none" nr="109" next="255">
+      <position x="10.625000" y="0.937500" z="-3.750000"/>
+      <rotation x="0.000000" y="0.000000" z="0.000000"/>
+      <scale x="8.000000" y="8.000000" z="8.000000"/>
+      <cameraposition x="11.318506" y="4.437500" z="-8.701672"/>
+      <camerarotation x="-10.000000" y="172.027298" z="0.000000"/>
+    </set>
+    <set object="tree" type="none" nr="110" next="255">
+      <position x="10.625000" y="0.937500" z="7.500000"/>
+      <rotation x="0.000000" y="0.000000" z="0.000000"/>
+      <scale x="8.000000" y="8.000000" z="8.000000"/>
+      <cameraposition x="10.625000" y="4.437500" z="12.500000"/>
+      <camerarotation x="-10.000000" y="-0.000000" z="0.000000"/>
+    </set>
+    <set object="tree" type="none" nr="111" next="255">
+      <position x="10.625000" y="0.937500" z="17.500000"/>
+      <rotation x="0.000000" y="0.000000" z="0.000000"/>
+      <scale x="8.000000" y="8.000000" z="8.000000"/>
+      <cameraposition x="10.568193" y="4.437500" z="22.499678"/>
+      <camerarotation x="-10.000000" y="359.349030" z="0.000000"/>
+    </set>
+    <set object="tree" type="none" nr="112" next="255">
+      <position x="11.250000" y="0.937500" z="-10.000000"/>
+      <rotation x="0.000000" y="0.000000" z="0.000000"/>
+      <scale x="8.000000" y="8.000000" z="8.000000"/>
+      <cameraposition x="11.140397" y="4.437500" z="-14.998798"/>
+      <camerarotation x="-10.000000" y="181.256058" z="0.000000"/>
+    </set>
+    <set object="tree" type="none" nr="113" next="255">
+      <position x="11.875000" y="0.937500" z="-0.625000"/>
+      <rotation x="0.000000" y="0.000000" z="0.000000"/>
+      <scale x="8.000000" y="8.000000" z="8.000000"/>
+      <cameraposition x="16.872231" y="4.437500" z="-0.791390"/>
+      <camerarotation x="-10.000000" y="91.907043" z="0.000000"/>
+    </set>
+    <set object="tree" type="none" nr="114" next="255">
+      <position x="11.875000" y="0.937500" z="11.250000"/>
+      <rotation x="0.000000" y="0.000000" z="0.000000"/>
+      <scale x="8.000000" y="8.000000" z="8.000000"/>
+      <cameraposition x="11.810913" y="4.437500" z="16.249590"/>
+      <camerarotation x="-10.000000" y="359.265594" z="0.000000"/>
+    </set>
+    <set object="tree" type="none" nr="115" next="255">
+      <position x="12.500000" y="0.937500" z="-13.125000"/>
+      <rotation x="0.000000" y="0.000000" z="0.000000"/>
+      <scale x="8.000000" y="8.000000" z="8.000000"/>
+      <cameraposition x="12.564087" y="4.437500" z="-18.124590"/>
+      <camerarotation x="-10.000000" y="179.265594" z="0.000000"/>
+    </set>
+    <set object="tree" type="none" nr="116" next="255">
+      <position x="12.500000" y="0.937500" z="-6.250000"/>
+      <rotation x="0.000000" y="0.000000" z="0.000000"/>
+      <scale x="8.000000" y="8.000000" z="8.000000"/>
+      <cameraposition x="12.361273" y="4.437500" z="-1.251925"/>
+      <camerarotation x="-10.000000" y="358.410095" z="0.000000"/>
+    </set>
+    <set object="tree" type="none" nr="117" next="255">
+      <position x="13.125000" y="0.937500" z="-17.500000"/>
+      <rotation x="0.000000" y="0.000000" z="0.000000"/>
+      <scale x="8.000000" y="8.000000" z="8.000000"/>
+      <cameraposition x="12.770555" y="4.437500" z="-22.487421"/>
+      <camerarotation x="-10.000000" y="184.065048" z="0.000000"/>
+    </set>
+    <set object="tree" type="none" nr="118" next="255">
+      <position x="14.375000" y="0.937500" z="-11.250000"/>
+      <rotation x="0.000000" y="0.000000" z="0.000000"/>
+      <scale x="8.000000" y="8.000000" z="8.000000"/>
+      <cameraposition x="19.350666" y="4.437500" z="-11.742688"/>
+      <camerarotation x="-10.000000" y="95.654968" z="0.000000"/>
+    </set>
+    <set object="tree" type="none" nr="119" next="255">
+      <position x="14.375000" y="0.937500" z="-2.500000"/>
+      <rotation x="0.000000" y="0.000000" z="0.000000"/>
+      <scale x="8.000000" y="8.000000" z="8.000000"/>
+      <cameraposition x="14.375000" y="4.437500" z="2.500000"/>
+      <camerarotation x="-10.000000" y="-0.000000" z="0.000000"/>
+    </set>
+    <setkeks object="tree" type="none" nr="120" next="255">
+      <position x="14.375000" y="0.937500" z="5.625000"/>
+      <rotation x="0.000000" y="0.000000" z="0.000000"/>
+      <scale x="8.000000" y="8.000000" z="8.000000"/>
+      <cameraposition x="14.301494" y="4.437500" z="10.624459"/>
+      <camerarotation x="-10.000000" y="359.157654" z="0.000000"/>
+    </setkeks>
+    <set object="tree" type="none" nr="121" next="255">
+      <position x="15.000000" y="0.937500" z="-15.625000"/>
+      <rotation x="0.000000" y="0.000000" z="0.000000"/>
+      <scale x="8.000000" y="8.000000" z="8.000000"/>
+      <cameraposition x="15.073506" y="4.437500" z="-20.624460"/>
+      <camerarotation x="-10.000000" y="179.157654" z="0.000000"/>
+    </set>
+    <set object="tree" type="none" nr="122" next="255">
+      <position x="15.000000" y="0.937500" z="-7.500000"/>
+      <rotation x="0.000000" y="0.000000" z="0.000000"/>
+      <scale x="8.000000" y="8.000000" z="8.000000"/>
+      <cameraposition x="15.000000" y="4.437500" z="-2.500000"/>
+      <camerarotation x="-10.000000" y="-0.000000" z="0.000000"/>
+    </set>
+    <set object="tree" type="none" nr="123" next="255">
+      <position x="15.000000" y="0.937500" z="9.375000"/>
+      <rotation x="0.000000" y="0.000000" z="0.000000"/>
+      <scale x="8.000000" y="8.000000" z="8.000000"/>
+      <cameraposition x="15.000000" y="4.437500" z="14.375000"/>
+      <camerarotation x="-10.000000" y="-0.000000" z="0.000000"/>
+    </set>
+    <set object="tree" type="none" nr="124" next="255">
+      <position x="15.000000" y="0.937500" z="16.875000"/>
+      <rotation x="0.000000" y="0.000000" z="0.000000"/>
+      <scale x="8.000000" y="8.000000" z="8.000000"/>
+      <cameraposition x="14.907455" y="4.437500" z="21.874144"/>
+      <camerarotation x="-10.000000" y="358.939453" z="0.000000"/>
+    </set>
+    <set object="tree" type="none" nr="125" next="255">
+      <position x="15.625000" y="0.937500" z="0.000000"/>
+      <rotation x="0.000000" y="0.000000" z="0.000000"/>
+      <scale x="8.000000" y="8.000000" z="8.000000"/>
+      <cameraposition x="20.621809" y="4.437500" z="0.178626"/>
+      <camerarotation x="-10.000000" y="87.952660" z="0.000000"/>
+    </set>
+    <set object="tree" type="none" nr="126" next="255">
+      <position x="16.250000" y="0.937500" z="-18.125000"/>
+      <rotation x="0.000000" y="0.000000" z="0.000000"/>
+      <scale x="8.000000" y="8.000000" z="8.000000"/>
+      <cameraposition x="16.336168" y="4.437500" z="-23.124258"/>
+      <camerarotation x="-10.000000" y="179.012527" z="0.000000"/>
+    </set>
+    <set object="tree" type="none" nr="127" next="255">
+      <position x="16.250000" y="0.937500" z="-5.625000"/>
+      <rotation x="0.000000" y="0.000000" z="0.000000"/>
+      <scale x="8.000000" y="8.000000" z="8.000000"/>
+      <cameraposition x="15.868748" y="4.437500" z="-0.639557"/>
+      <camerarotation x="-10.000000" y="355.626923" z="0.000000"/>
+    </set>
+    <set object="tree" type="none" nr="128" next="255">
+      <position x="17.500000" y="0.937500" z="-13.750000"/>
+      <rotation x="0.000000" y="0.000000" z="0.000000"/>
+      <scale x="8.000000" y="8.000000" z="8.000000"/>
+      <cameraposition x="17.881252" y="4.437500" z="-18.735443"/>
+      <camerarotation x="-10.000000" y="175.626923" z="0.000000"/>
+    </set>
+    <set object="tree" type="none" nr="129" next="255">
+      <position x="17.500000" y="0.937500" z="-9.375000"/>
+      <rotation x="0.000000" y="0.000000" z="0.000000"/>
+      <scale x="8.000000" y="8.000000" z="8.000000"/>
+      <cameraposition x="12.505136" y="4.437500" z="-9.148427"/>
+      <camerarotation x="-10.000000" y="272.597229" z="0.000000"/>
+    </set>
+    <set object="tree" type="none" nr="130" next="255">
+      <position x="18.125000" y="0.937500" z="-2.500000"/>
+      <rotation x="0.000000" y="0.000000" z="0.000000"/>
+      <scale x="8.000000" y="8.000000" z="8.000000"/>
+      <cameraposition x="23.119864" y="4.437500" z="-2.726573"/>
+      <camerarotation x="-10.000000" y="92.597229" z="0.000000"/>
+    </set>
+    <set object="tree" type="none" nr="131" next="255">
+      <position x="18.125000" y="0.937500" z="15.625000"/>
+      <rotation x="0.000000" y="0.000000" z="0.000000"/>
+      <scale x="8.000000" y="8.000000" z="8.000000"/>
+      <cameraposition x="18.011452" y="4.437500" z="20.623711"/>
+      <camerarotation x="-10.000000" y="358.698730" z="0.000000"/>
+    </set>
+    <set object="tree" type="none" nr="132" next="255">
+      <position x="18.750000" y="0.937500" z="1.875000"/>
+      <rotation x="0.000000" y="0.000000" z="0.000000"/>
+      <scale x="8.000000" y="8.000000" z="8.000000"/>
+      <cameraposition x="18.863548" y="4.437500" z="-3.123710"/>
+      <camerarotation x="-10.000000" y="178.698715" z="0.000000"/>
+    </set>
+    <set object="tree" type="none" nr="133" next="255">
+      <position x="18.750000" y="0.937500" z="19.375000"/>
+      <rotation x="0.000000" y="0.000000" z="0.000000"/>
+      <scale x="8.000000" y="8.000000" z="8.000000"/>
+      <cameraposition x="20.701841" y="4.437500" z="23.978294"/>
+      <camerarotation x="-10.000000" y="22.977421" z="0.000000"/>
+    </set>
+    <set object="forest_shop" type="shop"  nr="256" next="255">
+      <position x="14.75000" y="0.000000" z="7.250000"/>
+      <rotation x="0.000000" y="110.000000" z="0.000000"/>
+      <scale x="3.000000" y="3.000000" z="3.000000"/>
+      <cameraposition x="22.243418" y="3.500000" z="4.668862"/>
+      <camerarotation x="-10.000000" y="108.434937" z="0.000000"/>
+    </set>
+    <set object="forest_shop" type="none" nr="257" next="255">
+      <position x="-12.50000" y="0.0000000" z="14.000000"/>
+      <rotation x="0.000000" y="45.000000" z="0.000000"/>
+      <scale x="3.000000" y="3.000000" z="3.000000"/>
+      <cameraposition x="-11.935961" y="4.437500" z="18.749628"/>
+      <camerarotation x="-10.000000" y="359.301422" z="0.000000"/>
+    </set>
+    <set object="forest_shop" type="shop"  nr="258" next="255">
+      <position x="-4.0000000" y="0.000000" z="-13.000000"/>
+      <rotation x="0.000000" y="230.000000" z="0.000000"/>
+      <scale x="3.000000" y="3.000000" z="3.000000"/>
+      <cameraposition x="-11.618417" y="3.500000" z="-15.956138"/>
+      <camerarotation x="-10.000000" y="251.565063" z="0.000000"/>
+    </set>
+    <set object="rubin" type="rubin" nr="666" next="0">
+      <position x="0.000000" y="0.000000" z="0.000000"/>
+      <rotation x="0.000000" y="0.000000" z="0.000000"/>
+      <scale x="1.000000" y="1.000000" z="1.000000"/>
+      <cameraposition x="0.000000" y="0.000000" z="0.000000"/>
+      <camerarotation x="0.000000" y="0.000000" z="0.000000"/>
+      <color r="1" g="0" b="0"/>
+    </set>
+  </design>
+  <output>
+    <border>
+      <left r="0.000000" g="1.000000" b="0.000000"/>
+      <right r="0.000000" g="1.000000" b="0.000000"/>
+      <up r="0.000000" g="1.000000" b="0.000000"/>
+      <down r="0.000000" g="1.000000" b="0.000000"/>
+    </border>
+    <text name="rubintext">
+      <german>Glückwunsch, du hast die einmalige Gelegenheit einen Rubin für nur 13 Münzen zu kaufen. Möchtest du für 13 Münzen einen Rubin kaufen? Wenn ja, drücke [A], andernfalls drücke [B]!</german>
+      <english>Gratulation, you have the unique chance to buy a rubin for only 13 coins. Do you want to buy a rubin for only 13 coins? Press [A] for "yes" or [B] for "no"!</english>
+    </text>
+    <text name="rubintext_nomoney">
+      <german>Du hast leider nicht genug Münzen für einen Rubin. Du brauchst 13 Münzen. Viel Spaß noch! (Weiter mit beliebigen Button)</german>
+      <english>You doesn't have enough coins to buy a rubin. You need 13 coins. Have Fun! (Along with any button)</english>
+    </text>
+		<text name="dicetext_in">
+		  <german>Willkommen beim lustigen Glücksradspiel! Möchtest du für nur 5 Münzen einmal dein Glück versuchen? Drücke [A] für Ja und [B] für Nein!</german>
+			<english>Welcome to the funny wheel of Fortune game! Do you want to try one's luck for only 5 coins? Press [A] for "yes" and [B] for "no"!</english>
+		</text>
+		<text name="dicetext_nomoney">
+		  <german>Willkommen beim lustigen Glücksradspiel! Du hast nicht mal 5 Münzen für dieses Glücksspiel. Schade... (Weiter mit beliebigen Button)</german>
+			<english>Welcome to the funny wheel of Fortune game! You have not enough money to play. You need 5 coins. (Along with any button)</english>
+		</text>
+		<text name="dicetext_out">
+		  <german>Glückwunsch zu deinem Gewinn! (Weiter mit beliebigen Button)</german>
+			<english>Congratulations to your win! (Along with any button)</english>
+		</text>
+		<text name="dicetext_blank">
+		  <german>Das war wohl nichts... (Weiter mit beliebigen Button)</german>
+			<english>You failed! (Along with any button)</english>
+		</text>
+		<text name="dicetext_item">
+		  <german>Glückwunsch zu dem Item! (Weiter mit beliebigen Button)</german>
+			<english>Congratuilations to your item! (Along with any button)</english>
+		</text>
+		<text name="dice_choice">
+			<german> Niete |7 Münzen| Niete |1 Rubin| Niete | 13 Münzen | Niete | 1 Item |</german>
+			<english> blank | 7 coins | blank | 1 rubin | blank | 13 coins | blank | 1 item |</english>
+		</text>
+		<text name="questionmarktext_in">
+		  <german>Du bist auf dem magischen Fragezeichenfeld gelandet und wirst nun deinen Platz mit einem zufällig erwählten Spieler tauschen.         (Weiter mit beliebigen Button)</german>
+			<english>You arrived at the magical Questionmark field and now you will switch your place with an other random player. (Along with any button)</english>
+		</text>
+		<text name="duelltext_in">
+		  <german>Willkommen beim Duellfeld. Du und ein zufälliger Spieler werden ein Minispiel spielen, dann werden zufällig Wetteinsätze bestimmt. Der Gewinner bekommt alles. (Weiter mit beliebigen Button)</german>
+			<english>Welcome to the Duell field. You and an other random player will play a Minigame. At End by random the entries will be selected. The winner takes it all. The loser standing small. (Along with any button)</english>
+		</text>
+		<text name="duelltext_nowinner">
+		  <german>Oha, scheinbar gibt es keinen Gewinner. Wo kein Gewinner, da keine Gewinnvergabe... (Weiter mit beliebigen Button)</german>
+			<english>Hm, there's no winner. So there is no entryselecting. (Along with any button)</english>
+		</text>
+		<text name="duelltext_entry">
+		  <german>Schauen wir, welcher Wetteinsatz zu leisten ist... (Weiter mit beliebigen Button)</german>
+			<english>Lets have a look which entry there will be... (Along with any button)</english>
+		</text>
+		<text name="duelltext_noentry">
+		  <german>Oh, der Verlierer hat sowas gar nicht. Glück im Unglück. (Weiter mit beliebigen Button)</german>
+			<english>Oh, the Looser has nothing of this. A blessing in disguise. (Along with any button)</english>
+		</text>
+		<text name="duelltext_fewentry">
+		  <german>Oh, der Verlierer hat gar nicht genug davon. Naja, es wird reichen müssen. (Weiter mit beliebigen Button)</german>
+			<english>Oh, the Looser has not enough of this. It will be enough. (Along with any button)</english>
+		</text>
+		<text name="duelltext_choiceentry">
+		  <german> 5 Münzen |15 Münzen| 5 Münzen | 1 Rubin | 5 Münzen |15 Münzen|</german>
+			<english> 5 coins |15 coins| 5 coins | 1 rubin | 5 coins |15 coins|</english>
+		</text>
+		<text name="teleporttext_in">
+		  <german>Für nur 8 Münzen könntest du zum nächsten Teleportfeld teleportiert werden. Interesse? Drücke [A] für ein unvergessliches Teleporterlebnis und [B] wenn du gemächlich deiner Wege gehen willst!</german>
+			<english>For only 8 coins you can be teleported to the next teleport field. Interest? Press [A] to teleport or [B] to economize your coins!</english>
+		</text>
+		<text name="teleporttext_nomoney">
+		  <german>Für nur 8 Münzen könntest du zum nächsten Teleportfeld teleportiert werden. Die hast du aber nicht. Schade. Drücke einen beliebigen Button!</german>
+			<english>For only 8 coins you could be teleported to the next teleport field. But you have not enough coins. Press any button!</english>
+		</text>
+		<text name="item_dice">
+		  <german>Mit diesem Item kannst du noch einmal zusätzlich würfeln!</german>
+			<english>With this item you can dice once more!</english>
+		</text>
+		<text name="item_double_dice">
+		  <german>Mit diesem Item kannst du noch zwei mal zusätzlich würfeln!</german>
+			<english>With this item you can dice twice more!</english>
+		</text>
+		<text name="item_slomo">
+		  <german>Mit diesem Item würfelst du 90% langsamer!</german>
+			<english>With this item you dice 90 percent slower!</english>
+		</text>
+		<text name="item_bomb">
+		  <german>Mit diesem Item kannst du einem Spieler bis zu 5 Münzen klauen!</german>
+			<english>With this item you can steel max. 5 coins from a player!</english>
+		</text>
+		<text name="item_moneytrap">
+		  <german>Immer wenn ein gegnerische Spieler auf dem Feld mit diesem Item zum Stehen kommt, gibt er dir 7 Münzen!</german>
+			<english>Whenever an enemy player stops on the field with this item you get 7 coins from this player.</english>
+		</text>
+		<text name="show_rubin">
+		  <german>Hier ist der Rubin!</german>
+			<english>Here is the rubin!</english>
+		</text>
+		<text name="shop_30percent">
+		  <german>Willkommen beim 30%-Shop. Kleine Auswahl, aber alles um 30% reduziert. Möchtest du das Angebot betrachen? Drücke [A] für Ja und jeden anderen Button für Nein!</german>
+			<english>Welcome to the 30 percent shop. Little assortment, but with cut prices of 30 percent. Do you want to go into the shop? Press [A] for Yes or any other button for No!</english>
+		</text>
+		<text name="shop_itemland">
+		  <german>Willkommen bei Itemland. Gute Auswahl zu guten Preisen. Möchtest du das Angebot betrachen? Drücke [A] für Ja und jeden anderen Button für Nein!</german>
+			<english>Welcome to Itemland. Good assortment for a good price. Do you want to go into the shop? Press [A] for Yes or any other button for No!</english>
+		</text>
+		<text name="shop_itemstadt">
+		  <german>Willkommen bei Itemstadt. Große Auswahl hat ihren Preisen. Möchtest du das Angebot betrachen? Drücke [A] für Ja und jeden anderen Button für Nein!</german>
+			<english>Welcome to Itemstadt. A big assortment has it price. Do you want to go into the shop? Press [A] for Yes or any other button for No!</english>
+		</text>
+  </output>
+  <opl>
+    <script name="weiche" parameter="0">
+      if (op_player_lastposition_get(op_player_activ())=29)
+        op_set_next_set(30,31)
+      fi
+      if (op_player_lastposition_get(op_player_activ())=42)
+        op_set_next_set(30,43)
+      fi
+      if (op_player_lastposition_get(op_player_activ())=8)
+        op_set_next_set(9,10)
+      fi
+      if (op_player_lastposition_get(op_player_activ())=46)
+        op_set_next_set(9,47)
+      fi
+      if (op_player_lastposition_get(op_player_activ())=13)
+        op_set_next_set(14,15)
+      fi
+      if (op_player_lastposition_get(op_player_activ())=25)
+        op_set_next_set(14,26)
+      fi
+    </script>
+    <script name="vorweiche" parameter="0">
+      if (op_player_position_get(op_player_activ())=29)
+        op_set_cameraposition_from_set(30,1030)
+        op_set_camerarotation_from_set(30,1030)
+      fi
+      if (op_player_position_get(op_player_activ())=42)
+        op_set_cameraposition_from_set(30,2030)
+        op_set_camerarotation_from_set(30,2030)
+      fi
+      if (op_player_position_get(op_player_activ())=8)
+        op_set_cameraposition_from_set(9,1009)
+        op_set_camerarotation_from_set(9,1009)
+      fi
+      if (op_player_position_get(op_player_activ())=46)
+        op_set_cameraposition_from_set(9,2009)
+        op_set_camerarotation_from_set(9,2009)
+      fi
+      if (op_player_position_get(op_player_activ())=13)
+        op_set_cameraposition_from_set(14,1014)
+        op_set_camerarotation_from_set(14,1014)
+      fi
+      if (op_player_position_get(op_player_activ())=25)
+        op_set_cameraposition_from_set(14,2014)
+        op_set_camerarotation_from_set(14,2014)
+      fi
+    </script>
+    <script name="setrubin" parameter="1" >
+      setglobal(0,stack(0))
+      op_set_position_from_set(666,getglobal(0))
+      op_set_position_y_set(666,op_set_position_y_get(666)+2.0)
+    </script>
+    <script name="rubinaction" parameter="0">
+      if (op_player_position_get(op_player_activ())=getglobal(0))
+        if (op_player_money_get(op_player_activ())<13)
+          op_text_content_set(op_player_activ(),"rubintext_nomoney")
+          if (op_player_iscpu(op_player_activ()))
+            delay(2000)
+          fi
+          set(auswahl,0)
+          while ([auswahl]=0)
+            if (op_controller_button_get(op_player_activ(),4)=1)
+              set(auswahl,1)
+              op_controller_button_set(op_player_activ(),4,0)
+            else
+              sync
+            fi    
+          elihw
+        else
+          op_text_content_set(op_player_activ(),"rubintext")
+          if (op_player_iscpu(op_player_activ()))
+            delay(2000)
+          fi
+          set(auswahl,0)
+          while ([auswahl]=0)
+            if (op_controller_button_get(op_player_activ(),0)=1)
+              set(auswahl,1)
+              op_controller_button_set(op_player_activ(),0,0)
+            else
+              if (op_controller_button_get(op_player_activ(),1)=1)
+                set(auswahl,2)
+                op_controller_button_set(op_player_activ(),1,0)
+              else
+                sync
+              fi
+            fi        
+          elihw
+          if ([auswahl]=1)
+            op_player_money_set(op_player_activ(),op_player_money_get(op_player_activ())-13)
+            delay(500)
+            op_player_rubin_set(op_player_activ(),op_player_rubin_get(op_player_activ())+1)            
+            set(position,random(49)+2)
+            if ([position]>33)
+              set(position,[position]+2)
+            fi
+            setrubin([position])
+            delay(500)
+  					$show_rubin()
+          fi
+        fi
+        op_text_content_delete()
+      fi
+    </script>
+		<script name="teleport" parameter="0">
+		  if (op_dice_get_value()=0)
+				if (op_player_money_get(op_player_activ())<8)
+					op_text_content_set(op_player_activ(),"teleporttext_nomoney")
+					if (op_player_iscpu(op_player_activ()))
+						delay(2000)
+					fi
+					while (op_controller_button_get(op_player_activ(),4)=0)
+						sync
+					elihw
+					op_controller_button_set(op_player_activ(),4,0)
+					op_text_content_delete()
+				else
+					op_text_content_set(op_player_activ(),"teleporttext_in")
+					if (op_player_iscpu(op_player_activ()))
+						delay(2000)
+					fi
+					set(auswahl,0)
+					while ([auswahl]=0)
+						if (op_controller_button_get(op_player_activ(),0)=1)
+							set(auswahl,1)
+							op_controller_button_set(op_player_activ(),0,0)
+						else
+							if (op_controller_button_get(op_player_activ(),1)=1)
+								set(auswahl,2)
+								op_controller_button_set(op_player_activ(),1,0)
+							else
+								sync
+							fi    
+						fi    
+					elihw
+					op_text_content_delete()
+					if (op_player_iscpu(op_player_activ()))
+						set(auswahl,random(2))
+					fi
+					if ([auswahl]=1)
+						op_player_money_set(op_player_activ(),op_player_money_get(op_player_activ())-8)
+						delay(500)
+						while(op_fade_get_counter()<1.0)
+							op_fade_set_counter(op_fade_get_counter()+0.002)
+							sync
+						elihw
+						op_fade_set_counter(1.0)
+						
+						if (op_player_position_get(op_player_activ())=2)
+							op_player_position_set(op_player_activ(),20)  
+						else
+							if (op_player_position_get(op_player_activ())=20)
+								op_player_position_set(op_player_activ(),38)  
+							else
+								if (op_player_position_get(op_player_activ())=38)
+									op_player_position_set(op_player_activ(),2)  
+								fi
+							fi					
+						fi
+						
+						while(op_fade_get_counter()>0.0)
+							op_fade_set_counter(op_fade_get_counter()-0.002)
+							sync
+						elihw
+						op_fade_set_counter(0.0)					
+					fi
+				fi
+			fi
+			$rubinaction()
+		</script>
+		<script name="duell" parameter="0">
+		  if (op_dice_get_value()=0)
+				op_text_content_set(op_player_activ(),"duelltext_in")
+				if (op_player_iscpu(op_player_activ()))
+					delay(2000)
+				fi
+				while (op_controller_button_get(op_player_activ(),4)=0)
+					sync
+				elihw
+				op_controller_button_set(op_player_activ(),4,0)
+				op_text_content_delete()
+				if (op_player_number()>2)
+					op_choosecircle_show_face_without_team_of(op_player_activ())
+					while (op_choosecircle_get_direction()<2000)
+						sync
+					elihw			
+					set(the_chosen_one,op_choosecircle_get_choice())
+					op_choosecircle_kill()
+				else
+					set(the_chosen_one,1-op_player_activ())
+				fi
+				
+				op_choosecircle_show_minigames(2)
+				while (op_choosecircle_get_direction()<2000)
+					sync
+				elihw			
+				op_choosecircle_calc_minigames_result()
+				op_choosecircle_kill()				
+				
+				while(op_fade_get_counter()<1.0)
+					op_fade_set_counter(op_fade_get_counter()+0.002)
+					sync
+				elihw
+				op_fade_set_counter(1.0)
+				
+				set(winner,op_minigame_duell(op_player_activ(),[the_chosen_one]))
+			
+				while(op_fade_get_counter()>0.0)
+					op_fade_set_counter(op_fade_get_counter()-0.002)
+					sync
+				elihw
+				op_fade_set_counter(0.0)
+				
+				if ([winner]<0)
+					op_text_content_set(op_player_activ(),"duelltext_nowinner")
+					if (op_player_iscpu(op_player_activ()))
+						delay(2000)
+					fi
+					while (op_controller_button_get(op_player_activ(),4)=0)
+						sync
+					elihw
+					op_controller_button_set(op_player_activ(),4,0)
+					op_text_content_delete()				
+				else				  
+				  if (op_player_activ()=[winner])
+					  set(loser,[the_chosen_one])
+					else
+					  set(loser,op_player_activ())
+				  fi
+					op_text_content_set(op_player_activ(),"duelltext_entry")
+					if (op_player_iscpu(op_player_activ()))
+						delay(2000)
+					fi
+					while (op_controller_button_get(op_player_activ(),4)=0)
+						sync
+					elihw
+					op_controller_button_set(op_player_activ(),4,0)
+					op_text_content_delete()
+
+					op_choosecircle_show("duelltext_choiceentry")
+					while (op_choosecircle_get_direction()<2000)
+						sync
+					elihw
+					set(result,op_choosecircle_get_choice())
+					op_choosecircle_kill()
+					
+					set(entry,0)
+					set(message,0)
+					set(count,0)
+					if ([result]%2=0)
+					  set(entry,0)
+						set(count,5)
+						if (op_player_money_get([loser])<5)
+						  set(count,op_player_money_get([loser]));
+						  set(message,1)
+						fi
+						if (op_player_money_get([loser])=0)
+						  set(count,op_player_money_get([loser]));
+						  set(message,2)
+						fi
+					fi
+					if ([result]%4=1)
+					  set(entry,1)
+						set(count,15);
+						if (op_player_money_get([loser])<15)
+						  set(count,op_player_money_get([loser]));
+						  set(message,1)
+						fi
+						if (op_player_money_get([loser])=0)
+						  set(count,op_player_money_get([loser]));
+						  set(message,2)
+						fi
+					fi
+					if ([result]=3)
+					  set(entry,2)
+						set(count,1);
+						if (op_player_rubin_get([loser])<1)
+						  set(count,0);
+						  set(message,2)
+						fi
+					fi
+					if ([message]=1)
+					  op_text_content_set(op_player_activ(),"duelltext_fewentry")
+					fi
+					if ([message]=2)
+					  op_text_content_set(op_player_activ(),"duelltext_noentry")
+					fi					
+					if ([message]>0)					
+						if (op_player_iscpu(op_player_activ()))
+							delay(2000)
+						fi
+						while (op_controller_button_get(op_player_activ(),4)=0)
+							sync
+						elihw
+						op_controller_button_set(op_player_activ(),4,0)
+						op_text_content_delete()				
+					fi
+					if ([message]<2)
+
+						while(op_fade_get_counter()<1.0)
+							op_fade_set_counter(op_fade_get_counter()+0.002)
+							sync
+						elihw
+						op_fade_set_counter(1.0)
+
+						op_camera_from_set(op_player_position_get([loser]))
+						op_camera_set_mode([loser])
+
+						while(op_fade_get_counter()>0.0)
+							op_fade_set_counter(op_fade_get_counter()-0.002)
+							sync
+						elihw
+						op_fade_set_counter(0.0)
+
+						if (([entry]<2) & ([count]>0))
+							op_player_money_set([loser],op_player_money_get([loser])-[count])
+						fi
+						if (([entry]=2) & ([count]>0))
+							op_player_rubin_set([loser],op_player_rubin_get([loser])-[count])
+						fi
+						delay(500)
+
+						while(op_fade_get_counter()<1.0)
+							op_fade_set_counter(op_fade_get_counter()+0.002)
+							sync
+						elihw
+						op_fade_set_counter(1.0)
+
+						op_camera_from_set(op_player_position_get([winner]))
+						op_camera_set_mode([winner])
+
+						while(op_fade_get_counter()>0.0)
+							op_fade_set_counter(op_fade_get_counter()-0.002)
+							sync
+						elihw
+						op_fade_set_counter(0.0)
+
+						if (([entry]<2) & ([count]>0))
+							op_player_money_set([winner],op_player_money_get([winner])+[count])						
+						fi
+						if (([entry]=2) & ([count]>0))
+							op_player_rubin_set([winner],op_player_rubin_get([winner])+[count])						
+						fi
+						delay(500)
+						
+						if ([winner]=op_player_activ())
+							op_camera_set_mode(-1)
+						else
+							while(op_fade_get_counter()<1.0)
+								op_fade_set_counter(op_fade_get_counter()+0.002)
+								sync
+							elihw
+							op_fade_set_counter(1.0)
+							
+							op_camera_from_set(op_player_position_get(op_player_activ()))
+							op_camera_set_mode(-1)
+							
+							while(op_fade_get_counter()>0.0)
+								op_fade_set_counter(op_fade_get_counter()-0.002)
+								sync
+							elihw
+							op_fade_set_counter(0.0)
+						fi
+					fi
+				fi
+			fi
+			$rubinaction()
+		</script>
+		<script name="questionmark" parameter="0">
+		  if (op_dice_get_value()=0)
+				op_text_content_set(op_player_activ(),"questionmarktext_in")
+				if (op_player_iscpu(op_player_activ()))
+					delay(2000)
+				fi
+				while (op_controller_button_get(op_player_activ(),4)=0)
+					sync
+				elihw
+				op_controller_button_set(op_player_activ(),4,0)
+				op_text_content_delete()
+				if (op_player_number()>2)
+					op_choosecircle_show_face_without(op_player_activ())
+					while (op_choosecircle_get_direction()<2000)
+						sync
+					elihw			
+					set(the_chosen_one,op_choosecircle_get_choice())
+					op_choosecircle_kill()
+				else
+					set(the_chosen_one,1-op_player_activ())
+				fi
+				while(op_fade_get_counter()<1.0)
+					op_fade_set_counter(op_fade_get_counter()+0.002)
+					sync
+				elihw
+				op_fade_set_counter(1.0)
+				
+				set(pos1,op_player_position_get(op_player_activ()))
+				set(pos2,op_player_position_get([the_chosen_one]))
+				op_player_position_set(op_player_activ(),[pos2])
+				op_player_position_set([the_chosen_one],[pos1])
+				while(op_fade_get_counter()>0.0)
+					op_fade_set_counter(op_fade_get_counter()-0.002)
+					sync
+				elihw
+				op_fade_set_counter(0.0)
+			fi
+			$rubinaction()
+		</script>
+		<script name="dice" parameter="0">
+			if (op_dice_get_value()=0)
+				if (op_player_money_get(op_player_activ())<5)
+          op_text_content_set(op_player_activ(),"dicetext_nomoney")
+          if (op_player_iscpu(op_player_activ()))
+            delay(2000)
+          fi
+          set(auswahl,0)
+          while (op_controller_button_get(op_player_activ(),4)=0)
+            sync
+          elihw
+					op_controller_button_set(op_player_activ(),4,0)
+					op_text_content_delete()
+        else
+          op_text_content_set(op_player_activ(),"dicetext_in")
+          if (op_player_iscpu(op_player_activ()))
+            delay(2000)
+          fi
+          set(auswahl,0)
+          while ([auswahl]=0)
+            if (op_controller_button_get(op_player_activ(),0)=1)
+              set(auswahl,1)
+              op_controller_button_set(op_player_activ(),0,0)
+            else
+							if (op_controller_button_get(op_player_activ(),1)=1)
+								set(auswahl,2)
+								op_controller_button_set(op_player_activ(),1,0)
+							else
+								sync
+							fi    
+            fi    
+          elihw
+					op_text_content_delete()
+					if (op_player_iscpu(op_player_activ()))
+					  set(auswahl,random(2))
+					fi
+					if ([auswahl]=1)
+            op_player_money_set(op_player_activ(),op_player_money_get(op_player_activ())-5)
+            delay(500)
+						op_choosecircle_show("dice_choice")
+						while (op_choosecircle_get_direction()<2000)
+							sync
+						elihw
+						if (op_choosecircle_get_choice()%2=0)
+						  op_choosecircle_kill()
+							op_text_content_set(op_player_activ(),"dicetext_blank")
+							if (op_player_iscpu(op_player_activ()))
+								delay(2000)
+							fi
+							while (op_controller_button_get(op_player_activ(),4)=0)
+								sync
+							elihw
+							op_controller_button_set(op_player_activ(),4,0)
+						else
+							if (op_choosecircle_get_choice()=7)
+							  op_choosecircle_kill()
+								op_player_add_item(op_player_activ(),random(op_item_num()))
+								op_text_content_set(op_player_activ(),"dicetext_item")
+								if (op_player_iscpu(op_player_activ()))
+									delay(2000)
+								fi
+								while (op_controller_button_get(op_player_activ(),4)=0)
+									sync
+								elihw
+								op_controller_button_set(op_player_activ(),4,0)
+							else
+								if (op_choosecircle_get_choice()=1)
+								  op_player_money_set(op_player_activ(),op_player_money_get(op_player_activ())+7) fi
+								if (op_choosecircle_get_choice()=5)
+								  op_player_money_set(op_player_activ(),op_player_money_get(op_player_activ())+13) fi
+								if (op_choosecircle_get_choice()=3)
+								  op_player_rubin_set(op_player_activ(),op_player_rubin_get(op_player_activ())+1) fi
+
+							  op_choosecircle_kill()
+								op_text_content_set(op_player_activ(),"dicetext_out")
+								
+								if (op_player_iscpu(op_player_activ()))
+									delay(2000)
+								fi
+								while (op_controller_button_get(op_player_activ(),4)=0)
+									sync
+								elihw
+								op_controller_button_set(op_player_activ(),4,0)
+							fi
+						fi
+						op_text_content_delete()
+					fi
+				fi
+			fi
+			$rubinaction()
+		</script>
+    <script name="prepare" parameter="0">
+      do
+        set(position,random(49)+2)
+        if ([position]>33)
+          set(position,[position]+2)
+        fi
+      od (([position]<27) | ([position]>30))
+      setrubin([position])
+      op_player_add_item(0,4)
+      op_player_add_item(1,4)
+    </script>
+		<script name="item_dice" parameter="0">
+			op_dice_set_number(op_dice_get_number()+1)
+		</script>
+		<script name="item_double_dice" parameter="0">
+			op_dice_set_number(op_dice_get_number()+2)
+		</script>
+		<script name="item_slomo" parameter="0">
+			op_dice_mult_speed(0.1)
+		</script>
+		<script name="item_moneytrap" parameter="1">
+			if ((op_dice_get_value()=0) & (op_player_get_team(stack(0))<>op_player_get_team(op_player_activ())) & (op_player_money_get(op_player_activ())>0))        
+        
+        if (op_player_money_get(op_player_activ())<7)
+          set(money,op_player_money_get(op_player_activ()))
+        else
+          set(money,7)
+        fi
+        
+        op_player_money_set(op_player_activ(),op_player_money_get(op_player_activ())-[money])
+        delay(800)			
+        
+        while(op_fade_get_counter()<1.0)
+          op_fade_set_counter(op_fade_get_counter()+0.002)
+          sync
+        elihw
+        op_fade_set_counter(1.0)			
+        
+        op_camera_from_set(op_player_position_get(stack(0)))
+        
+        while(op_fade_get_counter()>0.0)
+          op_fade_set_counter(op_fade_get_counter()-0.002)
+          sync
+        elihw
+        op_fade_set_counter(0.0)					
+
+        op_player_money_set(stack(0),op_player_money_get(stack(0))+[money])
+        delay(800)
+
+        while(op_fade_get_counter()<1.0)
+          op_fade_set_counter(op_fade_get_counter()+0.002)
+          sync
+        elihw
+        op_fade_set_counter(1.0)			
+        
+        op_camera_from_set(op_player_position_get(op_player_activ()))
+        op_camera_set_mode(-1)
+        
+        while(op_fade_get_counter()>0.0)
+          op_fade_set_counter(op_fade_get_counter()-0.002)
+          sync
+        elihw
+        op_fade_set_counter(0.0)					
+      fi
+		</script>
+		<script name="item_bomb" parameter="1">
+			while(op_fade_get_counter()<1.0)
+				op_fade_set_counter(op_fade_get_counter()+0.002)
+				sync
+			elihw
+			op_fade_set_counter(1.0)
+
+			op_camera_from_set(op_player_position_get(stack(0)))
+
+			while(op_fade_get_counter()>0.0)
+				op_fade_set_counter(op_fade_get_counter()-0.002)
+				sync
+			elihw
+			op_fade_set_counter(0.0)
+			
+			
+			if (op_player_money_get(stack(0))<5)
+			  set(money,op_player_money_get(stack(0)))
+			else
+				set(money,5)
+			fi
+			
+			op_player_money_set(stack(0),op_player_money_get(stack(0))-[money])
+      delay(800)			
+			
+			while(op_fade_get_counter()<1.0)
+				op_fade_set_counter(op_fade_get_counter()+0.002)
+				sync
+			elihw
+			op_fade_set_counter(1.0)			
+			
+			op_camera_from_set(op_player_position_get(op_player_activ()))
+			op_camera_set_mode(-1)
+			
+			while(op_fade_get_counter()>0.0)
+				op_fade_set_counter(op_fade_get_counter()-0.002)
+				sync
+			elihw
+			op_fade_set_counter(0.0)					
+
+			op_player_money_set(op_player_activ(),op_player_money_get(op_player_activ())+[money])
+      delay(800)
+		</script>
+		<script name="show_rubin" parameter="0">
+			while(op_fade_get_counter()<1.0)
+				op_fade_set_counter(op_fade_get_counter()+0.002)
+				sync
+			elihw
+			op_fade_set_counter(1.0)
+
+			op_camera_from_set(getglobal(0))
+			op_text_content_set(0,"show_rubin")
+
+			while(op_fade_get_counter()>0.0)
+				op_fade_set_counter(op_fade_get_counter()-0.002)
+				sync
+			elihw
+			op_fade_set_counter(0.0)
+			
+      delay(2000)
+			
+			while(op_fade_get_counter()<1.0)
+				op_fade_set_counter(op_fade_get_counter()+0.002)
+				sync
+			elihw
+			op_fade_set_counter(1.0)			
+			
+			op_text_content_delete()
+			op_camera_from_set(op_player_position_get(op_player_activ()))
+			op_camera_set_mode(-1)
+			
+			while(op_fade_get_counter()>0.0)
+				op_fade_set_counter(op_fade_get_counter()-0.002)
+				sync
+			elihw
+			op_fade_set_counter(0.0)					
+		</script>
+		<script name="intro" parameter="0">
+		  $show_rubin()
+		</script>
+		<script name="shop_30percent" parameter="0">
+			op_text_content_set(op_player_activ(),"shop_30percent")
+			if (op_player_iscpu(op_player_activ()))
+				delay(500)
+			fi
+			set(auswahl,0)
+			while ([auswahl]=0)
+				if (op_controller_button_get(op_player_activ(),0)=1)
+					set(auswahl,1)
+					op_controller_button_set(op_player_activ(),0,0)
+				else
+					if (op_controller_button_get(op_player_activ(),4)=1)
+						set(auswahl,2)
+						op_controller_button_set(op_player_activ(),4,0)
+					else
+						sync
+					fi    
+				fi    
+			elihw
+			if (([auswahl]=2) | (op_player_iscpu(op_player_activ()) & (random(2)=1)))
+				op_text_content_delete()
+			  return(0)
+			fi
+			op_text_content_delete()
+			op_item_shop(0)
+			sync
+      $rubinaction()
+		</script>
+		<script name="shop_itemland" parameter="0">
+			op_text_content_set(op_player_activ(),"shop_itemland")
+			if (op_player_iscpu(op_player_activ()))
+				delay(500)
+			fi
+			set(auswahl,0)
+			while ([auswahl]=0)
+				if (op_controller_button_get(op_player_activ(),0)=1)
+					set(auswahl,1)
+					op_controller_button_set(op_player_activ(),0,0)
+				else
+					if (op_controller_button_get(op_player_activ(),4)=1)
+						set(auswahl,2)
+						op_controller_button_set(op_player_activ(),4,0)
+					else
+						sync
+					fi    
+				fi    
+			elihw
+			if (([auswahl]=2) | (op_player_iscpu(op_player_activ()) & (random(2)=1)))
+				op_text_content_delete()
+			  return(0)
+			fi
+			op_text_content_delete()
+			op_item_shop(1)
+			sync
+      $rubinaction()
+		</script>
+		<script name="shop_itemstadt" parameter="0">
+			op_text_content_set(op_player_activ(),"shop_itemstadt")
+			if (op_player_iscpu(op_player_activ()))
+				delay(500)
+			fi
+			set(auswahl,0)
+			while ([auswahl]=0)
+				if (op_controller_button_get(op_player_activ(),0)=1)
+					set(auswahl,1)
+					op_controller_button_set(op_player_activ(),0,0)
+				else
+					if (op_controller_button_get(op_player_activ(),4)=1)
+						set(auswahl,2)
+						op_controller_button_set(op_player_activ(),4,0)
+					else
+						sync
+					fi    
+				fi    
+			elihw
+			if (([auswahl]=2) | (op_player_iscpu(op_player_activ()) & (random(2)=1)))
+				op_text_content_delete()
+			  return(0)
+			fi
+			op_text_content_delete()
+			op_item_shop(2)
+			sync
+      $rubinaction()
+		</script>
+  </opl>
+	<utils>
+	  <item name="dice" destination="nothing" description="item_dice" script="item_dice" number="0" price="4">
+			<model name="dice">
+				<scale x="1.000000" y="1.000000" z="1.000000"/>
+			</model>
+		</item>
+	  <item name="double_dice" destination="nothing" description="item_double_dice" script="item_double_dice" number="1" price="10">
+			<model name="double_dice">
+				<scale x="1.000000" y="1.000000" z="1.000000"/>
+			</model>
+		</item>
+	  <item name="slomo" destination="nothing" description="item_slomo" script="item_slomo" number="2" price="10">
+			<model name="slomo">
+				<scale x="1.000000" y="1.000000" z="1.000000"/>
+			</model>
+		</item>
+	  <item name="bomb" destination="user" description="item_bomb" script="item_bomb" number="3" friendlyfire="True" price="8">
+			<model name="bomb">
+				<scale x="1.500000" y="1.500000" z="1.500000"/>
+			</model>
+		</item>
+	  <item name="moneytrap" destination="set" radius="10" description="item_moneytrap" script="item_moneytrap" number="4" friendlyfire="False" price="7">
+			<model name="trap">
+				<scale x="1.300000" y="1.300000" z="1.300000"/>
+			</model>
+		</item>
+	</utils>
+</openparty>

@@ -1,0 +1,32 @@
+#This file was created with Wings 3D 0.99.03
+#See http://www.wings3d.com for details 
+#Criterion Renderware export v1.0.
+modelbegin 
+clumpbegin 
+#Object name cylinder2
+clumpbegin 
+LightSampling Vertex 
+Vertex 0.100000 0.100000 0.000000 
+Vertex 0.030902 0.100000 0.095106 
+Vertex -0.080902 0.100000 0.058779 
+Vertex -0.080902 0.100000 -0.058779 
+Vertex 0.030902 0.100000 -0.095106 
+Vertex 0.100000 -0.100000 0.000000 
+Vertex 0.030902 -0.100000 0.095106 
+Vertex -0.080902 -0.100000 0.058779 
+Vertex -0.080902 -0.100000 -0.058779 
+Vertex 0.030902 -0.100000 -0.095106 
+Surface 0.580000 0.150000 0.150000
+Color 1.0 1.0 1.0
+Opacity 1.0
+Texture Null
+Quad 2 7 6 1
+Quad 3 8 7 2
+Quad 4 9 8 3
+Quad 5 10 9 4
+Quad 1 6 10 5
+Polygon 5  7 8 9 10 6
+Polygon 5  1 5 4 3 2
+clumpend 
+clumpend 
+modelend 
