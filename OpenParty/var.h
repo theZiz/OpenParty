@@ -407,9 +407,9 @@ void load_options(void)
       {
         if (strcmp(attribute->name,"value")==0)
         {
-          if (strcmp(attribute->wert,"true")==0)
+          if (strcmp(attribute->wert,"True")==0)
             firsttimestarted=1;
-          if (strcmp(attribute->wert,"false")==0)
+          if (strcmp(attribute->wert,"False")==0)
             firsttimestarted=0;
         }
         attribute=attribute->next;
@@ -596,8 +596,8 @@ void save_options(void)
   ZWbegintag(xmlfile,(char*)"first_time");
     switch (firsttimestarted)
     {
-      case 0: ZWaddattribute_string(xmlfile,(char*)"value",(char*)"false"); break;
-      case 1: ZWaddattribute_string(xmlfile,(char*)"value",(char*)"true"); break;
+      case 0: ZWaddattribute_string(xmlfile,(char*)"value",(char*)"False"); break;
+      case 1: ZWaddattribute_string(xmlfile,(char*)"value",(char*)"True"); break;
     }
   ZWendstandalonetag(xmlfile);
   ZWbegintag(xmlfile,(char*)"texture_quality");
