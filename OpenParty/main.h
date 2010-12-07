@@ -403,9 +403,9 @@ void draw_main(pmaindata data)
   glTranslatef(0,0,-15);
   //FPS
   sprintf(buffer,"%i",ZWattribute->fps);
-  glColor4f(0,0,0,0.8);
+  glColor4f(0,0,0,0.4);
   ZWdrawtextright(text,12,-8.2,-1,buffer,2.1);
-  glColor4f(1,1,1,0.9);
+  glColor4f(1,1,1,0.5);
   ZWdrawtextright(text,12,-8.2,-1,buffer,2.0);
   glDepthFunc(GL_LEQUAL); 
 }

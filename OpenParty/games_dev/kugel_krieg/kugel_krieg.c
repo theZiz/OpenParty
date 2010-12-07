@@ -29,7 +29,7 @@
 #include "./../../../zizutils/texture/texture.h"
 #include "./../../../zizutils/partikel/partikel.h"
 
-#include "./../../testgame/minigames.h"
+#include "./../../minigames.h"
 
 #ifdef WIN32
 #define bool char
@@ -93,6 +93,17 @@ typedef struct sdata {
 	int left[8];
 	int right[8];
 	int counter;
+  int color[20][20];
+  int prex[20][20];
+  int prey[20][20];
+  int path_cost[20][20];
+  char refresh;
+  int oldboxx[8];
+  int oldboxy[8];
+  int goalx[8];
+  int goaly[8];
+  char goal_is_enemy[8];
+  int enemy[8];
 } tdata;
 
 
@@ -496,7 +507,7 @@ EXPORT void op_init_game(pdata data,pgameinfo gameinfo)
   for (a=2;a<18;a++)
     for (b=2;b<18;b++)
     {
-      if (rand()%4==0 && !(a>7 & a<12 && b>7 && b<12))
+      if (rand()%4==0 && !(a>7 && a<12 && b>7 && b<12))
         data->block[a][b]=1;
     }
   
@@ -616,6 +627,12 @@ EXPORT void op_init_game(pdata data,pgameinfo gameinfo)
   data->fade=1;
   data->countdown=2500;  
 	data->counter=120999;
+  data->refresh=1;
+  for (a=0;a<data->gameinfo->playernum;a++)
+  {
+    data->oldboxx[a]=(int)(data->x[a])/2;
+    data->oldboxy[a]=(int)(data->y[a])/2;
+  }
 }
 
 #include "cpu.h"
@@ -639,12 +656,11 @@ EXPORT int op_calc_game(pdata data)
     return 0;
   }
 	
-	calc_cpu(data);
-	
   //zeitabhängige Bewegung:
   int time;
   for (time=0;time<(int)(*(data->gameinfo->steps));time++)
   {
+    calc_cpu(data);
 		calcbullets(data);
 	int a;
     for (a=0;a<data->gameinfo->playernum;a++)
@@ -1143,7 +1159,7 @@ EXPORT void op_reset_game(pdata data,pgameresult gameresult)
   for (b=0;b<data->gameinfo->playernum;b++)
     gameresult->winner[b]=data->live[b]>0; 
   ZWdeleteobject(data->tank_basis);
-  int a;
+  //int a;
   //for (a=0;a<(data->gameinfo->playernum);a++)
     //ZWdeleteobject(data->tank_top[a]);    
   ZWdeletetexture(data->texture);

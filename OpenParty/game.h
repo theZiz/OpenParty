@@ -17,14 +17,14 @@
  For feedback and questions about my Files and Projects please mail me,     
  Alexander Matthes (Ziz) , zizsdl_at_googlemail.com                         
 */
-void load_gameinfotext(void)
+void load_gameinfotext(char* thefile)
 {
 	free(gameinfotext);
 	gameinfotext=NULL;
 	char buffer[256];
   //Text einlesen:
 	char content[65536]="no text";
-	sprintf(buffer,DATAFOLDER"data/info.txt");
+	sprintf(buffer,thefile);
 	SDL_RWops *rw=SDL_RWFromFile(buffer,"rb");
 	planguage description=NULL;
 	if(rw!=NULL)
@@ -184,7 +184,7 @@ void prepare_game(pset startset,int complete)
 	choosecircle_position=rand()%360;
 	choosecircle_direction=0;
 	maindata.gamestartinfo=1;
-	load_gameinfotext();
+	load_gameinfotext((char*)(DATAFOLDER"data/info.txt"));
 	for (a=0;a<playernum;a++)
 	  maindata.gameinfochoice[a]=maindata.player[a].iscpu;
 	maindata.turn_dice_dest=1;
