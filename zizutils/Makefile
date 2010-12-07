@@ -6,7 +6,7 @@ zizwindow: ./zizwindow/zizwindow.c ./zizwindow/zizwindow.h
 	make
 	cd ..
 
-xml: ./xml/xml.c ./xml/xml.h ./xml/xml.o
+xml: ./xml/xml.c ./xml/xml.h
 	make ./xml/Makefile
 
 ttf: ./ttf/ttf.c ./ttf/ttf.h
