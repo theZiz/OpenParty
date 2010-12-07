@@ -1,8 +1,4 @@
-all: ziztexture
-ziztexture: lib
-	
-object: ttf.c
-	gcc -fPIC -g -c -Wall -O2 ttf.c
+all: lib
 
-lib: object
+lib: object ttf.o
 	gcc -shared -Wl,-soname,libzizttf.so -o libzizttf.so ttf.o
