@@ -35,7 +35,7 @@ void draw_about(pmenudata data)
   float dist_a=40.0/7.0;
   float zoom=0.28;
   
-  ZWdrawtextmiddle(text,-1.12+0.0*dist_x,0.52-0.0*dist_y,-4,(char*)"Open Party Version 0.7.5",zoom*1.2);
+  ZWdrawtextmiddle(text,-1.12+0.0*dist_x,0.52-0.0*dist_y,-4,(char*)"Open Party Version 0.8.0",zoom*1.2);
   ZWdrawtextmiddle(text,-1.12+1.0*dist_x,0.52-0.8*dist_y,-4,(char*)"licensed under MPL and LGPL",zoom*0.8);
   ZWdrawtextmiddle(text,-1.12+2.0*dist_x,0.52-1.6*dist_y,-4,(char*)"mainly developed by Ziz",zoom*1.1);
   ZWdrawtextmiddle(text,-1.12+3.0*dist_x,0.52-2.45*dist_y,-4,(char*)"Main menu music from Kevin MacLeod",zoom*0.85);
@@ -46,7 +46,7 @@ void draw_about(pmenudata data)
   glColor4f(COLOR_BASE+sin((data->rotation-0.0*dist_a)*M_PI/180.0)*COLOR_MULT,
             COLOR_BASE+sin((data->rotation-0.0*dist_a)*M_PI/90.0)*COLOR_MULT,
             COLOR_BASE+sin((data->rotation-0.0*dist_a)*M_PI/45.0)*COLOR_MULT,1);
-  ZWdrawtextmiddle(text,-1.11+0.0*dist_x,0.5-0.0*dist_y,-4,(char*)"Open Party Version 0.7.5",zoom*1.2);
+  ZWdrawtextmiddle(text,-1.11+0.0*dist_x,0.5-0.0*dist_y,-4,(char*)"Open Party Version 0.8.0",zoom*1.2);
   glColor4f(COLOR_BASE+sin((data->rotation-1.0*dist_a)*M_PI/180.0)*COLOR_MULT,
             COLOR_BASE+sin((data->rotation-1.0*dist_a)*M_PI/90.0)*COLOR_MULT,
             COLOR_BASE+sin((data->rotation-1.0*dist_a)*M_PI/45.0)*COLOR_MULT,1);

@@ -345,7 +345,7 @@ void draw_main(pmaindata data)
 
   //etwaige Anzeigen ja nach Spielstatus
 	if (data->gamestartinfo || data->mainloop_pos==0)
-	  draw_gamestartinfo(data);
+	  draw_gamestartinfo(data,1,1.0);
 	if (data->special_step==1)
 	  draw_item_shop(data);
 	else

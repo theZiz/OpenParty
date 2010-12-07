@@ -23,8 +23,8 @@ void load_gameinfotext(char* thefile)
 	gameinfotext=NULL;
 	char buffer[256];
   //Text einlesen:
-	char content[65536]="no text";
-	sprintf(buffer,thefile);
+	char content[65535]="no text";
+	sprintf(buffer,"%s",thefile);
 	SDL_RWops *rw=SDL_RWFromFile(buffer,"rb");
 	planguage description=NULL;
 	if(rw!=NULL)
@@ -385,7 +385,7 @@ void reset_after_game(void)
 
 }
 
-void draw_gamestartinfo(pmaindata data)
+void draw_gamestartinfo(pmaindata data,char show_gameinfofaces,float faktor)
 {
 	glColor4f(1,1,1,0.8);
 	ZWdrawsprite(maintex,-1.2, 0.8,-2.0,0.2,0.2,4,8);		  
@@ -397,12 +397,12 @@ void draw_gamestartinfo(pmaindata data)
 	ZWdrawsprite(maintex, 0.0,-0.8,-2.0,1.0,0.2,8,41);		  
 	int a;
 	glColor4f(0,0,0,0.8);
-	float maxlen=20.0;
+	float maxlen=20.0/faktor;
 	int pos=0;
 	int lastspace=0;
 	float momlen;
 	int start;
-	for (int a=0;a<17;a++)
+	for (int a=0;a<18-show_gameinfofaces;a++)
 	{
 		//So lange von Leerzeichen zu Leerzeichen springen bis die Zeile zu lang wird.
 		momlen=0;
@@ -418,13 +418,14 @@ void draw_gamestartinfo(pmaindata data)
 			pos++;
 		}
 		gameinfotext[lastspace]=0;
-	  ZWdrawtextmiddle(text,0,0.82-(float)a*0.1,-2.0,&(gameinfotext[start]),0.12);
+	  ZWdrawtextmiddle(text,0,0.82-(float)a*0.1*faktor,-2.0,&(gameinfotext[start]),0.12*faktor);
 		gameinfotext[lastspace]=' ';
 		if (gameinfotext[pos]==0)
 		  break;
 		pos=lastspace+1;
 	}
 	
+  if (show_gameinfofaces)
 	for (a=0;a<playernum;a++)
 	{
 		glColor4f(data->player[a].color.r,data->player[a].color.g,data->player[a].color.b,0.8);

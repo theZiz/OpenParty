@@ -2,12 +2,14 @@ ToDo bis Release 0.8:
 + Spiel beenden ohne Alt+F4
   + Esc Zwischenmenu
 + Pathfinding
-- Kurzer Einführungstext beim Starten von OpenParty
++ Kurzer Einführungstext beim Starten von OpenParty
 - 3 Minispiele
   - Pong von 2 bis 8 Spielern, 2: Viereck, 3: Dreieck, 4: Viereck: 5: FÃ¼nfeck ... Ball wird schneller. Jeder Spieler 3 Leben.
   - Bomberman
 	- einen Button drücken gaaaaaanz schnell
 - Zweisprachigkeit durchgängig (bis auf Minispiele)
+  - Infotexte
+  - Alle Quelltextdateien durchgehen
 - Für die Entwicklung notwendige Header einzeln runterladbar
   - Auch Einbetten in das How to
 - Minispielsektion auf der Internetseite basteln

@@ -74,6 +74,9 @@ void draw_menu(pmenudata data)
             COLOR_BASE+sin((data->rotation-45.0)*M_PI/90.0)*COLOR_MULT,
             COLOR_BASE+sin((data->rotation-45.0)*M_PI/45.0)*COLOR_MULT,1);
   ZWdrawtextmiddle(text, 0.15,-1.75,-4,(char*)"Ende",0.5*zoom[5]);
+
+  if (firsttimestarted)
+    draw_gamestartinfo(&maindata,0,1.03);
   
   glDepthFunc(GL_LEQUAL);
 }
@@ -473,6 +476,16 @@ int calc_menu(pmenudata data)
 int calc_menu_thread(pmenudata data)
 {
   if (data->fade_dir!=0) return 0;
+
+  if (firsttimestarted)
+  {
+    if (is_any_button_down(1))
+    {
+      firsttimestarted=0;
+      save_options();
+    }
+    return 0;
+  }
 
   //Menuauswahl
   if (is_any_axis_down(0) && data->menu_delta==0)

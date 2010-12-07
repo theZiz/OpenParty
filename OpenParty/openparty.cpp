@@ -149,12 +149,14 @@ int main( int argc, char* argv[])
 		save_minigames();
     prepare_minigames();
 
+    load_gameinfotext((char*)(DATAFOLDER"data/startinfo.txt"));
+
 		//Hauptmenu:
     //Zeit einstellen:
     Mix_PlayMusic(snd_menumusic, -1);
     ZWattribute->newticks=SDL_GetTicks();
 		
-		printf("Run \"openparty --joytest\" for getting button numbers to simulate axis by editing \"mapping.xml\" (e.g. for dance mats).\n");
+		printf("Run \"openparty --joytest\" for getting button numbers to simulate axis by editing \"mapping.xml\" (e.g. for dance pads).\n");
 
     if (argc>1 && strcmp(argv[1],(char*)"--joytest")==0)
 		{

@@ -269,6 +269,7 @@ typedef struct scontroller_db {
   int stretched=0;
   char language[32];
 	char *gameinfotext=NULL;
+  char firsttimestarted=1;
 //3dobjects
   object3d ball,coin,rubin,dice,arrow,sphere;
   object3d item[10];
@@ -399,6 +400,21 @@ void load_options(void)
   pxmltag first=ZWgetnexttag(maintag->inhalt);
   while (first!=NULL)
   {
+    if (strcmp(first->name,"first_time")==0)
+    {
+      pxmlattribute attribute=first->attribute;
+      while (attribute!=NULL)
+      {
+        if (strcmp(attribute->name,"value")==0)
+        {
+          if (strcmp(attribute->wert,"true")==0)
+            firsttimestarted=1;
+          if (strcmp(attribute->wert,"false")==0)
+            firsttimestarted=0;
+        }
+        attribute=attribute->next;
+      }
+    }  
     if (strcmp(first->name,"texture_quality")==0)
     {
       pxmlattribute attribute=first->attribute;
@@ -577,6 +593,13 @@ void save_options(void)
 	
 
   pxmlfile xmlfile=ZWnewxmlfile(buffer,(char*)"settings");
+  ZWbegintag(xmlfile,(char*)"first_time");
+    switch (firsttimestarted)
+    {
+      case 0: ZWaddattribute_string(xmlfile,(char*)"value",(char*)"false"); break;
+      case 1: ZWaddattribute_string(xmlfile,(char*)"value",(char*)"true"); break;
+    }
+  ZWendstandalonetag(xmlfile);
   ZWbegintag(xmlfile,(char*)"texture_quality");
     switch (texquali)
     {
