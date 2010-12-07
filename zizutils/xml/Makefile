@@ -1,6 +1,6 @@
 all: lib
 	
-object: xml.c
+object: xml.c xml.o
 	gcc -fPIC -g -c -Wall -O2 xml.c
 
 lib: object
