@@ -127,12 +127,18 @@ float callexfunction(int nr,float* stack)
       temp=(int)(trunc(stack[1]))-maindata.player[(int)(trunc(stack[0]))].rubins;
       if (temp>0)
       {
-        sprintf(buffer,"+%i Rubine",(int)(temp));
+        if (strcmp(language,(char*)"german")==0)
+          sprintf(buffer,"+%i Rubine",(int)(temp));
+        else
+          sprintf(buffer,"+%i Rubins",(int)(temp));
         Mix_PlayChannel(-1,snd_positive,0);
       }
       else
       {
-        sprintf(buffer,"-%i Rubine",(int)(-temp));
+        if (strcmp(language,(char*)"german")==0)
+          sprintf(buffer,"-%i Rubine",(int)(-temp));
+        else
+          sprintf(buffer,"-%i Rubins",(int)(-temp));
         Mix_PlayChannel(-1,snd_negative,0);
       }
       maindata.player[(int)(trunc(stack[0]))].rubins=(int)(trunc(stack[1]));
@@ -146,12 +152,19 @@ float callexfunction(int nr,float* stack)
       temp=(int)(trunc(stack[1]))-maindata.player[(int)(trunc(stack[0]))].money;
       if (temp>=0)
       {
-        sprintf(buffer,"+%i Münzen",(int)(temp));
+        if (strcmp(language,(char*)"german")==0)
+          sprintf(buffer,"+%i Münzen",(int)(temp));
+        else
+          sprintf(buffer,"+%i Coins",(int)(temp));
         Mix_PlayChannel(-1,snd_positive,0);
       }
       else
       {
-        sprintf(buffer,"-%i Münzen",(int)(-temp));
+        if (strcmp(language,(char*)"german")==0)
+          sprintf(buffer,"-%i Münzen",(int)(-temp));
+        else
+          sprintf(buffer,"-%i Coins",(int)(-temp));
+        
         Mix_PlayChannel(-1,snd_negative,0);
       }
       maindata.player[(int)(trunc(stack[0]))].money=(int)(trunc(stack[1]));

@@ -137,21 +137,30 @@ void draw_minigames(pmenudata data)
     glColor4f(0.2,0.8,0.3,0.8);
     ZWdrawtext(text,-1.5*zoom,-1.77*zoom,0.01,(char*)"[ ]",0.35*zoom);
     glColor4f(0.2,0.2,0.2,0.8);
-    ZWdrawtext(text,-1.1*zoom,-1.77*zoom,0.01,(char*)"Installiert",0.35*zoom);
+    if (strcmp(language,(char*)"german")==0)
+      ZWdrawtext(text,-1.1*zoom,-1.77*zoom,0.01,(char*)"Installiert",0.35*zoom);
+    else
+      ZWdrawtext(text,-1.1*zoom,-1.77*zoom,0.01,(char*)"Installed",0.35*zoom);
 
     if (minigamelist[a]->ingame)
     {
       glColor4f(0.2,0.8,0.3,0.8);
       ZWdrawtext(text,-1.5*zoom,-2.15*zoom,0.01,(char*)"[ ]",0.35*zoom);
       glColor4f(0.2,0.2,0.2,0.8);
-      ZWdrawtext(text,-1.1*zoom,-2.15*zoom,0.01,(char*)"wird gespielt",0.35*zoom);
+      if (strcmp(language,(char*)"german")==0)
+        ZWdrawtext(text,-1.1*zoom,-2.15*zoom,0.01,(char*)"wird gespielt",0.35*zoom);
+      else
+        ZWdrawtext(text,-1.1*zoom,-2.15*zoom,0.01,(char*)"is played",0.35*zoom);
     }
     else
     {
       glColor4f(0.8,0.2,0.3,0.8);
       ZWdrawtext(text,-1.5*zoom,-2.15*zoom,0.01,(char*)"[ ]",0.35*zoom);
       glColor4f(0.2,0.2,0.2,0.8);
-      ZWdrawtext(text,-1.1*zoom,-2.15*zoom,0.01,(char*)"wird nicht gespielt",0.35*zoom);
+      if (strcmp(language,(char*)"german")==0)
+        ZWdrawtext(text,-1.1*zoom,-2.15*zoom,0.01,(char*)"wird nicht gespielt",0.35*zoom);
+      else
+        ZWdrawtext(text,-1.1*zoom,-2.15*zoom,0.01,(char*)"es not played",0.35*zoom);
     }
   }
     
@@ -172,15 +181,30 @@ void draw_minigames(pmenudata data)
   glColor4f(0.7,0.7,0.7,0.7);
   char content[9][64];
   
-  sprintf(content[0],"Spielen");
-  sprintf(content[1],"[<]Alle Spiele[>]");
-  sprintf(content[2],"Markieren");
-  sprintf(content[3],"Alle markieren");
-  sprintf(content[4],"Installieren/Aktualisieren");
-  sprintf(content[5],"In OpenParty spielen");
-  sprintf(content[6],"Löschen");
-  sprintf(content[7],"Auf Updates prüfen");
-  sprintf(content[8],"Zurück   ");
+  if (strcmp(language,(char*)"german")==0)
+  {
+    sprintf(content[0],"Spielen");
+    sprintf(content[1],"[<]Alle Spiele[>]");
+    sprintf(content[2],"Markieren");
+    sprintf(content[3],"Alle markieren");
+    sprintf(content[4],"Installieren/Aktualisieren");
+    sprintf(content[5],"In OpenParty spielen");
+    sprintf(content[6],"Löschen");
+    sprintf(content[7],"Auf Updates prüfen");
+    sprintf(content[8],"Zurück   ");
+  }
+  else
+  {
+    sprintf(content[0],"Play");
+    sprintf(content[1],"[<]All Games[>]");
+    sprintf(content[2],"Mark");
+    sprintf(content[3],"Mark all");
+    sprintf(content[4],"Install/Update");
+    sprintf(content[5],"Playing in Party");
+    sprintf(content[6],"Delete");
+    sprintf(content[7],"Check Updates");
+    sprintf(content[8],"Back   ");
+  }
 
   float dist_x=0;//1.2/7.0;
   float dist_y=0.25;//2.4/7.0;
@@ -217,17 +241,33 @@ void draw_minigames(pmenudata data)
   glLoadIdentity();
   
   glColor4f(0.2,0.2,0.2,0.9);
-  sprintf(buffer,"Installierte Spiele: %i",mg_installed+mg_updateable);
-  ZWdrawtextmiddle_fac(text,3.2+ballonx,1.25+0.55*data->fade,-7,buffer,0.4*data->fade,0.95);
-  sprintf(buffer,"Verfügbare Spiele: %i",mg_installed+mg_updateable+mg_not_installed);
-  ZWdrawtextmiddle_fac(text,3.2+ballonx,1.25+0.15*data->fade,-7,buffer,0.4*data->fade,0.95);
-  sprintf(buffer,"Updates verfügbar: %i",mg_updateable);
-  ZWdrawtextmiddle_fac(text,3.2+ballonx,1.25-0.25*data->fade,-7,buffer,0.4*data->fade,0.95);
+  if (strcmp(language,(char*)"german")==0)
+  {
+    sprintf(buffer,"Installierte Spiele: %i",mg_installed+mg_updateable);
+    ZWdrawtextmiddle_fac(text,3.2+ballonx,1.25+0.55*data->fade,-7,buffer,0.4*data->fade,0.95);
+    sprintf(buffer,"Verfügbare Spiele: %i",mg_installed+mg_updateable+mg_not_installed);
+    ZWdrawtextmiddle_fac(text,3.2+ballonx,1.25+0.15*data->fade,-7,buffer,0.4*data->fade,0.95);
+    sprintf(buffer,"Updates verfügbar: %i",mg_updateable);
+    ZWdrawtextmiddle_fac(text,3.2+ballonx,1.25-0.25*data->fade,-7,buffer,0.4*data->fade,0.95);
+  }
+  else
+  {
+    sprintf(buffer,"Installed Games: %i",mg_installed+mg_updateable);
+    ZWdrawtextmiddle_fac(text,3.2+ballonx,1.25+0.55*data->fade,-7,buffer,0.4*data->fade,0.95);
+    sprintf(buffer,"Games avaible: %i",mg_installed+mg_updateable+mg_not_installed);
+    ZWdrawtextmiddle_fac(text,3.2+ballonx,1.25+0.15*data->fade,-7,buffer,0.4*data->fade,0.95);
+    sprintf(buffer,"Updates avaible: %i",mg_updateable);
+    ZWdrawtextmiddle_fac(text,3.2+ballonx,1.25-0.25*data->fade,-7,buffer,0.4*data->fade,0.95);
+  }
+  
   int count=0;
   for (a=0;a<mg_installed+mg_not_installed+mg_updateable;a++)
     if (minigamelist[a]->ingame)
       count++;
-  sprintf(buffer,"Ingame verwendet: %i",count);
+  if (strcmp(language,(char*)"german")==0)
+    sprintf(buffer,"Ingame verwendet: %i",count);
+  else
+    sprintf(buffer,"Used ingame: %i",count);
   ZWdrawtextmiddle_fac(text,3.2+ballonx,1.25-0.65*data->fade,-7,buffer,0.4*data->fade,0.95);
   
   if (data->fade_dir==1 && playernum!=0)

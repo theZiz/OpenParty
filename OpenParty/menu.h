@@ -36,44 +36,71 @@ void draw_menu(pmenudata data)
   glDepthFunc(GL_ALWAYS);
   glTranslatef((0.08-pow(1.0-data->fade*(1.0+sqrt(0.08)),2.0))*6.0,0,0);
 
-  glColor4f(0.7,0.7,0.7,0.7);        
-	ZWdrawtextmiddle(text,0.0,-2.19,-4,(char*)"Tipp: Drücke F1 für Hilfe zum Keyboardmapping!",0.18);
+  glColor4f(0.7,0.7,0.7,0.7);
+  char helpbuffer[256];
+  if (strcmp(language,(char*)"german")==0)
+    sprintf(helpbuffer,(char*)"Tipp: Drücke F1 für Hilfe zum Keyboardmapping!");
+  else
+    sprintf(helpbuffer,(char*)"Tip: Press F1 for help of keyboard mapping!");
+	ZWdrawtextmiddle(text,0.0,-2.19,-4,helpbuffer,0.18);
   glColor4f(COLOR_BASE+sin((data->rotation-40.0)*M_PI/180.0)*COLOR_MULT,
             COLOR_BASE+sin((data->rotation-40.0)*M_PI/90.0)*COLOR_MULT,
             COLOR_BASE+sin((data->rotation-40.0)*M_PI/45.0)*COLOR_MULT,1);
-	ZWdrawtextmiddle(text,0.01 ,-2.2 ,-4,(char*)"Tipp: Drücke F1 für Hilfe zum Keyboardmapping!",0.18);
+	ZWdrawtextmiddle(text,0.01 ,-2.2 ,-4,helpbuffer,0.18);
+
+  char buffer[6][32];
+  if (strcmp(language,(char*)"german")==0)
+  {
+     sprintf(buffer[0],(char*)"Partytime");
+     sprintf(buffer[1],(char*)"Minispiele");
+     sprintf(buffer[2],(char*)"Spielfelder");
+     sprintf(buffer[3],(char*)"Optionen");
+     sprintf(buffer[4],(char*)"Über");
+     sprintf(buffer[5],(char*)"Ende");
+  }
+  else
+  {
+     sprintf(buffer[0],(char*)"Party time");
+     sprintf(buffer[1],(char*)"Mini games");
+     sprintf(buffer[2],(char*)"Game boards");
+     sprintf(buffer[3],(char*)"Options");
+     sprintf(buffer[4],(char*)"About");
+     sprintf(buffer[5],(char*)"The End");
+  }
+  
+
 
   glColor4f(0.7,0.7,0.7,0.7);
-  ZWdrawtextmiddle(text,-1.13, 0.53,-4,(char*)"Partytime",0.5*zoom[0]);
-  ZWdrawtextmiddle(text,-0.88, 0.08,-4,(char*)"Minispiele",0.5*zoom[1]);
-  ZWdrawtextmiddle(text,-0.63,-0.37,-4,(char*)"Spielfelder",0.5*zoom[2]);
-  ZWdrawtextmiddle(text,-0.38,-0.82,-4,(char*)"Optionen",0.5*zoom[3]);
-  ZWdrawtextmiddle(text,-0.13,-1.27,-4,(char*)"Über",0.5*zoom[4]);
-  ZWdrawtextmiddle(text, 0.12,-1.72,-4,(char*)"Ende",0.5*zoom[5]);
+  ZWdrawtextmiddle(text,-1.13, 0.53,-4,buffer[0],0.5*zoom[0]);
+  ZWdrawtextmiddle(text,-0.88, 0.08,-4,buffer[1],0.5*zoom[1]);
+  ZWdrawtextmiddle(text,-0.63,-0.37,-4,buffer[2],0.5*zoom[2]);
+  ZWdrawtextmiddle(text,-0.38,-0.82,-4,buffer[3],0.5*zoom[3]);
+  ZWdrawtextmiddle(text,-0.13,-1.27,-4,buffer[4],0.5*zoom[4]);
+  ZWdrawtextmiddle(text, 0.12,-1.72,-4,buffer[5],0.5*zoom[5]);
   glColor4f(COLOR_BASE+sin((data->rotation-00.0)*M_PI/180.0)*COLOR_MULT,
             COLOR_BASE+sin((data->rotation-00.0)*M_PI/90.0)*COLOR_MULT,
             COLOR_BASE+sin((data->rotation-00.0)*M_PI/45.0)*COLOR_MULT,1);
-  ZWdrawtextmiddle(text,-1.1 , 0.5 ,-4,(char*)"Partytime",0.5*zoom[0]);
+  ZWdrawtextmiddle(text,-1.1 , 0.5 ,-4,buffer[0],0.5*zoom[0]);
   glColor4f(COLOR_BASE+sin((data->rotation-09.0)*M_PI/180.0)*COLOR_MULT,
             COLOR_BASE+sin((data->rotation-09.0)*M_PI/90.0)*COLOR_MULT,
             COLOR_BASE+sin((data->rotation-09.0)*M_PI/45.0)*COLOR_MULT,1);
-  ZWdrawtextmiddle(text,-0.85, 0.05,-4,(char*)"Minispiele",0.5*zoom[1]);
+  ZWdrawtextmiddle(text,-0.85, 0.05,-4,buffer[1],0.5*zoom[1]);
 /*  glColor4f(COLOR_BASE+sin((data->rotation-18.0)*M_PI/180.0)*COLOR_MULT,
             COLOR_BASE+sin((data->rotation-18.0)*M_PI/90.0)*COLOR_MULT,
             COLOR_BASE+sin((data->rotation-18.0)*M_PI/45.0)*COLOR_MULT,1);
-  ZWdrawtextmiddle(text,-0.6 ,-0.4,-4,(char*)"Spielfelder",0.5*zoom[2]);*/
+  ZWdrawtextmiddle(text,-0.6 ,-0.4,-4,buffer[2],0.5*zoom[2]);*/
   glColor4f(COLOR_BASE+sin((data->rotation-27.0)*M_PI/180.0)*COLOR_MULT,
             COLOR_BASE+sin((data->rotation-27.0)*M_PI/90.0)*COLOR_MULT,
             COLOR_BASE+sin((data->rotation-27.0)*M_PI/45.0)*COLOR_MULT,1);
-  ZWdrawtextmiddle(text,-0.35,-0.85,-4,(char*)"Optionen",0.5*zoom[3]);
+  ZWdrawtextmiddle(text,-0.35,-0.85,-4,buffer[3],0.5*zoom[3]);
   glColor4f(COLOR_BASE+sin((data->rotation-36.0)*M_PI/180.0)*COLOR_MULT,
             COLOR_BASE+sin((data->rotation-36.0)*M_PI/90.0)*COLOR_MULT,
             COLOR_BASE+sin((data->rotation-36.0)*M_PI/45.0)*COLOR_MULT,1);
-  ZWdrawtextmiddle(text,-0.1 ,-1.3 ,-4,(char*)"Über",0.5*zoom[4]);
+  ZWdrawtextmiddle(text,-0.1 ,-1.3 ,-4,buffer[4],0.5*zoom[4]);
   glColor4f(COLOR_BASE+sin((data->rotation-45.0)*M_PI/180.0)*COLOR_MULT,
             COLOR_BASE+sin((data->rotation-45.0)*M_PI/90.0)*COLOR_MULT,
             COLOR_BASE+sin((data->rotation-45.0)*M_PI/45.0)*COLOR_MULT,1);
-  ZWdrawtextmiddle(text, 0.15,-1.75,-4,(char*)"Ende",0.5*zoom[5]);
+  ZWdrawtextmiddle(text, 0.15,-1.75,-4,buffer[5],0.5*zoom[5]);
 
   if (firsttimestarted)
     draw_gamestartinfo(&maindata,0,1.03);

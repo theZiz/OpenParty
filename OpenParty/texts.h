@@ -140,9 +140,18 @@ void drawtextsite(void)
   glColor4f(1,1,1,0.3);
   
   //Infos zum Text:
-  ZWdrawtextright(text,1.48,-0.26,-2,(char*)"[<] und [>] zum Blättern nutzen!",0.1);
   char buffer[128];
-  sprintf(buffer,"Seite %i von %i",momtextsite+1,maxtextsite);
+  if (strcmp(language,(char*)"german")==0)
+  {
+    ZWdrawtextright(text,1.48,-0.26,-2,(char*)"[<] und [>] zum Blättern nutzen!",0.1);
+    sprintf(buffer,"Seite %i von %i",momtextsite+1,maxtextsite);
+  }
+  else
+  {
+    ZWdrawtextright(text,1.48,-0.26,-2,(char*)"Use [<] und [>] to scroll!",0.1);
+    sprintf(buffer,"Page %i of %i",momtextsite+1,maxtextsite);
+  }
+  
   ZWdrawtextright(text,1.48,-0.965,-2,buffer,0.1);
 
   glColor4f(1,1,1,0.5);

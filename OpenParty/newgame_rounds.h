@@ -25,12 +25,20 @@ void draw_newgame_rounds(pmenudata data)
 
   glTranslatef((0.08-pow(1.0-data->fade*(1.0+sqrt(0.08)),2.0))*6.0,0,0);
 
+  char helpbuffer[256];
+  if (strcmp(language,(char*)"german")==0)
+    sprintf(helpbuffer,(char*)"Was soll das Spielziel sein? Die Mehrheit entscheidet!");
+  else
+    sprintf(helpbuffer,(char*)"What should be the goal? The majority decides!");
+  
+
+
   glColor4f(0.7,0.7,0.7,0.7);        
-  ZWdrawtextmiddle(text,-0.71,-2.19,-4,(char*)"Was soll das Spielziel sein? Die Mehrheit entscheidet!",0.17);
+  ZWdrawtextmiddle(text,-0.71,-2.19,-4,helpbuffer,0.17);
   glColor4f(COLOR_BASE+sin((data->rotation-40.0)*M_PI/180.0)*COLOR_MULT,
             COLOR_BASE+sin((data->rotation-40.0)*M_PI/90.0)*COLOR_MULT,
             COLOR_BASE+sin((data->rotation-40.0)*M_PI/45.0)*COLOR_MULT,1);
-  ZWdrawtextmiddle(text,-0.7 ,-2.2 ,-4,(char*)"Was soll das Spielziel sein? Die Mehrheit entscheidet!",0.17);
+  ZWdrawtextmiddle(text,-0.7 ,-2.2 ,-4,helpbuffer,0.17);
 
   for (float b=0;b<4;b++)
   {
@@ -43,21 +51,36 @@ void draw_newgame_rounds(pmenudata data)
     glColor4f(1.0,0.5,0.5,0.5);
     ZWdrawsprite(maintex,-1.7 +b*0.7,-1.5 ,-4,0.3,0.3,2,2);
   }
+  
+  char rounds[16],coins[16],rubins[16];
+  if (strcmp(language,(char*)"german")==0)
+  {
+    sprintf(rounds,(char*)"Runden");
+    sprintf(coins,(char*)"Münzen");
+    sprintf(rubins,(char*)"Rubine");
+  }
+  else
+  {
+    sprintf(rounds,(char*)"Rounds");
+    sprintf(coins,(char*)"Coins");
+    sprintf(rubins,(char*)"Rubins");
+  }
+  
   for (float b=0;b<4;b++)
   {
     glColor4f(0,0,0,0.8);
     char buffer[10];
     sprintf(buffer,"%i",((int)(trunc(b+1)))*5);
     ZWdrawtextmiddle(text,-2.3 +b*0.7, 0.65,-4,buffer,0.3);
-    ZWdrawtextmiddle(text,-2.3 +b*0.7, 0.5 ,-4,(char*)"Runden",0.2);
+    ZWdrawtextmiddle(text,-2.3 +b*0.7, 0.5 ,-4,rounds,0.2);
     glColor4f(0,0,0,0.8);
     sprintf(buffer,"%i",((int)(trunc(b+5)))*5);
     ZWdrawtextmiddle(text,-2.13+b*0.7, 0.05,-4,buffer,0.3);
-    ZWdrawtextmiddle(text,-2.13+b*0.7,-0.1 ,-4,(char*)"Runden",0.2);
+    ZWdrawtextmiddle(text,-2.13+b*0.7,-0.1 ,-4,rounds,0.2);
     glColor4f(0,0,0,0.8);
     sprintf(buffer,"%i",((int)(trunc(b+1)))*111);
     ZWdrawtextmiddle(text,-1.91+b*0.7,-0.7 ,-4,buffer,0.3);
-    ZWdrawtextmiddle(text,-1.91+b*0.7,-0.85,-4,(char*)"Münzen",0.2);
+    ZWdrawtextmiddle(text,-1.91+b*0.7,-0.85,-4,coins,0.2);
     glColor4f(0,0,0,0.8);
     switch (((int)(trunc(b))))
     {
@@ -66,15 +89,25 @@ void draw_newgame_rounds(pmenudata data)
       case  2: ZWdrawtextmiddle(text,-1.7 +b*0.7,-1.45,-4,(char*)"7",0.3); break;
       default: ZWdrawtextmiddle(text,-1.7 +b*0.7,-1.45,-4,(char*)"10",0.3); break;    
     }
-    ZWdrawtextmiddle(text,-1.7 +b*0.7,-1.6 ,-4,(char*)"Rubine",0.2);
+    ZWdrawtextmiddle(text,-1.7 +b*0.7,-1.6 ,-4,rubins,0.2);
   }
+
 
   glColor4f(0.3,0.3,0.3,0.5);
   ZWdrawsprite(maintex,   -2.65,-1.2,-4,0.35,0.35,2,2);
   glColor4f(0.8,0,0,0.8);
-  ZWdrawtextmiddle(text,  -2.65,-1.35,-4,(char*)"X",0.8);
-  ZWdrawtextmiddle(text,  -2.65,-1.65,-4,(char*)"Komplett",0.21);
-  ZWdrawtextmiddle(text,  -2.65,-1.77,-4,(char*)"abbrechen",0.17);
+  if (strcmp(language,(char*)"german")==0)
+  {
+    ZWdrawtextmiddle(text,  -2.65,-1.35,-4,(char*)"X",0.8);
+    ZWdrawtextmiddle(text,  -2.65,-1.65,-4,(char*)"Komplett",0.21);
+    ZWdrawtextmiddle(text,  -2.65,-1.77,-4,(char*)"abbrechen",0.17);
+  }
+  else
+  {
+    ZWdrawtextmiddle(text,  -2.65,-1.35,-4,(char*)"X",0.8);
+    ZWdrawtextmiddle(text,  -2.65,-1.65,-4,(char*)"Cancel",0.21);
+    ZWdrawtextmiddle(text,  -2.65,-1.77,-4,(char*)"complete",0.17);
+  }
 
   //Cursor anzeigen
   float temp=ZWgettexturepercent();

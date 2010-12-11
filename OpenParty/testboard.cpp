@@ -110,7 +110,7 @@ int main( int argc, char* argv[] )
   //Level laden
     if (argc<2)
     {
-      printf("Nicht genug Argumente\n");
+      printf("Not enough arguments\n");
       printf("testboard file.opxml [player]\n");
       ZWquitfont();
       ZWquitsdl();      
@@ -118,7 +118,7 @@ int main( int argc, char* argv[] )
     }
     if (loadlevel(argv[1])==1)
     {
-      printf("Datei %s nicht gefunden\n",argv[1]);
+      printf("File %s not found\n",argv[1]);
       ZWquitfont();
       ZWquitsdl();   
       return 1;

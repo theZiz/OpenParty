@@ -26,12 +26,18 @@ void draw_newgame_team_4(pmenudata data)
 
   glTranslatef((0.08-pow(1.0-data->fade*(1.0+sqrt(0.08)),2.0))*6.0,0,0);
 
+  char helpbuffer[256];
+  if (strcmp(language,(char*)"german")==0)
+    sprintf(helpbuffer,(char*)"Teilt euch in die Teams ein! Die CPU wird zufällig aufgefüllt.");
+  else
+    sprintf(helpbuffer,(char*)"Choose a team. The cpu will choose by random at the end.");
+
   glColor4f(0.7,0.7,0.7,0.7);        
-  ZWdrawtextmiddle(text,-0.71,-2.14,-4,(char*)"Teilt euch in die Teams ein! Die CPU wird zufällig aufgefüllt.",0.18);
+  ZWdrawtextmiddle(text,-0.71,-2.14,-4,helpbuffer,0.18);
   glColor4f(COLOR_BASE+sin((data->rotation-40.0)*M_PI/180.0)*COLOR_MULT,
             COLOR_BASE+sin((data->rotation-40.0)*M_PI/90.0)*COLOR_MULT,
             COLOR_BASE+sin((data->rotation-40.0)*M_PI/45.0)*COLOR_MULT,1);
-  ZWdrawtextmiddle(text,-0.7 ,-2.15 ,-4,(char*)"Teilt euch in die Teams ein! Die CPU wird zufällig aufgefüllt.",0.18);
+  ZWdrawtextmiddle(text,-0.7 ,-2.15 ,-4,helpbuffer,0.18);
 
 
   glColor4f(1,0,0,0.5);
@@ -43,27 +49,45 @@ void draw_newgame_team_4(pmenudata data)
   glColor4f(1,1,0,0.5);
   ZWdrawsprite(maintex,   0,-1.2,-4,0.7,0.7,2,2);
 
-  glColor4f(1,1,1,0.8);
-  ZWdrawtextmiddle(text,-2.1, 0.5,-4,(char*)"Team",0.4);
-  ZWdrawtextmiddle(text,-2.1, 0.1,-4,(char*)"Rot",0.6);
-
-  ZWdrawtextmiddle(text,-0.6, 0.5,-4,(char*)"Team",0.4);
-  ZWdrawtextmiddle(text,-0.6, 0.1,-4,(char*)"Grün",0.6);
-
-  ZWdrawtextmiddle(text,-1.5,-1.0,-4,(char*)"Team",0.4);
-  ZWdrawtextmiddle(text,-1.5,-1.4,-4,(char*)"Blau",0.6);
+  if (strcmp(language,(char*)"german")==0)
+  {
+    glColor4f(1,1,1,0.8);
+    ZWdrawtextmiddle(text,-2.1, 0.5,-4,(char*)"Team",0.4);
+    ZWdrawtextmiddle(text,-2.1, 0.1,-4,(char*)"Rot",0.6);
+    ZWdrawtextmiddle(text,-0.6, 0.5,-4,(char*)"Team",0.4);
+    ZWdrawtextmiddle(text,-0.6, 0.1,-4,(char*)"Grün",0.6);
+    ZWdrawtextmiddle(text,-1.5,-1.0,-4,(char*)"Team",0.4);
+    ZWdrawtextmiddle(text,-1.5,-1.4,-4,(char*)"Blau",0.6);
+    glColor4f(0,0,0,0.8);
+    ZWdrawtextmiddle(text,   0,-1.0,-4,(char*)"Team",0.4);
+    ZWdrawtextmiddle(text,   0,-1.4,-4,(char*)"Gelb",0.6);
+    glColor4f(0.3,0.3,0.3,0.5);
+    ZWdrawsprite(maintex,   -2.65,-1.2,-4,0.35,0.35,2,2);
+    glColor4f(0.8,0,0,0.8);
+    ZWdrawtextmiddle(text,  -2.65,-1.35,-4,(char*)"X",0.8);
+    ZWdrawtextmiddle(text,  -2.65,-1.65,-4,(char*)"Komplett",0.21);
+    ZWdrawtextmiddle(text,  -2.65,-1.77,-4,(char*)"abbrechen",0.17);
+  }
+  else
+  {
+    glColor4f(1,1,1,0.8);
+    ZWdrawtextmiddle(text,-2.1, 0.5,-4,(char*)"Team",0.4);
+    ZWdrawtextmiddle(text,-2.1, 0.1,-4,(char*)"Red",0.6);
+    ZWdrawtextmiddle(text,-0.6, 0.5,-4,(char*)"Team",0.4);
+    ZWdrawtextmiddle(text,-0.6, 0.1,-4,(char*)"Green",0.6);
+    ZWdrawtextmiddle(text,-1.5,-1.0,-4,(char*)"Team",0.4);
+    ZWdrawtextmiddle(text,-1.5,-1.4,-4,(char*)"Blue",0.6);
+    glColor4f(0,0,0,0.8);
+    ZWdrawtextmiddle(text,   0,-1.0,-4,(char*)"Team",0.4);
+    ZWdrawtextmiddle(text,   0,-1.4,-4,(char*)"Yellow",0.6);
+    glColor4f(0.3,0.3,0.3,0.5);
+    ZWdrawsprite(maintex,   -2.65,-1.2,-4,0.35,0.35,2,2);
+    glColor4f(0.8,0,0,0.8);
+    ZWdrawtextmiddle(text,  -2.65,-1.35,-4,(char*)"X",0.8);
+    ZWdrawtextmiddle(text,  -2.65,-1.65,-4,(char*)"Cancel",0.21);
+    ZWdrawtextmiddle(text,  -2.65,-1.77,-4,(char*)"complete",0.17);
+  }
   
-  glColor4f(0,0,0,0.8);
-  ZWdrawtextmiddle(text,   0,-1.0,-4,(char*)"Team",0.4);
-  ZWdrawtextmiddle(text,   0,-1.4,-4,(char*)"Gelb",0.6);
-
-
-  glColor4f(0.3,0.3,0.3,0.5);
-  ZWdrawsprite(maintex,   -2.65,-1.2,-4,0.35,0.35,2,2);
-  glColor4f(0.8,0,0,0.8);
-  ZWdrawtextmiddle(text,  -2.65,-1.35,-4,(char*)"X",0.8);
-  ZWdrawtextmiddle(text,  -2.65,-1.65,-4,(char*)"Komplett",0.21);
-  ZWdrawtextmiddle(text,  -2.65,-1.77,-4,(char*)"abbrechen",0.17);
 
   //Cursor anzeigen
   float temp=ZWgettexturepercent();

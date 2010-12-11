@@ -25,12 +25,19 @@ void draw_newgame_turnsort(pmenudata data)
 
   glTranslatef((0.08-pow(1.0-data->fade*(1.0+sqrt(0.08)),2.0))*6.0,0,0);
 
-  glColor4f(0.7,0.7,0.7,0.7);        
-  ZWdrawtextmiddle(text,-0.71,-2.19,-4,(char*)"Jeder zieht ein Los für die Festsetzung der Spielreihenfolge!",0.17);
+  glColor4f(0.7,0.7,0.7,0.7);
+  
+  char helpbuffer[256];
+  if (strcmp(language,(char*)"german")==0)
+    sprintf(helpbuffer,(char*)"Jeder zieht ein Los für die Festsetzung der Spielreihenfolge!");
+  else
+    sprintf(helpbuffer,(char*)"Everybody draws a lot for the dice order in the game!");
+          
+  ZWdrawtextmiddle(text,-0.71,-2.19,-4,helpbuffer,0.17);
   glColor4f(COLOR_BASE+sin((data->rotation-40.0)*M_PI/180.0)*COLOR_MULT,
             COLOR_BASE+sin((data->rotation-40.0)*M_PI/90.0)*COLOR_MULT,
             COLOR_BASE+sin((data->rotation-40.0)*M_PI/45.0)*COLOR_MULT,1);
-  ZWdrawtextmiddle(text,-0.7 ,-2.2 ,-4,(char*)"Jeder zieht ein Los für die Festsetzung der Spielreihenfolge!",0.17);
+  ZWdrawtextmiddle(text,-0.7 ,-2.2 ,-4,helpbuffer,0.17);
 
   float max=playernum+cpuplayer;
   for (float b=0;b<max;b++)

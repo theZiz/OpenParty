@@ -245,7 +245,10 @@ void calc_turn(pmaindata data)
           {
             data->player[data->activplayer].money+=2;
             Mix_PlayChannel(-1,snd_positive,0);
-            new_message((char*)"+2 Münzen");
+            if (strcmp(language,(char*)"german")==0)
+              new_message((char*)"+2 Münzen");
+            else
+              new_message((char*)"+2 Coins");
           }
           else
           //rotes Feld
@@ -255,7 +258,10 @@ void calc_turn(pmaindata data)
             if (data->player[data->activplayer].money<0)
               data->player[data->activplayer].money=0;
             Mix_PlayChannel(-1,snd_negative,0);
-            new_message((char*)"-2 Münzen");
+            if (strcmp(language,(char*)"german")==0)
+              new_message((char*)"-2 Münzen");
+            else
+              new_message((char*)"-2 Coins");
           }
 					{
             data->mainloop_pos=7; //Minispielauswahl

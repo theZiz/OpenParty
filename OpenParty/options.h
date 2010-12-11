@@ -37,35 +37,63 @@ void draw_options(pmenudata data)
   glTranslatef(-0.25,0,0);
   glColor4f(0.7,0.7,0.7,0.7);
   char texturtext[32],fonttext[32],lighttext[32],restext[32],strechtext[32],fullscreentext[32],volumetext[32];
-  switch (texquali)
+  if (strcmp(language,(char*)"german")==0)
   {
-    case 1: sprintf(texturtext,"Textur: hoch"); break;
-    case 2: sprintf(texturtext,"Textur: mittel"); break;
-    default: sprintf(texturtext,"Textur: niedrig");
+    switch (texquali)
+    {
+      case 1: sprintf(texturtext,"Textur: hoch"); break;
+      case 2: sprintf(texturtext,"Textur: mittel"); break;
+      default: sprintf(texturtext,"Textur: niedrig");
+    }
+    switch (fontquali)
+    {
+      case 1: sprintf(fonttext,"Schrift: hoch"); break;
+      case 2: sprintf(fonttext,"Schrift: mittel"); break;
+      default: sprintf(fonttext,"Schrift: niedrig");  
+    }
+    sprintf(lighttext,"Sprache: %s",language);
+    sprintf(restext,"Auflösung: %ix%i",resolutionx,resolutiony);
+    switch (stretched)
+    {
+      case 0: sprintf(strechtext,"Stauchen: Nein"); break;
+      default: sprintf(strechtext,"Stauchen: Ja");
+    }
+    switch (fullscreen)
+    {
+      case 0: sprintf(fullscreentext,"Vollbild: Nein"); break;
+      default: sprintf(fullscreentext,"Vollbild: Ja");
+    }
+    sprintf(volumetext,"Lautstärke: %i%%",(int)(round(global_volume*100.0)));
   }
-  switch (fontquali)
+  else
   {
-    case 1: sprintf(fonttext,"Schrift: hoch"); break;
-    case 2: sprintf(fonttext,"Schrift: mittel"); break;
-    default: sprintf(fonttext,"Schrift: niedrig");  
+    switch (texquali)
+    {
+      case 1: sprintf(texturtext,"Texture: high"); break;
+      case 2: sprintf(texturtext,"Texture: midle"); break;
+      default: sprintf(texturtext,"Texture: low");
+    }
+    switch (fontquali)
+    {
+      case 1: sprintf(fonttext,"Font: high"); break;
+      case 2: sprintf(fonttext,"Font: midle"); break;
+      default: sprintf(fonttext,"Font: low");  
+    }
+    sprintf(lighttext,"Language: %s",language);
+    sprintf(restext,"Resolution: %ix%i",resolutionx,resolutiony);
+    switch (stretched)
+    {
+      case 0: sprintf(strechtext,"Upsetting: No"); break;
+      default: sprintf(strechtext,"Upsetting: Yes");
+    }
+    switch (fullscreen)
+    {
+      case 0: sprintf(fullscreentext,"Fullscreen: No"); break;
+      default: sprintf(fullscreentext,"Fullscreen: Yes");
+    }
+    sprintf(volumetext,"Volume: %i%%",(int)(round(global_volume*100.0)));
   }
   
-  sprintf(lighttext,"Sprache: %s",language);
-
-  sprintf(restext,"Auflösung: %ix%i",resolutionx,resolutiony);
-  switch (stretched)
-  {
-    case 0: sprintf(strechtext,"Stauchen: Nein"); break;
-    default: sprintf(strechtext,"Stauchen: Ja");
-  }
-  switch (fullscreen)
-  {
-    case 0: sprintf(fullscreentext,"Fullscreen: Nein"); break;
-    default: sprintf(fullscreentext,"Fullscreen: Ja");
-  }
- 
-  sprintf(volumetext,"Volume: %i%%",(int)(round(global_volume*100.0)));
-
   float dist_x=1.2/7.0;
   float dist_y=2.4/7.0;
   float dist_a=40.0/7.0;
@@ -77,7 +105,10 @@ void draw_options(pmenudata data)
   ZWdrawtextmiddle(text,-1.13+4.0*dist_x,0.53-4.0*dist_y,-4,strechtext,0.35*zoom[4]);
   ZWdrawtextmiddle(text,-1.13+5.0*dist_x,0.53-5.0*dist_y,-4,fullscreentext,0.35*zoom[5]);
   ZWdrawtextmiddle(text,-1.13+6.0*dist_x,0.53-6.0*dist_y,-4,volumetext,0.35*zoom[6]);
-  ZWdrawtextmiddle(text,-1.13+7.0*dist_x,0.53-7.0*dist_y,-4,(char*)"Zurück",0.35*zoom[7]);
+  if (strcmp(language,(char*)"german")==0)
+    ZWdrawtextmiddle(text,-1.13+7.0*dist_x,0.53-7.0*dist_y,-4,(char*)"Zurück",0.35*zoom[7]);
+  else
+    ZWdrawtextmiddle(text,-1.13+7.0*dist_x,0.53-7.0*dist_y,-4,(char*)"Back",0.35*zoom[7]);
   glColor4f(COLOR_BASE+sin((data->rotation-0.0*dist_a)*M_PI/180.0)*COLOR_MULT,
             COLOR_BASE+sin((data->rotation-0.0*dist_a)*M_PI/90.0)*COLOR_MULT,
             COLOR_BASE+sin((data->rotation-0.0*dist_a)*M_PI/45.0)*COLOR_MULT,1);
@@ -109,13 +140,20 @@ void draw_options(pmenudata data)
   glColor4f(COLOR_BASE+sin((data->rotation-7.0*dist_a)*M_PI/180.0)*COLOR_MULT,
             COLOR_BASE+sin((data->rotation-7.0*dist_a)*M_PI/90.0)*COLOR_MULT,
             COLOR_BASE+sin((data->rotation-7.0*dist_a)*M_PI/45.0)*COLOR_MULT,1);
-  ZWdrawtextmiddle(text,-1.11+7.0*dist_x,0.5-7.0*dist_y,-4,(char*)"Zurück",0.35*zoom[7]);
+  if (strcmp(language,(char*)"german")==0)
+    ZWdrawtextmiddle(text,-1.11+7.0*dist_x,0.5-7.0*dist_y,-4,(char*)"Zurück",0.35*zoom[7]);
+  else
+    ZWdrawtextmiddle(text,-1.11+7.0*dist_x,0.5-7.0*dist_y,-4,(char*)"Back",0.35*zoom[7]);
+  
 
   //Neustart:
   if (data->need_reboot)
   {
     char buffer[30];
-    sprintf(buffer,"Neustart erforderlich");
+    if (strcmp(language,(char*)"german")==0)
+      sprintf(buffer,"Neustart erforderlich");
+    else
+      sprintf(buffer,"Need to restart");
     glColor4f(0,0,0,0.7);
     ZWdrawtext(text,-2.76,-2.24,-4,buffer,0.3);
     glColor4f(0.9+sin((data->rotation-40.0)*M_PI/180.0)/10.0,
