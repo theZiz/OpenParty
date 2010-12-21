@@ -25,12 +25,24 @@ void draw_newgame_cpu(pmenudata data)
 
   glTranslatef((0.08-pow(1.0-data->fade*(1.0+sqrt(0.08)),2.0))*6.0,0,0);
 
-  glColor4f(0.7,0.7,0.7,0.7);        
-  ZWdrawtextmiddle(text,-0.71,-2.19,-4,(char*)"Wie viele CPU Spieler sollen mitspielen? Die Mehrheit entscheidet!",0.17);
-  glColor4f(COLOR_BASE+sin((data->rotation-40.0)*M_PI/180.0)*COLOR_MULT,
-            COLOR_BASE+sin((data->rotation-40.0)*M_PI/90.0)*COLOR_MULT,
-            COLOR_BASE+sin((data->rotation-40.0)*M_PI/45.0)*COLOR_MULT,1);
-  ZWdrawtextmiddle(text,-0.7 ,-2.2 ,-4,(char*)"Wie viele CPU Spieler sollen mitspielen? Die Mehrheit entscheidet!",0.17);
+  glColor4f(0.7,0.7,0.7,0.7);
+  if (strcmp(language,(char*)"german")==0)
+  {
+    ZWdrawtextmiddle(text,-0.71,-2.19,-4,(char*)"Wie viele CPU Spieler sollen mitspielen? Die Mehrheit entscheidet!",0.17);
+    glColor4f(COLOR_BASE+sin((data->rotation-40.0)*M_PI/180.0)*COLOR_MULT,
+              COLOR_BASE+sin((data->rotation-40.0)*M_PI/90.0)*COLOR_MULT,
+              COLOR_BASE+sin((data->rotation-40.0)*M_PI/45.0)*COLOR_MULT,1);
+    ZWdrawtextmiddle(text,-0.7 ,-2.2 ,-4,(char*)"Wie viele CPU Spieler sollen mitspielen? Die Mehrheit entscheidet!",0.17);
+  }
+  else
+  {
+    ZWdrawtextmiddle(text,-0.71,-2.19,-4,(char*)"How many AI players play? The Majority decides!",0.17);
+    glColor4f(COLOR_BASE+sin((data->rotation-40.0)*M_PI/180.0)*COLOR_MULT,
+              COLOR_BASE+sin((data->rotation-40.0)*M_PI/90.0)*COLOR_MULT,
+              COLOR_BASE+sin((data->rotation-40.0)*M_PI/45.0)*COLOR_MULT,1);
+    ZWdrawtextmiddle(text,-0.7 ,-2.2 ,-4,(char*)"How many AI players play? The Majority decides!",0.17);
+  }
+  
 
   glColor4f(0.5,1,0.5,0.5);
   ZWdrawsprite(maintex,-2.4 , 0.6 ,-4,0.5,0.5,2,2);
@@ -63,9 +75,19 @@ void draw_newgame_cpu(pmenudata data)
   ZWdrawtextmiddle(text,-2.4 , 0.35,-4,(char*)"Spieler?",0.2);*/
 
   glColor4f(0,0,0,0.8);
-  ZWdrawtextmiddle(text,-2.4 , 0.75,-4,(char*)"Neues",0.2);
-  ZWdrawtextmiddle(text,-2.4 , 0.55,-4,(char*)"CPU",0.2);
-  ZWdrawtextmiddle(text,-2.4 , 0.35,-4,(char*)"Aussehen",0.2);
+  if (strcmp(language,(char*)"german")==0)
+  {
+    ZWdrawtextmiddle(text,-2.4 , 0.75,-4,(char*)"Neues",0.2);
+    ZWdrawtextmiddle(text,-2.4 , 0.55,-4,(char*)"CPU",0.2);
+    ZWdrawtextmiddle(text,-2.4 , 0.35,-4,(char*)"Aussehen",0.2);
+  }
+  else
+  {
+    ZWdrawtextmiddle(text,-2.4 , 0.75,-4,(char*)"New",0.2);
+    ZWdrawtextmiddle(text,-2.4 , 0.55,-4,(char*)"CPU",0.2);
+    ZWdrawtextmiddle(text,-2.4 , 0.35,-4,(char*)"appearance",0.2);
+  }
+  
   glColor4f(0,0,0,0.8-((float)(data->blocked_field[0]))*0.5);
   ZWdrawtextmiddle(text,-1.35, 0.55,-4,(char*)"0 CPU",0.4-((float)(data->blocked_field[0]))*0.16);
   glColor4f(1,1,1,0.8-((float)(data->blocked_field[1]))*0.5);
@@ -86,9 +108,19 @@ void draw_newgame_cpu(pmenudata data)
   glColor4f(0.3,0.3,0.3,0.5);
   ZWdrawsprite(maintex,   -2.65,-1.2,-4,0.35,0.35,2,2);
   glColor4f(0.8,0,0,0.8);
-  ZWdrawtextmiddle(text,  -2.65,-1.35,-4,(char*)"X",0.8);
-  ZWdrawtextmiddle(text,  -2.65,-1.65,-4,(char*)"Komplett",0.21);
-  ZWdrawtextmiddle(text,  -2.65,-1.77,-4,(char*)"abbrechen",0.17);
+  if (strcmp(language,(char*)"german")==0)
+  {
+    ZWdrawtextmiddle(text,  -2.65,-1.35,-4,(char*)"X",0.8);
+    ZWdrawtextmiddle(text,  -2.65,-1.65,-4,(char*)"Komplett",0.21);
+    ZWdrawtextmiddle(text,  -2.65,-1.77,-4,(char*)"abbrechen",0.17);
+  }
+  else
+  {
+    ZWdrawtextmiddle(text,  -2.65,-1.35,-4,(char*)"X",0.8);
+    ZWdrawtextmiddle(text,  -2.65,-1.65,-4,(char*)"Cancel",0.21);
+    ZWdrawtextmiddle(text,  -2.65,-1.77,-4,(char*)"complete",0.17);
+  }
+  
 
   //Cursor anzeigen
   float temp=ZWgettexturepercent();

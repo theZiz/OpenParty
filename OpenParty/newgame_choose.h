@@ -30,17 +30,33 @@ void draw_newgame_choose(pmenudata data)
     if (data->play_with[(int)(trunc(a))]==-1)
     {
       glColor4f(0.7,0.7,0.7,0.7);
-      ZWdrawtextmiddle(text,-1.12+a*0.1,0.72-a*0.4,-4,(char*)"Slot nicht besetzt",0.3);
-      glColor4f(COLOR_BASE+sin((data->rotation-40.0*a/7.0)*M_PI/180.0)*COLOR_MULT,
-                COLOR_BASE+sin((data->rotation-40.0*a/7.0)*M_PI/90.0)*COLOR_MULT,
-                COLOR_BASE+sin((data->rotation-40.0*a/7.0)*M_PI/45.0)*COLOR_MULT,1);
-      ZWdrawtextmiddle(text,-1.1+a*0.1,0.7-a*0.4,-4,(char*)"Slot nicht besetzt",0.3);
+      if (strcmp(language,(char*)"german")==0)
+      {
+        ZWdrawtextmiddle(text,-1.12+a*0.1,0.72-a*0.4,-4,(char*)"Slot nicht besetzt",0.3);
+        glColor4f(COLOR_BASE+sin((data->rotation-40.0*a/7.0)*M_PI/180.0)*COLOR_MULT,
+                  COLOR_BASE+sin((data->rotation-40.0*a/7.0)*M_PI/90.0)*COLOR_MULT,
+                  COLOR_BASE+sin((data->rotation-40.0*a/7.0)*M_PI/45.0)*COLOR_MULT,1);
+        ZWdrawtextmiddle(text,-1.1+a*0.1,0.7-a*0.4,-4,(char*)"Slot nicht besetzt",0.3);
+      }
+      else
+      {
+        ZWdrawtextmiddle(text,-1.12+a*0.1,0.72-a*0.4,-4,(char*)"Slot not used",0.3);
+        glColor4f(COLOR_BASE+sin((data->rotation-40.0*a/7.0)*M_PI/180.0)*COLOR_MULT,
+                  COLOR_BASE+sin((data->rotation-40.0*a/7.0)*M_PI/90.0)*COLOR_MULT,
+                  COLOR_BASE+sin((data->rotation-40.0*a/7.0)*M_PI/45.0)*COLOR_MULT,1);
+        ZWdrawtextmiddle(text,-1.1+a*0.1,0.7-a*0.4,-4,(char*)"Slot not used",0.3);
+      }
+      
     }
     else
     {
       if (data->choose_step[(int)(trunc(a))]==0)
       {
-        char buffer1[64]="Wähle eine Farbe mit [<] und [>]";
+        char buffer1[64];
+        if (strcmp(language,(char*)"german")==0)
+          sprintf(buffer1,"Wähle eine Farbe mit [<] und [>]");
+        else
+          sprintf(buffer1,"Choose a color with [<] und [>]");
         char buffer2[32]="";
         glColor4f(0.7,0.7,0.7,0.7);        
         ZWdrawtextmiddle(text,-1.12+a*0.1,0.72-a*0.4,-4,buffer1,0.3);
@@ -84,8 +100,18 @@ void draw_newgame_choose(pmenudata data)
       }
       if (data->choose_step[(int)(trunc(a))]==1)
       {
-        char buffer1[64]="Wähle ein Gesicht [<][>]";
-        char buffer2[32]="[C]: Zurück [A]: Weiter";
+        char buffer1[64];
+        char buffer2[32];
+        if (strcmp(language,(char*)"german")==0)
+        {
+          sprintf(buffer1,"Wähle ein Gesicht [<][>]");
+          sprintf(buffer2,"[C]: Zurück [A]: Weiter");
+        }
+        else
+        {
+          sprintf(buffer1,"Choose a face [<][>]");
+          sprintf(buffer2,"[C]: Back [A]: Continue");
+        }        
         glColor4f(0.7,0.7,0.7,0.7);        
         ZWdrawtext(text,-2.87+a*0.1,0.72-a*0.4,-4,buffer1,0.3);
         glColor4f(COLOR_BASE+sin((data->rotation-40.0*a/7.0)*M_PI/180.0)*COLOR_MULT,
@@ -117,8 +143,18 @@ void draw_newgame_choose(pmenudata data)
       }      
       if (data->choose_step[(int)(trunc(a))]==2)
       {
-        char buffer1[32]="     Ready!";
-        char buffer2[32]="    [C]: Zurück";
+        char buffer1[32];
+        char buffer2[32];
+        if (strcmp(language,(char*)"german")==0)
+        {
+          sprintf(buffer1,"     Fertig!");
+          sprintf(buffer2,"    [C]: Zurück");
+        }
+        else
+        {
+          sprintf(buffer1,"     Ready!");
+          sprintf(buffer2,"    [C]: Back");
+        }
         glColor4f(0.7,0.7,0.7,0.7);        
         ZWdrawtext(text,-2.87+a*0.1,0.72-a*0.4,-4,buffer1,0.3);
         glColor4f(COLOR_BASE+sin((data->rotation-40.0*a/7.0)*M_PI/180.0)*COLOR_MULT,

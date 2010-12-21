@@ -179,11 +179,11 @@ int calc_menu(pmenudata data)
       switch (data->dest)
       {
         case 0:  ZWreset_virtuell_joytick();
-                 //Login
+                 /*//Login
                  memset(&(data->play_with[0]),255,8);
                  data->counter=OPENPARTY_WAITTIME;
-                 ZWschleifeex((void(*)(void*))draw_newgame_login,(int(*)(void*))calc_newgame_login_thread,
-                 (int(*)(void*))calc_newgame_login,(void*)(data),sizeof(tmenudata));
+                 ZWschleifeex((void(*)(void*))draw_newgame_login_new,(int(*)(void*))calc_newgame_login_thread_new,
+                 (int(*)(void*))calc_newgame_login_new,(void*)(data),sizeof(tmenudata));
                  playernum=0;
                  for (a=0;a<8;a++)
                    if (data->play_with[a]!=-1)
@@ -193,8 +193,24 @@ int calc_menu(pmenudata data)
 								 for (a=playernum;a<8;a++)
 								   maindata.player[a].joystick_nr=-1;
 								 //ohne CPU kalibrieren:
-								 calib_all_controllers();
-                 memset(&(data->calib_step[0]),0,8);
+								 calib_all_controllers();*/
+                 //Login
+                 ZWreset_virtuell_joytick();
+                 memset(&(data->play_with[0]),255,8);
+                 memset(&(data->choose_step[0]),0,8);
+                 data->counter=OPENPARTY_WAITTIME;
+                 playernum=0;
+                 fade_login_out=0;
+                 ZWschleifeex((void(*)(void*))draw_newgame_login_new,(int(*)(void*))calc_newgame_login_thread_new,
+                 (int(*)(void*))calc_newgame_login_new,(void*)(data),sizeof(tmenudata)); 
+                 fade_login_out=1;
+                 data->fade_dir=1;
+								 for (int a=playernum;a<8;a++)
+								   maindata.player[a].joystick_nr=-1;
+                 calib_all_controllers();
+                 
+                 
+                 /*memset(&(data->calib_step[0]),0,8);
 								 data->counter=0;
 								 for (a=0;a<playernum;a++)
 								 {
@@ -206,7 +222,7 @@ int calc_menu(pmenudata data)
                    //data->counter=OPENPARTY_WAITTIME2;
                    ZWschleifeex((void(*)(void*))draw_newgame_calib,(int(*)(void*))calc_newgame_calib_thread,
 								   (int(*)(void*))calc_newgame_calib,(void*)(data),sizeof(tmenudata));
-								 }
+								 }*/
                  //Farb- und Gesichtswahl
                  memset(&(data->color_choose[0]),0,8);
                  memset(&(data->blocked_color[0]),0,27);

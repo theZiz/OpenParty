@@ -46,7 +46,11 @@ void draw_after_minigame(pafter_data data)
   glDepthFunc(GL_ALWAYS);
 
   glColor4f(1,0.8,0,0.7);
-  ZWdrawtextmiddle(text,0,1.7,-4,(char*)"Ergebnis",1.0);  
+  
+  if (strcmp(language,(char*)"german")==0)
+    ZWdrawtextmiddle(text,0,1.7,-4,(char*)"Ergebnis",1.0);  
+  else
+    ZWdrawtextmiddle(text,0,1.7,-4,(char*)"Result",1.0);    
 
   float temp=ZWgettexturepercent();
   ZWsettexturepercent(0.005);
@@ -61,17 +65,31 @@ void draw_after_minigame(pafter_data data)
       ZWdrawsprite(maintex,-2.2+(float)a*1.5,0.8-(float)b*1.8,-4,0.5,0.5,2,2);
       glColor4f(1,1,1,1);
    ZWdrawsprite(facetex,-2.2+(float)a*1.5,0.8-(float)b*1.8,-4,0.5/sqrt(2),0.5/sqrt(2),4,data->maindata->player[a+4*b].facenr);
-      switch (data->gameresult->winner[a+4*b])
-      {
-        case 0: glColor4f(0.8,0,0,0.5);
-                ZWdrawtextmiddle(text,-2.2+(float)a*1.5,-0.0-(float)b*1.8,-4,(char*)"Verloren",0.35); 
-                ZWdrawtextmiddle(text,-2.2+(float)a*1.5,-0.3-(float)b*1.8,-4,(char*)"+0",0.35); 
-        break;
-        default: glColor4f(0,0.6,0,0.5);
-                ZWdrawtextmiddle(text,-2.2+(float)a*1.5,-0.0-(float)b*1.8,-4,(char*)"Gewonnen",0.35); 
-                ZWdrawtextmiddle(text,-2.2+(float)a*1.5,-0.3-(float)b*1.8,-4,(char*)"+7",0.35); 
-        break;
-      }
+      if (strcmp(language,(char*)"german")==0)
+        switch (data->gameresult->winner[a+4*b])
+        {
+          case 0: glColor4f(0.8,0,0,0.5);
+                  ZWdrawtextmiddle(text,-2.2+(float)a*1.5,-0.0-(float)b*1.8,-4,(char*)"Verloren",0.35); 
+                  ZWdrawtextmiddle(text,-2.2+(float)a*1.5,-0.3-(float)b*1.8,-4,(char*)"+0",0.35); 
+          break;
+          default: glColor4f(0,0.6,0,0.5);
+                  ZWdrawtextmiddle(text,-2.2+(float)a*1.5,-0.0-(float)b*1.8,-4,(char*)"Gewonnen",0.35); 
+                  ZWdrawtextmiddle(text,-2.2+(float)a*1.5,-0.3-(float)b*1.8,-4,(char*)"+7",0.35); 
+          break;
+        }
+      else
+        switch (data->gameresult->winner[a+4*b])
+        {
+          case 0: glColor4f(0.8,0,0,0.5);
+                  ZWdrawtextmiddle(text,-2.2+(float)a*1.5,-0.0-(float)b*1.8,-4,(char*)"Lost",0.35); 
+                  ZWdrawtextmiddle(text,-2.2+(float)a*1.5,-0.3-(float)b*1.8,-4,(char*)"+0",0.35); 
+          break;
+          default: glColor4f(0,0.6,0,0.5);
+                  ZWdrawtextmiddle(text,-2.2+(float)a*1.5,-0.0-(float)b*1.8,-4,(char*)"Won",0.35); 
+                  ZWdrawtextmiddle(text,-2.2+(float)a*1.5,-0.3-(float)b*1.8,-4,(char*)"+7",0.35); 
+          break;
+        }
+      
     }
   ZWsettexturepercent(temp);
 

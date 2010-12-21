@@ -103,7 +103,10 @@ void draw_ingame_kalib(pmaindata data)
 	}
 
 	glColor4f(0,0,0,0.8);
-	ZWdrawtextmiddle(text,0, 0.75,-2.0,(char*)"Neu kalibrieren",0.4);
+  if (strcmp(language,(char*)"german")==0)
+	  ZWdrawtextmiddle(text,0, 0.75,-2.0,(char*)"Neu kalibrieren",0.4);
+  else
+	  ZWdrawtextmiddle(text,0, 0.75,-2.0,(char*)"Calibrate new",0.4);
 	char buffer[64];
 	float one_texel=(float)texquali/1024.0;
 	switch (data->ingame_kalib_step)
@@ -186,19 +189,38 @@ void draw_ingame_kalib(pmaindata data)
 							glEnd();
 						}
 						glColor4f(0,0,0,0.8);
-						ZWdrawtext(text,-1.3, 0.5-6.0*abstand,-2.0,buffer,0.15);
-		        ZWdrawtextmiddle(text,0, 0.5-7.0*abstand,-2.0,(char*)"[A][C] zum Beenden und [B][D] für einen Reset drücken!",0.12);						
-		case 5: ZWdrawtext(text,-1.3, 0.5-5.0*abstand,-2.0,(char*)"Drück den Button für [D]",0.15);
-		case 4: ZWdrawtext(text,-1.3, 0.5-4.0*abstand,-2.0,(char*)"Drück den Button für [C]",0.15);
-		case 3: ZWdrawtext(text,-1.3, 0.5-3.0*abstand,-2.0,(char*)"Drück den Button für [B]",0.15);
-		case 2: ZWdrawtext(text,-1.3, 0.5-2.0*abstand,-2.0,(char*)"Drück den Button für [A]",0.15);
-		case 1: ZWdrawtext(text,-1.3, 0.5-1.0*abstand,-2.0,(char*)"Betätige die Achse für [^] und [v]",0.15);
-		case 0: ZWdrawtext(text,-1.3, 0.5-0.0*abstand,-2.0,(char*)"Betätige die Achse für [<] und [>]",0.15);
-	}
-	ZWdrawtextmiddle(text,0,-0.9 ,-2.0,(char*)"Hinweis: Die Tasten so drücken, so dass",0.1);
-	ZWdrawtextmiddle(text,0,-0.97 ,-2.0,(char*)"die Belegung wie auf dem Beispielcontroller ist!",0.1);
-	
-	
+						ZWdrawtext(text,-1.3, 0.5-6.0*abstand,-2.0,buffer,0.15); break;
+  }
+  if (strcmp(language,(char*)"german")==0)
+  {
+    switch (data->ingame_kalib_step)
+    {
+      case 6: ZWdrawtextmiddle(text,0, 0.5-7.0*abstand,-2.0,(char*)"[A][C] zum Beenden und [B][D] für einen Reset drücken!",0.12);						
+      case 5: ZWdrawtext(text,-1.3, 0.5-5.0*abstand,-2.0,(char*)"Drück den Button für [D]",0.15);
+      case 4: ZWdrawtext(text,-1.3, 0.5-4.0*abstand,-2.0,(char*)"Drück den Button für [C]",0.15);
+      case 3: ZWdrawtext(text,-1.3, 0.5-3.0*abstand,-2.0,(char*)"Drück den Button für [B]",0.15);
+      case 2: ZWdrawtext(text,-1.3, 0.5-2.0*abstand,-2.0,(char*)"Drück den Button für [A]",0.15);
+      case 1: ZWdrawtext(text,-1.3, 0.5-1.0*abstand,-2.0,(char*)"Betätige die Achse für [^] und [v]",0.15);
+      case 0: ZWdrawtext(text,-1.3, 0.5-0.0*abstand,-2.0,(char*)"Betätige die Achse für [<] und [>]",0.15);
+    }
+    ZWdrawtextmiddle(text,0,-0.9 ,-2.0,(char*)"Hinweis: Die Tasten so drücken, so dass",0.1);
+    ZWdrawtextmiddle(text,0,-0.97 ,-2.0,(char*)"die Belegung wie auf dem Beispielcontroller ist!",0.1);
+  }	
+  else
+  {
+    switch (data->ingame_kalib_step)
+    {
+      case 6: ZWdrawtextmiddle(text,0, 0.5-7.0*abstand,-2.0,(char*)"Press [A][C] for finishing or [B][D] for reset!",0.12);						
+      case 5: ZWdrawtext(text,-1.3, 0.5-5.0*abstand,-2.0,(char*)"Press the Button for [D]",0.15);
+      case 4: ZWdrawtext(text,-1.3, 0.5-4.0*abstand,-2.0,(char*)"Press the Button for [C]",0.15);
+      case 3: ZWdrawtext(text,-1.3, 0.5-3.0*abstand,-2.0,(char*)"Press the Button for [B]",0.15);
+      case 2: ZWdrawtext(text,-1.3, 0.5-2.0*abstand,-2.0,(char*)"Press the Button for [A]",0.15);
+      case 1: ZWdrawtext(text,-1.3, 0.5-1.0*abstand,-2.0,(char*)"Use the Axis for [^] and [v]",0.15);
+      case 0: ZWdrawtext(text,-1.3, 0.5-0.0*abstand,-2.0,(char*)"Use the Axis for [<] and [>]",0.15);
+    }
+    ZWdrawtextmiddle(text,0,-0.9 ,-2.0,(char*)"Hint: Press the buttons like the",0.1);
+    ZWdrawtextmiddle(text,0,-0.97 ,-2.0,(char*)"positions on the example gamepad!",0.1);
+  }	
 }
 
 void calc_ingame_kalib(pmaindata data)

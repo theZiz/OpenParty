@@ -28,15 +28,25 @@ void draw_newgame_calib(pmenudata data)
 	for (a=0;a<5;a++)
 	{
 		char buffer[64]="Dummy";
-		switch ((int)a)
-		{
-			case 0: sprintf(buffer,"Achtung! Folgende Spieler haben bisher keine"); break;
-			case 1: sprintf(buffer,"Gamepadeinstellung und müssen ihr Gamepad im"); break;
-			case 2: sprintf(buffer,"Spiel noch konfigurieren. Bis dahin gilt eine"); break;
-			case 3: sprintf(buffer,"Standardkonfiguration, deren Belegung durch"); break;
-			case 4: sprintf(buffer,"Testen ermittelt werden muss."); break;
-						
-		}
+    if (strcmp(language,(char*)"german")==0)
+      switch ((int)a)
+      {
+        case 0: sprintf(buffer,"Achtung! Folgende Spieler haben bisher keine"); break;
+        case 1: sprintf(buffer,"Gamepadeinstellung und müssen ihr Gamepad im"); break;
+        case 2: sprintf(buffer,"Spiel noch konfigurieren. Bis dahin gilt eine"); break;
+        case 3: sprintf(buffer,"Standardkonfiguration, deren Belegung durch"); break;
+        case 4: sprintf(buffer,"Testen ermittelt werden muss."); break;
+      }
+    else
+      switch ((int)a)
+      {
+        case 0: sprintf(buffer,"Attention! The following players don't have"); break;
+        case 1: sprintf(buffer,"a gamepad setting yet and should configure"); break;
+        case 2: sprintf(buffer,"their gamepads ingame. Until then it uses"); break;
+        case 3: sprintf(buffer,"a standard configuration. So you have to"); break;
+        case 4: sprintf(buffer,"try, where each button is."); break;
+      }
+    
 		glColor4f(0.7,0.7,0.7,0.7);        
 		ZWdrawtextmiddle(text,-1.105+a*0.035,0.72-a*0.135,-4,buffer,0.2);
 		glColor4f(COLOR_BASE+sin((data->rotation-40.0*a/21.0)*M_PI/180.0)*COLOR_MULT,
@@ -70,11 +80,22 @@ void draw_newgame_calib(pmenudata data)
   }
 	
   glColor4f(0.7,0.7,0.7,0.7);        
-	ZWdrawtextmiddle(text,0.0,-2.19,-4,(char*)"Alle betreffenden Spieler müssen [A] finden und drücken.",0.18);
-  glColor4f(COLOR_BASE+sin((data->rotation-40.0)*M_PI/180.0)*COLOR_MULT,
-            COLOR_BASE+sin((data->rotation-40.0)*M_PI/90.0)*COLOR_MULT,
-            COLOR_BASE+sin((data->rotation-40.0)*M_PI/45.0)*COLOR_MULT,1);
-	ZWdrawtextmiddle(text,0.01 ,-2.2 ,-4,(char*)"Alle betreffenden Spieler müssen [A] finden und drücken.",0.18);
+  if (strcmp(language,(char*)"german")==0)
+  {
+    ZWdrawtextmiddle(text,0.0,-2.19,-4,(char*)"Alle betreffenden Spieler müssen [A] finden und drücken.",0.18);
+    glColor4f(COLOR_BASE+sin((data->rotation-40.0)*M_PI/180.0)*COLOR_MULT,
+              COLOR_BASE+sin((data->rotation-40.0)*M_PI/90.0)*COLOR_MULT,
+              COLOR_BASE+sin((data->rotation-40.0)*M_PI/45.0)*COLOR_MULT,1);
+    ZWdrawtextmiddle(text,0.01 ,-2.2 ,-4,(char*)"Alle betreffenden Spieler müssen [A] finden und drücken.",0.18);
+  }
+  else
+  {
+    ZWdrawtextmiddle(text,0.0,-2.19,-4,(char*)"All named players have to find and push [A].",0.18);
+    glColor4f(COLOR_BASE+sin((data->rotation-40.0)*M_PI/180.0)*COLOR_MULT,
+              COLOR_BASE+sin((data->rotation-40.0)*M_PI/90.0)*COLOR_MULT,
+              COLOR_BASE+sin((data->rotation-40.0)*M_PI/45.0)*COLOR_MULT,1);
+    ZWdrawtextmiddle(text,0.01 ,-2.2 ,-4,(char*)"All named players have to find and push [A].",0.18);
+  }
 	
 	
   glDepthFunc(GL_LEQUAL);   

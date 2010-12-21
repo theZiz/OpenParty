@@ -28,21 +28,43 @@ void draw_aftergame(pmenudata data)
   for (a=0;a<playernum;a++)
   {
 		char buffer1[64]="";
-		if (teamsize>1)
-			switch (maindata.player[(int)(trunc(a))].team)
-			{
-				case 0: sprintf(buffer1,"Münzen: %i Rubine: %i Team: Rot",maindata.player[(int)(trunc(a))].money,maindata.player[(int)(trunc(a))].rubins); break;
-				case 1: sprintf(buffer1,"Münzen: %i Rubine: %i Team: Grün",maindata.player[(int)(trunc(a))].money,maindata.player[(int)(trunc(a))].rubins); break;
-				case 2: sprintf(buffer1,"Münzen: %i Rubine: %i Team: Blau",maindata.player[(int)(trunc(a))].money,maindata.player[(int)(trunc(a))].rubins); break;
-				case 3: sprintf(buffer1,"Münzen: %i Rubine: %i Team: Gelb",maindata.player[(int)(trunc(a))].money,maindata.player[(int)(trunc(a))].rubins); break;
-			}
-		else
-		  sprintf(buffer1,"Münzen: %i Rubine: %i Team: gabs nich'",maindata.player[(int)(trunc(a))].money,maindata.player[(int)(trunc(a))].rubins);
-		char buffer2[32]="";
-		if (data->choose_step[(int)(trunc(a))]==0)
-			sprintf(buffer2,"Drücke [A]");
-		else
-			sprintf(buffer2,"Ok");				
+    if (strcmp(language,(char*)"german")==0)
+    {
+      if (teamsize>1)
+        switch (maindata.player[(int)(trunc(a))].team)
+        {
+          case 0: sprintf(buffer1,"Münzen: %i Rubine: %i Team: Rot",maindata.player[(int)(trunc(a))].money,maindata.player[(int)(trunc(a))].rubins); break;
+          case 1: sprintf(buffer1,"Münzen: %i Rubine: %i Team: Grün",maindata.player[(int)(trunc(a))].money,maindata.player[(int)(trunc(a))].rubins); break;
+          case 2: sprintf(buffer1,"Münzen: %i Rubine: %i Team: Blau",maindata.player[(int)(trunc(a))].money,maindata.player[(int)(trunc(a))].rubins); break;
+          case 3: sprintf(buffer1,"Münzen: %i Rubine: %i Team: Gelb",maindata.player[(int)(trunc(a))].money,maindata.player[(int)(trunc(a))].rubins); break;
+        }
+      else
+        sprintf(buffer1,"Münzen: %i Rubine: %i Team: gabs nich'",maindata.player[(int)(trunc(a))].money,maindata.player[(int)(trunc(a))].rubins);
+      char buffer2[32]="";
+      if (data->choose_step[(int)(trunc(a))]==0)
+        sprintf(buffer2,"Drücke [A]");
+      else
+        sprintf(buffer2,"Ok");				
+    }
+    else
+    {
+      if (teamsize>1)
+        switch (maindata.player[(int)(trunc(a))].team)
+        {
+          case 0: sprintf(buffer1,"Coins: %i Rubins: %i Team: Red",maindata.player[(int)(trunc(a))].money,maindata.player[(int)(trunc(a))].rubins); break;
+          case 1: sprintf(buffer1,"Coins: %i Rubins: %i Team: Green",maindata.player[(int)(trunc(a))].money,maindata.player[(int)(trunc(a))].rubins); break;
+          case 2: sprintf(buffer1,"Coins: %i Rubins: %i Team: Blue",maindata.player[(int)(trunc(a))].money,maindata.player[(int)(trunc(a))].rubins); break;
+          case 3: sprintf(buffer1,"Coins: %i Rubins: %i Team: Yellow",maindata.player[(int)(trunc(a))].money,maindata.player[(int)(trunc(a))].rubins); break;
+        }
+      else
+        sprintf(buffer1,"Count: %i Rubins: %i Team: doesn't exist'",maindata.player[(int)(trunc(a))].money,maindata.player[(int)(trunc(a))].rubins);
+      char buffer2[32]="";
+      if (data->choose_step[(int)(trunc(a))]==0)
+        sprintf(buffer2,"Push [A]");
+      else
+        sprintf(buffer2,"Ok");				
+    }
+    
 		glColor4f(0.7,0.7,0.7,0.7);        
 		float fein=-1.3;
 		float zusammen=0.02;

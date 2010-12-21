@@ -18,6 +18,8 @@
  Alexander Matthes (Ziz) , zizsdl_at_googlemail.com                         
 */
 
+char fade_login_out=1;
+
 void draw_newgame_login_new(pmenudata data)
 {
   draw_ballon_background(&menudata);
@@ -31,11 +33,23 @@ void draw_newgame_login_new(pmenudata data)
     if (data->play_with[(int)(trunc(a))]==-1)
     {
       glColor4f(0.7,0.7,0.7,0.7);
-      ZWdrawtextmiddle(text,-1.12+a*0.1,0.72-a*0.4,-4,(char*)"Taste drücken um mitzuspielen",0.3);
-      glColor4f(COLOR_BASE+sin((data->rotation-40.0*a/7.0)*M_PI/180.0)*COLOR_MULT,
-                COLOR_BASE+sin((data->rotation-40.0*a/7.0)*M_PI/90.0)*COLOR_MULT,
-                COLOR_BASE+sin((data->rotation-40.0*a/7.0)*M_PI/45.0)*COLOR_MULT,1);
-      ZWdrawtextmiddle(text,-1.1+a*0.1,0.7-a*0.4,-4,(char*)"Taste drücken um mitzuspielen",0.3);
+      if (strcmp(language,(char*)"german")==0)
+      {
+        ZWdrawtextmiddle(text,-1.12+a*0.1,0.72-a*0.4,-4,(char*)"Taste drücken um mitzuspielen",0.3);
+        glColor4f(COLOR_BASE+sin((data->rotation-40.0*a/7.0)*M_PI/180.0)*COLOR_MULT,
+                  COLOR_BASE+sin((data->rotation-40.0*a/7.0)*M_PI/90.0)*COLOR_MULT,
+                  COLOR_BASE+sin((data->rotation-40.0*a/7.0)*M_PI/45.0)*COLOR_MULT,1);
+        ZWdrawtextmiddle(text,-1.1+a*0.1,0.7-a*0.4,-4,(char*)"Taste drücken um mitzuspielen",0.3);
+      }
+      else
+      {
+        ZWdrawtextmiddle(text,-1.12+a*0.1,0.72-a*0.4,-4,(char*)"Press Button to play!",0.3);
+        glColor4f(COLOR_BASE+sin((data->rotation-40.0*a/7.0)*M_PI/180.0)*COLOR_MULT,
+                  COLOR_BASE+sin((data->rotation-40.0*a/7.0)*M_PI/90.0)*COLOR_MULT,
+                  COLOR_BASE+sin((data->rotation-40.0*a/7.0)*M_PI/45.0)*COLOR_MULT,1);
+        ZWdrawtextmiddle(text,-1.1+a*0.1,0.7-a*0.4,-4,(char*)"Press Button to play!",0.3);
+      }
+      
     }
     else
     {
@@ -45,21 +59,40 @@ void draw_newgame_login_new(pmenudata data)
       {
         char temp=ZWattribute->realjoystick[data->play_with[(int)(trunc(a))]].name[28];
         ZWattribute->realjoystick[data->play_with[(int)(trunc(a))]].name[28]=0;
-        switch (data->choose_step[(int)(trunc(a))])
-        {
-          case 1: sprintf(buffer,"%s... [A] Weiter",ZWattribute->realjoystick[data->play_with[(int)(trunc(a))]].name); break;
-          case 2: sprintf(buffer,"%s... Ready [C] Zurück",ZWattribute->realjoystick[data->play_with[(int)(trunc(a))]].name); break;
-          case 3: sprintf(buffer,"%s... [ ] Kalibriere",ZWattribute->realjoystick[data->play_with[(int)(trunc(a))]].name); break;
-        }
+        if (strcmp(language,(char*)"german")==0)
+          switch (data->choose_step[(int)(trunc(a))])
+          {
+            case 1: sprintf(buffer,"%s... [A] Weiter",ZWattribute->realjoystick[data->play_with[(int)(trunc(a))]].name); break;
+            case 2: sprintf(buffer,"%s... Fertig [C] Zurück",ZWattribute->realjoystick[data->play_with[(int)(trunc(a))]].name); break;
+            case 3: sprintf(buffer,"%s... [ ] Kalibriere",ZWattribute->realjoystick[data->play_with[(int)(trunc(a))]].name); break;
+          }
+        else
+          switch (data->choose_step[(int)(trunc(a))])
+          {
+            case 1: sprintf(buffer,"%s... [A] Continue",ZWattribute->realjoystick[data->play_with[(int)(trunc(a))]].name); break;
+            case 2: sprintf(buffer,"%s... Ready [C] Back",ZWattribute->realjoystick[data->play_with[(int)(trunc(a))]].name); break;
+            case 3: sprintf(buffer,"%s... [ ] Calibrate",ZWattribute->realjoystick[data->play_with[(int)(trunc(a))]].name); break;
+          }
+        
         ZWattribute->realjoystick[data->play_with[(int)(trunc(a))]].name[28]=temp;
       }
       else
-        switch (data->choose_step[(int)(trunc(a))])
-        {
-          case 1: sprintf(buffer,"%s [A] Weiter",ZWattribute->realjoystick[data->play_with[(int)(trunc(a))]].name); break;
-          case 2: sprintf(buffer,"%s Ready [C] Zurück",ZWattribute->realjoystick[data->play_with[(int)(trunc(a))]].name); break;
-          case 3: sprintf(buffer,"%s [A] Kalibrieren",ZWattribute->realjoystick[data->play_with[(int)(trunc(a))]].name); break;
-        }
+      {
+        if (strcmp(language,(char*)"german")==0)
+          switch (data->choose_step[(int)(trunc(a))])
+          {
+            case 1: sprintf(buffer,"%s [A] Weiter",ZWattribute->realjoystick[data->play_with[(int)(trunc(a))]].name); break;
+            case 2: sprintf(buffer,"%s Fertig [C] Zurück",ZWattribute->realjoystick[data->play_with[(int)(trunc(a))]].name); break;
+            case 3: sprintf(buffer,"%s [A] Kalibrieren",ZWattribute->realjoystick[data->play_with[(int)(trunc(a))]].name); break;
+          }
+          else
+          switch (data->choose_step[(int)(trunc(a))])
+          {
+            case 1: sprintf(buffer,"%s [A] Continue",ZWattribute->realjoystick[data->play_with[(int)(trunc(a))]].name); break;
+            case 2: sprintf(buffer,"%s Ready [C] Back",ZWattribute->realjoystick[data->play_with[(int)(trunc(a))]].name); break;
+            case 3: sprintf(buffer,"%s [A] Calibrate",ZWattribute->realjoystick[data->play_with[(int)(trunc(a))]].name); break;
+          }
+      }
         
       ZWdrawtextmiddle(text,-1.11+a*0.1,0.71-a*0.4,-4,buffer,0.2);
       glColor4f(COLOR_BASE+sin((data->rotation-40.0*a/7.0)*M_PI/180.0)*COLOR_MULT,
@@ -77,7 +110,7 @@ void draw_newgame_login_new(pmenudata data)
     draw_ingame_kalib(&maindata);
   }
 
-  if (data->fade_dir!=1)
+  if (fade_login_out && data->fade_dir!=1)
   {
     glLoadIdentity();
     glDisable(GL_TEXTURE_2D);
@@ -283,7 +316,7 @@ int calc_newgame_login_thread_new(pmenudata data)
 }
 
 
-void draw_newgame_login(pmenudata data)
+/*void draw_newgame_login(pmenudata data)
 {
   draw_ballon_background(&menudata);
   glLoadIdentity();
@@ -455,5 +488,5 @@ int calc_newgame_login_thread(pmenudata data)
 		}
   }
   return 0;
-}
+}*/
 

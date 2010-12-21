@@ -196,13 +196,23 @@ void draw_main(pmaindata data)
     }
     char buffer[10];
     float r,g,b;
-    switch (data->player[a].team)
-    {
-      case 0: sprintf(buffer,"Rot");   r=1  ;g=0.5;b=0.5; break;
-      case 1: sprintf(buffer,"Grün");  r=0.5;g=1  ;b=0.5; break;
-      case 2: sprintf(buffer,"Blau");  r=0.5;g=0.5;b=1  ; break;
-      default: sprintf(buffer,"Gelb"); r=1  ;g=1  ;b=0.5; break;
-    }
+    if (strcmp(language,(char*)"german")==0)
+      switch (data->player[a].team)
+      {
+        case 0: sprintf(buffer,"Rot");   r=1  ;g=0.5;b=0.5; break;
+        case 1: sprintf(buffer,"Grün");  r=0.5;g=1  ;b=0.5; break;
+        case 2: sprintf(buffer,"Blau");  r=0.5;g=0.5;b=1  ; break;
+        default: sprintf(buffer,"Gelb"); r=1  ;g=1  ;b=0.5; break;
+      }
+    else
+      switch (data->player[a].team)
+      {
+        case 0: sprintf(buffer,"Red");   r=1  ;g=0.5;b=0.5; break;
+        case 1: sprintf(buffer,"Green");  r=0.5;g=1  ;b=0.5; break;
+        case 2: sprintf(buffer,"Blue");  r=0.5;g=0.5;b=1  ; break;
+        default: sprintf(buffer,"Yellow"); r=1  ;g=1  ;b=0.5; break;
+      }
+    
     if (a==data->activplayer)
     {
       if (teamsize>1)
@@ -260,13 +270,23 @@ void draw_main(pmaindata data)
       glEnable(GL_TEXTURE_2D);
       glColor4f(1,1,1,0.7);
       ZWdrawtextmiddle(text,x,y+0.35 ,-4,(char*)"Team",0.25);
-      switch (a)
-      {
-        case 0:ZWdrawtextmiddle(text,x,y+0.15,-4,(char*)"Rot",0.25);break;
-        case 1:ZWdrawtextmiddle(text,x,y+0.15,-4,(char*)"Grün",0.25);break;
-        case 2:ZWdrawtextmiddle(text,x,y+0.15,-4,(char*)"Blau",0.25);break;
-        case 3:ZWdrawtextmiddle(text,x,y+0.15,-4,(char*)"Gelb",0.25);break;
-      }
+      if (strcmp(language,(char*)"german")==0)
+        switch (a)
+        {
+          case 0:ZWdrawtextmiddle(text,x,y+0.15,-4,(char*)"Rot",0.25);break;
+          case 1:ZWdrawtextmiddle(text,x,y+0.15,-4,(char*)"Grün",0.25);break;
+          case 2:ZWdrawtextmiddle(text,x,y+0.15,-4,(char*)"Blau",0.25);break;
+          case 3:ZWdrawtextmiddle(text,x,y+0.15,-4,(char*)"Gelb",0.25);break;
+        }
+      else
+        switch (a)
+        {
+          case 0:ZWdrawtextmiddle(text,x,y+0.15,-4,(char*)"Red",0.25);break;
+          case 1:ZWdrawtextmiddle(text,x,y+0.15,-4,(char*)"Green",0.25);break;
+          case 2:ZWdrawtextmiddle(text,x,y+0.15,-4,(char*)"Blue",0.25);break;
+          case 3:ZWdrawtextmiddle(text,x,y+0.15,-4,(char*)"Yellow",0.25);break;
+        }
+      
 
       glTranslatef(x+0.15,y-0.2,z);
       glScalef(s,s,s);    
@@ -334,10 +354,21 @@ void draw_main(pmaindata data)
   
   //Runde
   char buffer[32];
-  if (gametype<8)
-    sprintf(buffer,"Runde %i von %i",data->round,(gametype+1)*5);
+  if (strcmp(language,(char*)"german")==0)
+  {
+    if (gametype<8)
+      sprintf(buffer,"Runde %i von %i",data->round,(gametype+1)*5);
+    else
+      sprintf(buffer,"Runde %i",data->round);
+  }
   else
-    sprintf(buffer,"Runde %i",data->round);
+  {
+    if (gametype<8)
+      sprintf(buffer,"Round %i of %i",data->round,(gametype+1)*5);
+    else
+      sprintf(buffer,"Round %i",data->round);
+  }
+  
   glColor4f(0,0,0,0.8);
   ZWdrawtext(text,-11.96,-8.66,-16,buffer,1.0);
   glColor4f(1,1,1,0.9);
@@ -371,11 +402,23 @@ void draw_main(pmaindata data)
 				case 2:draw_user_choose(data,data->activplayer,data->player[data->activplayer].item[data->use_item_nr]->friendlyfire);break;
         case 3:
           glColor4f(0,0,0,0.8);
-          ZWdrawtextmiddle(text,-0.01, 1.49,-2.8,(char*)"Wähle mit [<] und [>] ein Feld aus, wo das Item drauf",0.18);
-          ZWdrawtextmiddle(text,-0.01, 1.34,-2.8,(char*)"angewendet werden soll. Bestätige mit [A]. Zurück mit [C].",0.18);
-          glColor4f(1,1,1,0.9);
-          ZWdrawtextmiddle(text, 0   , 1.5 ,-2.8,(char*)"Wähle mit [<] und [>] ein Feld aus, wo das Item drauf",0.18);
-          ZWdrawtextmiddle(text, 0   , 1.35,-2.8,(char*)"angewendet werden soll. Bestätige mit [A]. Zurück mit [C].",0.18);
+          if (strcmp(language,(char*)"german")==0)
+          {
+            ZWdrawtextmiddle(text,-0.01, 1.49,-2.8,(char*)"Wähle mit [<] und [>] ein Feld aus, wo das Item drauf",0.18);
+            ZWdrawtextmiddle(text,-0.01, 1.34,-2.8,(char*)"angewendet werden soll. Bestätige mit [A]. Zurück mit [C].",0.18);
+            glColor4f(1,1,1,0.9);
+            ZWdrawtextmiddle(text, 0   , 1.5 ,-2.8,(char*)"Wähle mit [<] und [>] ein Feld aus, wo das Item drauf",0.18);
+            ZWdrawtextmiddle(text, 0   , 1.35,-2.8,(char*)"angewendet werden soll. Bestätige mit [A]. Zurück mit [C].",0.18);
+          }
+          else
+          {
+            ZWdrawtextmiddle(text,-0.01, 1.49,-2.8,(char*)"Choose with [<] and [>] a field, on which the the Item",0.18);
+            ZWdrawtextmiddle(text,-0.01, 1.34,-2.8,(char*)"should be used. Confirm with [A]. Back with [C].",0.18);
+            glColor4f(1,1,1,0.9);
+            ZWdrawtextmiddle(text, 0   , 1.5 ,-2.8,(char*)"Choose with [<] and [>] a field, on which the the Item",0.18);
+            ZWdrawtextmiddle(text, 0   , 1.35,-2.8,(char*)"should be used. Confirm with [A]. Back with [C].",0.18);
+          }
+          
         break;
 			}
     break;
@@ -563,7 +606,10 @@ int calc_main_thread(pmaindata data)
 					{
 						char buffer[32];
 						data->player[data->activplayer].money-=data->item_shop_price[data->item_choose_choose];
-						sprintf(buffer,"-%i Münzen",data->item_shop_price[data->item_choose_choose]);
+            if (strcmp(language,(char*)"german")==0)
+						  sprintf(buffer,"-%i Münzen",data->item_shop_price[data->item_choose_choose]);
+            else
+              sprintf(buffer,"-%i Coins",data->item_shop_price[data->item_choose_choose]);
 						new_message(buffer);
 						Mix_PlayChannel(-1,snd_negative,0);
 						data->item_shop_item_count--;
@@ -916,7 +962,10 @@ int calc_main_thread(pmaindata data)
 						case 1: //user
 							data->item_choose_choose=0;
 							data->item_choose_move=0;
-							createtextcontent((char*)"Wähle einen Mitspieler als Ziel für das Item aus!");
+              if (strcmp(language,(char*)"german")==0)
+                createtextcontent((char*)"Wähle einen Mitspieler als Ziel für das Item aus!");
+              else
+                createtextcontent((char*)"Choose a player as destination for the item!");
 						  data->item_in_script=2;
 							if (data->player[data->activplayer].iscpu)
 								data->choose_move=1;

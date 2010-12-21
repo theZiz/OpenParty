@@ -57,8 +57,17 @@ void draw_prepare_minigame(pprepare_data data)
 
   glLoadIdentity();
   glColor4f(0,0,0,0.5);
-  ZWdrawtext(text,-2.9,1.9,-4,(char*)"[A] drücken fürs Spielen",0.25);
-  ZWdrawtext(text,-2.9,1.7,-4,(char*)"[B] drücken fürs Üben",0.25);
+  if (strcmp(language,(char*)"german")==0)
+  {
+    ZWdrawtext(text,-2.9,1.9,-4,(char*)"[A] drücken fürs Spielen",0.25);
+    ZWdrawtext(text,-2.9,1.7,-4,(char*)"[B] drücken fürs Üben",0.25);
+  }
+  else
+  {
+    ZWdrawtext(text,-2.9,1.9,-4,(char*)"Press [A] for Playing",0.25);
+    ZWdrawtext(text,-2.9,1.7,-4,(char*)"Press [B] for Training",0.25);
+  }
+  
   
   float temp=ZWgettexturepercent();
   ZWsettexturepercent(0.005);
@@ -71,13 +80,21 @@ void draw_prepare_minigame(pprepare_data data)
                 data->maindata->player[a+b*4].color.b,data->maindata->player[a+b*4].color.a);
       ZWdrawsprite(maintex,-2.6+(float)a*0.8,1.2-(float)b*1.1,-4,0.35,0.35,2,2);
       glColor4f(1,1,1,1);
-   ZWdrawsprite(facetex,-2.6+(float)a*0.8,1.2-(float)b*1.1,-4,0.35/sqrt(2),0.35/sqrt(2),4,data->maindata->player[a+4*b].facenr);
+      ZWdrawsprite(facetex,-2.6+(float)a*0.8,1.2-(float)b*1.1,-4,0.35/sqrt(2),0.35/sqrt(2),4,data->maindata->player[a+4*b].facenr);
       glColor4f(0,0,0,0.5);
-      switch (data->player_status[a+4*b])
-      {
-        case 1: ZWdrawtextmiddle(text,-2.6+(float)a*0.8,0.65-(float)b*1.1,-4,(char*)"Üben",0.25); break;
-        case 2: ZWdrawtextmiddle(text,-2.6+(float)a*0.8,0.65-(float)b*1.1,-4,(char*)"Spielen",0.25); break;
-      }
+      if (strcmp(language,(char*)"german")==0)
+        switch (data->player_status[a+4*b])
+        {
+          case 1: ZWdrawtextmiddle(text,-2.6+(float)a*0.8,0.65-(float)b*1.1,-4,(char*)"Üben",0.25); break;
+          case 2: ZWdrawtextmiddle(text,-2.6+(float)a*0.8,0.65-(float)b*1.1,-4,(char*)"Spielen",0.25); break;
+        }
+      else
+        switch (data->player_status[a+4*b])
+        {
+          case 1: ZWdrawtextmiddle(text,-2.6+(float)a*0.8,0.65-(float)b*1.1,-4,(char*)"Train",0.25); break;
+          case 2: ZWdrawtextmiddle(text,-2.6+(float)a*0.8,0.65-(float)b*1.1,-4,(char*)"Play",0.25); break;
+        }
+      
     }
   ZWsettexturepercent(temp);  
   

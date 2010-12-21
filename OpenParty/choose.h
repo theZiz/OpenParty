@@ -51,9 +51,18 @@ void draw_choose(pmaindata data)
 			{
 				case 0:
 					glColor4f(0,0,0,0.8);
-					ZWdrawtextmiddle(text,0.03,-1.97,0,(char*)"Würfeln",1.01);      
-					glColor4f(1,1,1,1);
-					ZWdrawtextmiddle(text,0,-2,0,(char*)"Würfeln",1.0);     
+          if (strcmp(language,(char*)"german")==0)
+          {
+            ZWdrawtextmiddle(text,0.03,-1.97,0,(char*)"Würfeln",1.01);      
+            glColor4f(1,1,1,1);
+            ZWdrawtextmiddle(text,0,-2,0,(char*)"Würfeln",1.0);     
+          }
+          else
+          {
+            ZWdrawtextmiddle(text,0.03,-1.97,0,(char*)"Roll Dice",1.01);      
+            glColor4f(1,1,1,1);
+            ZWdrawtextmiddle(text,0,-2,0,(char*)"Roll Dice",1.0);     
+          }          
 					glRotatef(data->choose_angle,0,1,0);
 					glRotatef(sin(data->choose_angle*M_PI/90.0)*30.0,0,0,1);
 					ZWdrawobject(dice);
@@ -69,14 +78,29 @@ void draw_choose(pmaindata data)
 				break;
 				case 2:
 					glColor4f(0,0,0,0.8);
-					ZWdrawtextmiddle(text,0.03,-1.97,0,(char*)"Neu kalibrieren",1.01);      
-					if (!(data->player[data->activplayer].has_calib))
-						ZWdrawtextmiddle(text,0.03,-2.87,0,(char*)"Dringend empfohlen!",1.51);      
-					glColor4f(1,1,1,1);
-					ZWdrawtextmiddle(text,0,-2,0,(char*)"Neu kalibrieren",1.0);      
-					glColor4f(1,0.7,0.7,1);
-					if (!(data->player[data->activplayer].has_calib))
-						ZWdrawtextmiddle(text,0.,-2.9,0,(char*)"Dringend empfohlen!",1.5);      
+          if (strcmp(language,(char*)"german")==0)
+          {
+            ZWdrawtextmiddle(text,0.03,-1.97,0,(char*)"Neu kalibrieren",1.01);      
+            if (!(data->player[data->activplayer].has_calib))
+              ZWdrawtextmiddle(text,0.03,-2.87,0,(char*)"Dringend empfohlen!",1.51);      
+            glColor4f(1,1,1,1);
+            ZWdrawtextmiddle(text,0,-2,0,(char*)"Neu kalibrieren",1.0);      
+            glColor4f(1,0.7,0.7,1);
+            if (!(data->player[data->activplayer].has_calib))
+              ZWdrawtextmiddle(text,0.,-2.9,0,(char*)"Dringend empfohlen!",1.5);      
+          }
+          else
+          {
+            ZWdrawtextmiddle(text,0.03,-1.97,0,(char*)"Calibrate new",1.01);      
+            if (!(data->player[data->activplayer].has_calib))
+              ZWdrawtextmiddle(text,0.03,-2.87,0,(char*)"Badly recommended!",1.51);      
+            glColor4f(1,1,1,1);
+            ZWdrawtextmiddle(text,0,-2,0,(char*)"Calibrate new",1.0);      
+            glColor4f(1,0.7,0.7,1);
+            if (!(data->player[data->activplayer].has_calib))
+              ZWdrawtextmiddle(text,0.,-2.9,0,(char*)"Badly recommended!",1.5);      
+          }
+          
 					glColor4f(1,1,1,1);
 					glRotatef(sin(data->choose_angle*M_PI/90.0)*30.0,0,0,1);
 					glRotatef(cos(data->choose_angle*M_PI/45.0)*30.0,1,0,0);
@@ -90,9 +114,18 @@ void draw_choose(pmaindata data)
 				break;
 				case 3:
 					glColor4f(0,0,0,0.8);
-					ZWdrawtextmiddle(text,0.03,-1.97,0,(char*)"Übersicht",1.01);      
-					glColor4f(1,1,1,1);
-					ZWdrawtextmiddle(text,0,-2,0,(char*)"Übersicht",1.0);      
+          if (strcmp(language,(char*)"german")==0)
+          {
+            ZWdrawtextmiddle(text,0.03,-1.97,0,(char*)"Übersicht",1.01);      
+            glColor4f(1,1,1,1);
+            ZWdrawtextmiddle(text,0,-2,0,(char*)"Übersicht",1.0);      
+          }
+          else
+          {
+            ZWdrawtextmiddle(text,0.03,-1.97,0,(char*)"Overview",1.01);      
+            glColor4f(1,1,1,1);
+            ZWdrawtextmiddle(text,0,-2,0,(char*)"Overview",1.0);      
+          }
 					glRotatef(sin(data->choose_angle*M_PI/90.0)*30.0,0,0,1);
 					glRotatef(cos(data->choose_angle*M_PI/45.0)*30.0,1,0,0);
 					ZWusetexture(maintex);
@@ -144,11 +177,23 @@ void draw_item_choose(pmaindata data)
 		glPopMatrix();
 	}
 	glColor4f(0,0,0,0.8);
-	ZWdrawtextmiddle(text,-5.03,1.03,5,(char*)"[A] Einsetzen",1.01);
-	ZWdrawtextmiddle(text, 5.03,1.03,5,(char*)"[C] Zurück",1.01);
-	glColor4f(1,1,1,1);
-	ZWdrawtextmiddle(text,-5   ,1   ,5,(char*)"[A] Einsetzen",1.0);
-	ZWdrawtextmiddle(text, 5   ,1   ,5,(char*)"[C] Zurück",1.0);
+  if (strcmp(language,(char*)"german")==0)
+  {
+    ZWdrawtextmiddle(text,-5.03,1.03,5,(char*)"[A] Einsetzen",1.01);
+    ZWdrawtextmiddle(text, 5.03,1.03,5,(char*)"[C] Zurück",1.01);
+    glColor4f(1,1,1,1);
+    ZWdrawtextmiddle(text,-5   ,1   ,5,(char*)"[A] Einsetzen",1.0);
+    ZWdrawtextmiddle(text, 5   ,1   ,5,(char*)"[C] Zurück",1.0);
+  }
+  else
+  {
+    ZWdrawtextmiddle(text,-5.03,1.03,5,(char*)"[A] Use",1.01);
+    ZWdrawtextmiddle(text, 5.03,1.03,5,(char*)"[C] Back",1.01);
+    glColor4f(1,1,1,1);
+    ZWdrawtextmiddle(text,-5   ,1   ,5,(char*)"[A] Use",1.0);
+    ZWdrawtextmiddle(text, 5   ,1   ,5,(char*)"[C] Back",1.0);
+  }
+  
 }
 
 void draw_user_choose(pmaindata data,int player,char friendlyfire)
@@ -198,11 +243,23 @@ void draw_user_choose(pmaindata data,int player,char friendlyfire)
 		glPopMatrix();
 	}
 	glColor4f(0,0,0,0.8);
-	ZWdrawtextmiddle(text,-5.03,4.03,5,(char*)"[A] Auswählen",1.01);
-	ZWdrawtextmiddle(text, 5.03,4.03,5,(char*)"[C] Zurück",1.01);
-	glColor4f(1,1,1,1);
-	ZWdrawtextmiddle(text,-5   ,4   ,5,(char*)"[A] Auswählen",1.0);
-	ZWdrawtextmiddle(text, 5   ,4   ,5,(char*)"[C] Zurück",1.0);
+  if (strcmp(language,(char*)"german")==0)
+  {
+    ZWdrawtextmiddle(text,-5.03,4.03,5,(char*)"[A] Auswählen",1.01);
+    ZWdrawtextmiddle(text, 5.03,4.03,5,(char*)"[C] Zurück",1.01);
+    glColor4f(1,1,1,1);
+    ZWdrawtextmiddle(text,-5   ,4   ,5,(char*)"[A] Auswählen",1.0);
+    ZWdrawtextmiddle(text, 5   ,4   ,5,(char*)"[C] Zurück",1.0);
+  }
+  else
+  {
+    ZWdrawtextmiddle(text,-5.03,4.03,5,(char*)"[A] Choose",1.01);
+    ZWdrawtextmiddle(text, 5.03,4.03,5,(char*)"[C] Back",1.01);
+    glColor4f(1,1,1,1);
+    ZWdrawtextmiddle(text,-5   ,4   ,5,(char*)"[A] Choose",1.0);
+    ZWdrawtextmiddle(text, 5   ,4   ,5,(char*)"[C] Back",1.0);
+  }
+  
 }
 
 void draw_item_shop(pmaindata data)
@@ -236,7 +293,10 @@ void draw_item_shop(pmaindata data)
 			glTranslatef(0,0,7);
 			glRotatef(angle[position[a]],0,-1,0);
 			  char buffer[32];
-				sprintf(buffer,"%i Münzen",data->item_shop_price[position[a]]);
+        if (strcmp(language,(char*)"german")==0)
+          sprintf(buffer,"%i Münzen",data->item_shop_price[position[a]]);
+        else
+          sprintf(buffer,"%i Münzen",data->item_shop_price[position[a]]);
 				glColor4f(0,0,0,0.8);
 				ZWdrawtextmiddle(text,0.03,-1.97,0,buffer,1.01);      
 				glColor4f(1,1,1,1);
@@ -247,11 +307,23 @@ void draw_item_shop(pmaindata data)
 		glPopMatrix();
 	}
 	glColor4f(0,0,0,0.8);
-	ZWdrawtextmiddle(text,-5.23,-1.2 ,5,(char*)"[A] Kaufen",1.01);
-	ZWdrawtextmiddle(text, 5.23,-1.2 ,5,(char*)"[C] Zurück",1.01);
-	glColor4f(1,1,1,1);
-	ZWdrawtextmiddle(text,-5.2 ,-1.23,5,(char*)"[A] Kaufen",1.0);
-	ZWdrawtextmiddle(text, 5.2 ,-1.23,5,(char*)"[C] Zurück",1.0);
+  if (strcmp(language,(char*)"german")==0)
+  {
+    ZWdrawtextmiddle(text,-5.23,-1.2 ,5,(char*)"[A] Kaufen",1.01);
+    ZWdrawtextmiddle(text, 5.23,-1.2 ,5,(char*)"[C] Zurück",1.01);
+    glColor4f(1,1,1,1);
+    ZWdrawtextmiddle(text,-5.2 ,-1.23,5,(char*)"[A] Kaufen",1.0);
+    ZWdrawtextmiddle(text, 5.2 ,-1.23,5,(char*)"[C] Zurück",1.0);
+  }
+  else
+  {
+    ZWdrawtextmiddle(text,-5.23,-1.2 ,5,(char*)"[A] Buy",1.01);
+    ZWdrawtextmiddle(text, 5.23,-1.2 ,5,(char*)"[C] Back",1.01);
+    glColor4f(1,1,1,1);
+    ZWdrawtextmiddle(text,-5.2 ,-1.23,5,(char*)"[A] Buy",1.0);
+    ZWdrawtextmiddle(text, 5.2 ,-1.23,5,(char*)"[C] Back",1.0);
+  }
+  
 }
 
 void new_item_choose(pmaindata data,int kind) //kind: 0 "30%-Shop", 1: "Itemland" 2: "Interitem"

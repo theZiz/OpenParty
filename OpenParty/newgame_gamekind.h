@@ -25,12 +25,23 @@ void draw_newgame_gamekind(pmenudata data)
 
   glTranslatef((0.08-pow(1.0-data->fade*(1.0+sqrt(0.08)),2.0))*6.0,0,0);
 
-  glColor4f(0.7,0.7,0.7,0.7);        
-  ZWdrawtextmiddle(text,-0.71,-2.14,-4,(char*)"Wie groß sollen die Teams sein? Die Mehrheit entscheidet!",0.18);
-  glColor4f(COLOR_BASE+sin((data->rotation-40.0)*M_PI/180.0)*COLOR_MULT,
-            COLOR_BASE+sin((data->rotation-40.0)*M_PI/90.0)*COLOR_MULT,
-            COLOR_BASE+sin((data->rotation-40.0)*M_PI/45.0)*COLOR_MULT,1);
-  ZWdrawtextmiddle(text,-0.7 ,-2.15 ,-4,(char*)"Wie groß sollen die Teams sein? Die Mehrheit entscheidet!",0.18);
+  glColor4f(0.7,0.7,0.7,0.7);
+  if (strcmp(language,(char*)"german")==0)
+  {
+    ZWdrawtextmiddle(text,-0.71,-2.14,-4,(char*)"Wie groß sollen die Teams sein? Die Mehrheit entscheidet!",0.18);
+    glColor4f(COLOR_BASE+sin((data->rotation-40.0)*M_PI/180.0)*COLOR_MULT,
+              COLOR_BASE+sin((data->rotation-40.0)*M_PI/90.0)*COLOR_MULT,
+              COLOR_BASE+sin((data->rotation-40.0)*M_PI/45.0)*COLOR_MULT,1);
+    ZWdrawtextmiddle(text,-0.7 ,-2.15 ,-4,(char*)"Wie groß sollen die Teams sein? Die Mehrheit entscheidet!",0.18);
+  }
+  else
+  {
+    ZWdrawtextmiddle(text,-0.71,-2.14,-4,(char*)"What is the team size? The majority decides!",0.18);
+    glColor4f(COLOR_BASE+sin((data->rotation-40.0)*M_PI/180.0)*COLOR_MULT,
+              COLOR_BASE+sin((data->rotation-40.0)*M_PI/90.0)*COLOR_MULT,
+              COLOR_BASE+sin((data->rotation-40.0)*M_PI/45.0)*COLOR_MULT,1);
+    ZWdrawtextmiddle(text,-0.7 ,-2.15 ,-4,(char*)"What is the team size? The majority decides!",0.18);
+  }  
 
 
   glColor4f(1,0,0,0.5);
@@ -55,33 +66,67 @@ void draw_newgame_gamekind(pmenudata data)
   ZWdrawsprite(maintex,   -2.65,-1.2,-4,0.35,0.35,2,2);
 
   glColor4f(1,1,1,0.8);
-  ZWdrawtextmiddle(text,-2.1, 0.6,-4,(char*)"Alle",0.4);
-  ZWdrawtextmiddle(text,-2.1, 0.2,-4,(char*)"gegen",0.4);
-  ZWdrawtextmiddle(text,-2.1,-0.2,-4,(char*)"alle",0.4);
-
-  ZWdrawtextmiddle(text,-0.6, 0.4,-4,(char*)"2er",0.6);
-  ZWdrawtextmiddle(text,-0.6, 0.0,-4,(char*)"Teams",0.4);
-
-  if (playernum<7)
+  if (strcmp(language,(char*)"german")==0)
   {
-    ZWdrawtextmiddle(text,-1.5,-1.1,-4,(char*)"3er",0.6);
-    ZWdrawtextmiddle(text,-1.5,-1.5,-4,(char*)"Teams",0.4);
+    ZWdrawtextmiddle(text,-2.1, 0.6,-4,(char*)"Alle",0.4);
+    ZWdrawtextmiddle(text,-2.1, 0.2,-4,(char*)"gegen",0.4);
+    ZWdrawtextmiddle(text,-2.1,-0.2,-4,(char*)"alle",0.4);
+    
+    ZWdrawtextmiddle(text,-0.6, 0.4,-4,(char*)"2er",0.6);
+    ZWdrawtextmiddle(text,-0.6, 0.0,-4,(char*)"Teams",0.4);
+
+    if (playernum<7)
+    {
+      ZWdrawtextmiddle(text,-1.5,-1.1,-4,(char*)"3er",0.6);
+      ZWdrawtextmiddle(text,-1.5,-1.5,-4,(char*)"Teams",0.4);
+    }
+    else
+    {
+      glColor4f(1,1,1,0.3);
+      ZWdrawtextmiddle(text,-1.5,-1.1,-4,(char*)"3er",0.36);
+      ZWdrawtextmiddle(text,-1.5,-1.5,-4,(char*)"Teams",0.24);
+    }
+    
+    glColor4f(0,0,0,0.8);
+    ZWdrawtextmiddle(text,   0,-1.1,-4,(char*)"4er",0.6);
+    ZWdrawtextmiddle(text,   0,-1.5,-4,(char*)"Teams",0.4);
+
+    glColor4f(0.8,0,0,0.8);
+    ZWdrawtextmiddle(text,  -2.65,-1.35,-4,(char*)"X",0.8);
+    ZWdrawtextmiddle(text,  -2.65,-1.65,-4,(char*)"Komplett",0.21);
+    ZWdrawtextmiddle(text,  -2.65,-1.77,-4,(char*)"abbrechen",0.17);
   }
   else
   {
-    glColor4f(1,1,1,0.3);
-    ZWdrawtextmiddle(text,-1.5,-1.1,-4,(char*)"3er",0.36);
-    ZWdrawtextmiddle(text,-1.5,-1.5,-4,(char*)"Teams",0.24);
+    ZWdrawtextmiddle(text,-2.1, 0.6,-4,(char*)"All",0.4);
+    ZWdrawtextmiddle(text,-2.1, 0.2,-4,(char*)"against",0.4);
+    ZWdrawtextmiddle(text,-2.1,-0.2,-4,(char*)"all",0.4);
+    
+    ZWdrawtextmiddle(text,-0.6, 0.4,-4,(char*)"Double",0.6);
+    ZWdrawtextmiddle(text,-0.6, 0.0,-4,(char*)"teams",0.4);
+
+    if (playernum<7)
+    {
+      ZWdrawtextmiddle(text,-1.5,-1.1,-4,(char*)"Tripple",0.6);
+      ZWdrawtextmiddle(text,-1.5,-1.5,-4,(char*)"teams",0.4);
+    }
+    else
+    {
+      glColor4f(1,1,1,0.3);
+      ZWdrawtextmiddle(text,-1.5,-1.1,-4,(char*)"Tripple",0.36);
+      ZWdrawtextmiddle(text,-1.5,-1.5,-4,(char*)"teams",0.24);
+    }
+    
+    glColor4f(0,0,0,0.8);
+    ZWdrawtextmiddle(text,   0,-1.1,-4,(char*)"Quad",0.6);
+    ZWdrawtextmiddle(text,   0,-1.5,-4,(char*)"teams",0.4);
+
+    glColor4f(0.8,0,0,0.8);
+    ZWdrawtextmiddle(text,  -2.65,-1.35,-4,(char*)"X",0.8);
+    ZWdrawtextmiddle(text,  -2.65,-1.65,-4,(char*)"Cancel",0.21);
+    ZWdrawtextmiddle(text,  -2.65,-1.77,-4,(char*)"complete",0.17);
   }
   
-  glColor4f(0,0,0,0.8);
-  ZWdrawtextmiddle(text,   0,-1.1,-4,(char*)"4er",0.6);
-  ZWdrawtextmiddle(text,   0,-1.5,-4,(char*)"Teams",0.4);
-
-  glColor4f(0.8,0,0,0.8);
-  ZWdrawtextmiddle(text,  -2.65,-1.35,-4,(char*)"X",0.8);
-  ZWdrawtextmiddle(text,  -2.65,-1.65,-4,(char*)"Komplett",0.21);
-  ZWdrawtextmiddle(text,  -2.65,-1.77,-4,(char*)"abbrechen",0.17);
 
   //Cursor anzeigen
   float temp=ZWgettexturepercent();

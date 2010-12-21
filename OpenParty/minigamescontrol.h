@@ -29,7 +29,7 @@ int play_minigame(char* name,char showinfo,pgameresult gameresult,int practice)
     void *handle=dlopen(buffer,RTLD_LAZY);    
     if (handle==NULL)
     {
-      printf("Fehler beim Laden von %s\n",buffer);
+      printf("Error loading %s\n",buffer);
       return 1;
     }
     #endif
@@ -138,16 +138,16 @@ int play_minigame(char* name,char showinfo,pgameresult gameresult,int practice)
     reset_game(gamedata,gameresult);
     if (showinfo)
     {
-      printf("Gewonnen haben:\n");
+      printf("Winner:\n");
       char one_vic=0;
       for (int a=0;a<playernum;a++)
         if  (gameresult->winner[a])
         {
-          printf("Spieler %i hat gewonnen\n",a+1);
+          printf("Player %i won\n",a+1);
           one_vic=1;
         }
       if (one_vic==0)
-        printf("Keiner\n");
+        printf("Nobody\n");
     }
 		free(gameinfo.datafolder);
     free(gamedata);
