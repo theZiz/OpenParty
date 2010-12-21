@@ -28,6 +28,7 @@ void draw_aftergame(pmenudata data)
   for (a=0;a<playernum;a++)
   {
 		char buffer1[64]="";
+    char buffer2[32]="";
     if (strcmp(language,(char*)"german")==0)
     {
       if (teamsize>1)
@@ -40,7 +41,6 @@ void draw_aftergame(pmenudata data)
         }
       else
         sprintf(buffer1,"Münzen: %i Rubine: %i Team: gabs nich'",maindata.player[(int)(trunc(a))].money,maindata.player[(int)(trunc(a))].rubins);
-      char buffer2[32]="";
       if (data->choose_step[(int)(trunc(a))]==0)
         sprintf(buffer2,"Drücke [A]");
       else
@@ -58,7 +58,6 @@ void draw_aftergame(pmenudata data)
         }
       else
         sprintf(buffer1,"Count: %i Rubins: %i Team: doesn't exist'",maindata.player[(int)(trunc(a))].money,maindata.player[(int)(trunc(a))].rubins);
-      char buffer2[32]="";
       if (data->choose_step[(int)(trunc(a))]==0)
         sprintf(buffer2,"Push [A]");
       else
