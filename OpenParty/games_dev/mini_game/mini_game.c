@@ -30,7 +30,7 @@
 #include "./../../../zizutils/texture/texture.h"
 #include "./../../../zizutils/partikel/partikel.h"
 
-#include "./../../testgame/minigames.h"
+#include "./../../minigames.h"
 
 #ifdef WIN32
 #define bool char

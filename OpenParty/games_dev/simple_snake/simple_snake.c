@@ -32,7 +32,7 @@
 #include "./../../../zizutils/texture/texture.h"
 #include "./../../../zizutils/partikel/partikel.h"
 
-#include "./../../testgame/minigames.h"
+#include "./../../minigames.h"
 
 typedef struct sdata *pdata;
 typedef struct sdata {

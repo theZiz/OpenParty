@@ -31,7 +31,7 @@
 #include "./../../../zizutils/3dobjects/3dobjects.h"
 #include "./../../../zizutils/zizwindow/zizwindow.h"
 
-#include "./../../testgame/minigames.h"
+#include "./../../minigames.h"
 
 typedef struct sdata *pdata;
 typedef struct sdata {

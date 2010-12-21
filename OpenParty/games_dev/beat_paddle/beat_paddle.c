@@ -31,7 +31,7 @@
 #include "./../../../zizutils/3dobjects/3dobjects.h"
 #include "./../../../zizutils/zizwindow/zizwindow.h"
 
-#include "./../../testgame/minigames.h"
+#include "./../../minigames.h"
 
 #define WAITTIME 1000
 #ifdef WIN32
