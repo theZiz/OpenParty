@@ -18,7 +18,7 @@
  Alexander Matthes (Ziz) , zizsdl_at_googlemail.com                         
 */
 
-#define NEEDED_REVISION 2
+#define NEEDED_REVISION 3
 
 int minigame_step(bool duell,int player1,int player2,bool aftershowparty)
 {
@@ -232,6 +232,7 @@ void new_minigame_std_db(void)
   add_game_to_list((char*)"Beat Paddle",(char*)"beat_paddle",1,1);
   add_game_to_list((char*)"Ikosaeder Memory",(char*)"ikosaeder_memory",1,1);
   add_game_to_list((char*)"Ikosaeder Implosion",(char*)"ikosaeder_implosion",1,1);
+  add_game_to_list((char*)"King Pong",(char*)"king_pong",1,1);
 }
 
 void load_minigames(void)

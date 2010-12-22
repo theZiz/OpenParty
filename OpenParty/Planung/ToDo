@@ -7,9 +7,10 @@ ToDo bis Release 0.8:
 + Zweisprachigkeit durchgängig (bis auf Minispiele)
   + Infotexte
   + Alle Quelltextdateien durchgehen
-- Durchgängig neue Kalibrierung
++ Durchgängig neue Kalibrierung
   + done
-  - Testen!
+  + Testen!
+- Bug: Musik weg bei Minispielauswahl
 - 3 Minispiele
   - Pong von 2 bis 8 Spielern, 2: Viereck, 3: Dreieck, 4: Viereck: 5: FÃ¼nfeck ... Ball wird schneller. Jeder Spieler 3 Leben.
   - Bomberman

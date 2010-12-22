@@ -1,0 +1,5 @@
+all: king_pong.pp
+	fpc king_pong.pp -oking_pong.dll
+
+debug: skeleton_pascal.pp
+	fpc king_pong.pp -oking_pong.dll -gw
