@@ -51,6 +51,7 @@ type
     ballcount   : integer;
     playernum   : integer;
     time        : integer;
+    snd_fail,snd_pong : PMix_Chunk;
 	end;
 
 procedure op_get_gameinfos(gameinfo : pminigameinfo);
@@ -85,8 +86,16 @@ begin
   //Ton vorbereiten
 	keks:=String(gameinfo^.datafolder)+'sounds/Vegas Glitz.ogg';
   data^.backgroundmusic := Mix_LoadMUS(@keks[1]);
-  data^.old_music_volume:=Mix_VolumeMusic(longint(96.0*gameinfo^.volume));
+  data^.old_music_volume:=Mix_VolumeMusic(round(96*gameinfo^.volume));
   Mix_FadeInMusic(data^.backgroundmusic,-1,500);
+
+	keks:=String(gameinfo^.datafolder)+'sounds/negative.ogg';
+  data^.snd_fail := Mix_LoadWAV(@keks[1]);
+  Mix_VolumeChunk(data^.snd_fail,round(128*gameinfo^.volume));
+
+	keks:=String(gameinfo^.datafolder)+'sounds/plop.ogg';
+  data^.snd_pong := Mix_LoadWAV(@keks[1]);
+  Mix_VolumeChunk(data^.snd_pong,round(255*gameinfo^.volume));
 
   //Spiel ansich vorbereiten
   data^.step:=0;
@@ -120,6 +129,7 @@ var a,b,steps,c,alive : integer;
     controller : array [0..7] of integer;
     w,k : single;
     x1,x2,y1,y2,n : single;
+    fail : boolean;
 begin
   if data^.step=0 then //Fade In
   begin
@@ -254,6 +264,7 @@ begin
       ball[b].s+=0.00000004;
       ball[b].x+=cos(ball[b].dir)*ball[b].s;
       ball[b].y+=sin(ball[b].dir)*ball[b].s;
+      fail:=false;
       for a:=0 to playernum-1 do
       begin
         k:=0.1/sin((playernum-2)*pi/(2.0*playernum));
@@ -272,9 +283,14 @@ begin
           if ball[b].dir>=2.0*pi then
             ball[b].dir-=2.0*pi;
           if (player_live[a]>0) and
-                ((sqrt(x1*x1+y1*y1)-line_length*paddle_width[a]/2.0>paddle_pos[a]*line_length) or
-                 (sqrt(x1*x1+y1*y1)+line_length*paddle_width[a]/2.0<paddle_pos[a]*line_length)) then
-               dec(player_live[a]);
+                ((sqrt(x1*x1+y1*y1)-line_length*paddle_width[a]*1.2/2.0>paddle_pos[a]*line_length) or
+                 (sqrt(x1*x1+y1*y1)+line_length*paddle_width[a]*1.2/2.0<paddle_pos[a]*line_length)) then
+          begin
+            dec(player_live[a]);
+            Mix_PlayChannel(-1,snd_fail,0);
+          end
+          else
+            Mix_PlayChannel(-1,snd_pong,0);
           alive:=0;
           for c:=0 to playernum-1 do
             if player_live[c]>0 then
@@ -286,7 +302,7 @@ begin
             Mix_FadeOutMusic(500);
             exit(0);
           end;
-     
+          
           ball[b].x+=cos(ball[b].dir)*ball[b].s;
           ball[b].y+=sin(ball[b].dir)*ball[b].s;
         end;
@@ -406,8 +422,10 @@ begin
       gameresult^.winner[b]:=1
     else
       gameresult^.winner[b]:=0;
-    
-  //Musik zurücksetzen:
+
+  Mix_FreeChunk(data^.snd_fail);    
+  Mix_FreeChunk(data^.snd_pong);    
+
   Mix_VolumeMusic(data^.old_music_volume);
   Mix_FreeMusic(data^.backgroundmusic);
 end;

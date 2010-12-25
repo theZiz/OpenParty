@@ -166,7 +166,7 @@ begin
   //Ton vorbereiten
 	keks:=String(gameinfo^.datafolder)+'sounds/Radio Martini.ogg';
   data^.backgroundmusic := Mix_LoadMUS(@keks[1]);
-  data^.old_music_volume:=Mix_VolumeMusic(longint(96.0*gameinfo^.volume));
+  data^.old_music_volume:=Mix_VolumeMusic(round(96*gameinfo^.volume));
   Mix_FadeInMusic(data^.backgroundmusic,-1,500);
 
 	keks:=String(gameinfo^.datafolder)+'sounds/meow.ogg';
