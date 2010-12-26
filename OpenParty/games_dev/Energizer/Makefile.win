@@ -1,0 +1,5 @@
+all: Energizer.pp
+	fpc Energizer.pp -oEnergizer.dll
+
+debug: Energizer.pp
+	fpc Energizer.pp -oEnergizer.dll -gw
