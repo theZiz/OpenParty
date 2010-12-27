@@ -189,9 +189,9 @@ begin
   ZWcreatedrawlist(@(data^.crystall_stand),0);
 
   //Ton vorbereiten
-	keks:=String(gameinfo^.datafolder)+'sounds/Vegas Glitz.ogg';
+	keks:=String(gameinfo^.datafolder)+'sounds/Whimsy Groove.ogg';
   data^.backgroundmusic := Mix_LoadMUS(@keks[1]);
-  data^.old_music_volume:=Mix_VolumeMusic(round(96.0*gameinfo^.volume));
+  data^.old_music_volume:=Mix_VolumeMusic(round(255.0*gameinfo^.volume));
   Mix_FadeInMusic(data^.backgroundmusic,-1,500);
 
 	keks:=String(gameinfo^.datafolder)+'sounds/negative.ogg';

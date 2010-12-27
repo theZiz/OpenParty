@@ -1,2 +1,2 @@
-german:King Pong - das Pong der KÃ¶nige. Bis zu 8 Spieler mÃ¼ssen dafÃ¼r Sorge tragen, dass keiner der BÃ¤lle ihre Seite berÃ¼hrt. Sollte einem ein Ball durch die Lappen gehen, verliert man ein Herz - und man hat nur drei. Man steuert seinen SchlÃ¤ger mit dem Steuerkreuz.
+german:King Pong - das Pong der Könige. Bis zu 8 Spieler müssen dafür Sorge tragen, dass keiner der Bälle ihre Seite berührt. Sollte einem ein Ball durch die Lappen gehen, verliert man ein Herz - und man hat nur drei. Man steuert seinen Schläger mit dem Steuerkreuz.
 english:King Ping - the Kings Ping. Up to 8 players try to protect their side from the balls. If a ball touches you side, you will lose one heart - and you only have three! You move your Paddle with the directional pad.

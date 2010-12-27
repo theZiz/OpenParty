@@ -233,6 +233,7 @@ void new_minigame_std_db(void)
   add_game_to_list((char*)"Ikosaeder Memory",(char*)"ikosaeder_memory",1,1);
   add_game_to_list((char*)"Ikosaeder Implosion",(char*)"ikosaeder_implosion",1,1);
   add_game_to_list((char*)"King Pong",(char*)"king_pong",1,1);
+  add_game_to_list((char*)"Energizer",(char*)"energizer",1,1);
 }
 
 void load_minigames(void)

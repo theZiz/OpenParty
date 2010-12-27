@@ -10,10 +10,9 @@ ToDo bis Release 0.8:
 + Durchgängig neue Kalibrierung
   + done
   + Testen!
-- Bug: Musik weg bei Minispielauswahl
-- 3 Minispiele
++ 2 Minispiele
   + Pong von 2 bis 8 Spielern, 2: Viereck, 3: Dreieck, 4: Viereck: 5: FÃ¼nfeck ... Ball wird schneller. Jeder Spieler 3 Leben.
-	- einen Button drücken gaaaaaanz schnell
+  + Energizer
   
 Website:
 - Für die Entwicklung notwendige Header einzeln runterladbar
@@ -24,6 +23,7 @@ Website:
   - Beschreibung (Sprache, blablabla)
 
 ToDo bis Relese 0.8.5:
+- Bug: Musik weg bei Minispielauswahl
 - Abfragen, was das Minispiel kann
 - bei Laden von Text aus XML-Datei zu viele Leerzeichen und/oder Zeilenumbrüche ignorieren
 - leveldesigner Rewrite

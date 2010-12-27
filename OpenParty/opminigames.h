@@ -415,7 +415,7 @@ int calc_minigames(pmenudata data)
                  }   
                  //Minispielergebnis
                  after_minigame(&maindata,&gameresult);
-                 Mix_FadeInMusic(backgroundmusic,-1,FADE_IN_TIME);
+                 Mix_FadeInMusic(snd_menumusic,-1,FADE_IN_TIME);
                  
                  for (int a=0;a<playernum;a++)
                  {
