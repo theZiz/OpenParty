@@ -829,7 +829,7 @@ pcompiledblock createblock(ptermelem term)
   pknownvar newvar;
   pfunctab functab=NULL;
   pfunctab ft;
-  int *varanz;
+  long int *varanz;
   pjumpstack jumpstack=NULL;
   pjumpstack tempstack;
   while (now!=NULL)
@@ -860,7 +860,7 @@ pcompiledblock createblock(ptermelem term)
       case '{': //Funktion
         block[pos].art='{';
         block[pos].param.wert_i=0;
-        block[pos].jump=(int)now->function;
+        block[pos].jump=(long int)now->function;
         tempstack=(pjumpstack)malloc(sizeof(tjumpstack));
         tempstack->nr=pos;
         tempstack->next=jumpstack;
@@ -931,7 +931,7 @@ pcompiledblock createblock(ptermelem term)
         pos++;
       break;
       case 'p':
-        block[pos].jump=NULL; 
+        block[pos].jump=0; //NULL 
         block[pos].art='p';
         block[pos].param.wert_i=0;
         tempstack=(pjumpstack)malloc(sizeof(tjumpstack));

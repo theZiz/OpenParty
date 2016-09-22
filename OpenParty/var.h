@@ -871,7 +871,7 @@ void init_var(void)
 		
   ZWattribute->on_resize=on_resize;
   srand( time(0));
-  sprintf(sky.texture,"");
+  sky.texture[0] = 0;
   maindata.player[0].momset=NULL; maindata.player[1].momset=NULL; maindata.player[2].momset=NULL; maindata.player[3].momset=NULL;
   maindata.player[4].momset=NULL; maindata.player[5].momset=NULL; maindata.player[6].momset=NULL; maindata.player[7].momset=NULL;
   

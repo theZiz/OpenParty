@@ -79,9 +79,9 @@ void draw_joytest(pmenudata data)
 			  glColor4f(0,0,0,0.8);			
 			ZWdrawtext(text,-2.7+(float)zeile*dist_x+0.65*(float)spalte,0.5-(float)zeile*dist_y,-4,buffer,zoom*0.8);
 			if (a%2==0)
-			  sprintf(buffer,"[>]",a);
+			  sprintf(buffer,"[>]");
 			else
-			  sprintf(buffer,"[v]",a);
+			  sprintf(buffer,"[v]");
 			if (ZWattribute->realjoystick[joy].axis[a]>0)
 			  glColor4f(1.0,0.5,0.5,0.8);
 			else

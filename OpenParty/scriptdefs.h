@@ -40,7 +40,7 @@ typedef struct sblockelem {
             // 'w' while, 'x' elihw (until), 'd' do, 'o' od, 'i' if, 'j' fi, 'l' else, 'v' Variable,'s' set,
             // '#' Aufrufende, 'g' globale Variable
   blockparameter param; //bei art=='b' größe des benötigten Stacks (inklusive Parameter)
-  int jump; //Jumpziel oder bei art=='b' Anzahl der Parameter
+  long int jump; //Jumpziel oder bei art=='b' Anzahl der Parameter
 } tblockelem;
 
 typedef struct sfunctab *pfunctab;

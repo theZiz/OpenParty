@@ -1,5 +1,5 @@
 all: ikosaeder_implosion.pp
-	fpc ikosaeder_implosion.pp -oikosaeder_implosion.so -Xs -XX -fPIC
+	fpc -Fu"../../../zizutils/pascal_headers/" -Fl"../../../zizutils/" ikosaeder_implosion.pp -oikosaeder_implosion.so -Xs -XX -fPIC
 
 debug: ikosaeder_implosion.pp
-	fpc ikosaeder_implosion.pp -oikosaeder_implosion.so -gw -fPIC
+	fpc -Fu"../../../zizutils/pascal_headers/" -Fl"../../../zizutils/" ikosaeder_implosion.pp -oikosaeder_implosion.so -gw -fPIC

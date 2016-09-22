@@ -130,6 +130,6 @@ void deleteallobjects(void)
     ZWdeletedrawlist(sky.sky);
     ZWdeleteobject(sky.sky);
   }
-  sprintf(sky.texture,"");
+  sky.texture[0] = 0;
 }
 
